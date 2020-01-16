@@ -110,6 +110,7 @@ bool jugador::save(){
 
     if (m_idJugador > 0)
     {
+        qDebug() << "Update";
         ///UPDATE
         q.prepare("UPDATE jugadors SET dorsal = :dorsal, naixement = :data, nom = :name, soci = :soci, dni = :dni, tfn1 = :tfn1, tfn2 = :tfn2, adresa = :adresa, poblacio = :poblacio, email = :email WHERE id = :idjugador");
         q.bindValue(":idjugador", m_idJugador);
@@ -122,15 +123,25 @@ bool jugador::save(){
         q.bindValue(":adresa", m_address);
         q.bindValue(":poblacio", m_city);
         q.bindValue(":email", m_email);
-        q.bindValue(":idEquip", m_idTeam);
-        q.bindValue(":idGen", m_idGen);
+        q.bindValue(":data", m_birthday);
 
     }
     else
     {
+        qDebug() << "Insert";
+
         ///INSERT
-        q.prepare("INSERT INTO jugadors (Dorsal,Data_naixement) VALUES (:dorsal, :data)");
+        q.prepare("INSERT INTO jugadors (dorsal,naixement, nom, soci, dni, tfn1, tfn2,adresa, poblacio, email) VALUES (:dorsal, :data, :name, :soci, :dni, :tfn1, :tfn2, :adresa, :poblacio, :email)");
+        q.bindValue(":idjugador", m_idJugador);
         q.bindValue(":dorsal", m_number);
+        q.bindValue(":name", m_name);
+        q.bindValue(":soci", m_soci);
+        q.bindValue(":dni", m_dni);
+        q.bindValue(":tfn1", m_phoneNumber1);
+        q.bindValue(":tfn2", m_phoneNumber2);
+        q.bindValue(":adresa", m_address);
+        q.bindValue(":poblacio", m_city);
+        q.bindValue(":email", m_email);
         q.bindValue(":data", m_birthday);
     } //end if
 
