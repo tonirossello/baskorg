@@ -1,5 +1,6 @@
 #include "jugador.h"
 #include <QDebug>
+#include <QSqlError>
 
 ///GETTERS
 QString jugador::getName(){
@@ -56,7 +57,6 @@ void jugador::setName(QString name){
     m_name = name;
 }
 
-
 void jugador::setNumber(int number){
     m_number = number;
 }
@@ -111,10 +111,19 @@ bool jugador::save(){
     if (m_idJugador > 0)
     {
         ///UPDATE
-        q.prepare("UPDATE jugadors SET Dorsal = :dorsal, Data_naixement = :data WHERE id = :idjugador");
+        q.prepare("UPDATE jugadors SET dorsal = :dorsal, naixement = :data, nom = :name, soci = :soci, dni = :dni, tfn1 = :tfn1, tfn2 = :tfn2, adresa = :adresa, poblacio = :poblacio, email = :email WHERE id = :idjugador");
         q.bindValue(":idjugador", m_idJugador);
         q.bindValue(":dorsal", m_number);
-        q.bindValue(":data", m_birthday);
+        q.bindValue(":name", m_name);
+        q.bindValue(":soci", m_soci);
+        q.bindValue(":dni", m_dni);
+        q.bindValue(":tfn1", m_phoneNumber1);
+        q.bindValue(":tfn2", m_phoneNumber2);
+        q.bindValue(":adresa", m_address);
+        q.bindValue(":poblacio", m_city);
+        q.bindValue(":email", m_email);
+        q.bindValue(":idEquip", m_idTeam);
+        q.bindValue(":idGen", m_idGen);
 
     }
     else
@@ -128,10 +137,37 @@ bool jugador::save(){
     bool result {q.exec()};
 
     qDebug() << result;
+    qDebug() << q.lastError();
 }
 
 void jugador::load(int id){
+
     QSqlQuery q;
 
-    q.prepare("SELECT * from jugadors WHERE id = :idJugador LIMIT 1")
+    q.prepare("SELECT * from jugadors where id = :idJugador LIMIT 1");
+    q.bindValue(":idJugador", id);
+    bool result {q.exec()};
+    qDebug() << q.size();
+
+
+    if (result)
+    {
+        q.next();
+        m_idJugador = id;
+        m_number = q.value("dorsal").toInt();
+        m_name = q.value("nom").toString();
+        m_soci = q.value("soci").toString();
+        m_birthday = q.value("naixement").toDate();
+        m_dni = q.value("dni").toString();
+        m_phoneNumber1 = q.value("tfn1").toString();
+        m_phoneNumber2 = q.value("tfn2").toString();
+        m_address = q.value("adresa").toString();
+        m_city = q.value("poblacio").toString();
+        m_email = q.value("email").toString();
+        m_idTeam = q.value("idequip").toInt();
+        m_idGen = q.value("idgen").toInt();
+
+      qDebug() <<  m_name + m_soci + m_birthday.toString() + m_dni + m_phoneNumber1 + m_phoneNumber2 + m_address + m_city + m_email;
+    } //end if
+
 }

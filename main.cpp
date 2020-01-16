@@ -228,28 +228,32 @@ int main()
     {
 
         jugador j;
-        QDate d {QDate(1999,12,20)};
+        //QDate d {QDate(1999,12,20)};
 
-        QString fecha = d.toString(Qt::ISODate);
+        //QString fecha = d.toString(Qt::ISODate);
 
-
+        j.load(237);
+        j.setName("PROVA");
+        j.save();
         //j.setName("Jordi Rosselló");
         //j.setZip(07141);
         //j.setCity("Palma");
         //j.setState("Balears");
-        j.setNumber(4);
+       // j.setNumber(4);
         //j.setTeamId(0);
         //j.setAddress("Calle");
         //j.setCountry("Spain");
-        j.setBirthday(d);
+        //j.setBirthday(d);
         //j.setPhoneNumber("666999333");
-        j.save();
+        //j.save();
         /*QSqlQuery q;
-
-        q.prepare("INSERT INTO jugadors (Dorsal, Data_naixement) VALUES (:dorsal,:fecha)");
-        q.bindValue(":dorsal", 14);
-        q.bindValue(":fecha", fecha);
-        bool result {q.exec()};*/
+        q.prepare("SELECT * from jugadors");
+        q.exec();
+        qDebug() << q.size();*/
+        //q.prepare("INSERT INTO jugadors (Dorsal, Data_naixement) VALUES (:dorsal,:fecha)");
+         //q.bindValue(":dorsal", 14);
+        //q.bindValue(":fecha", fecha);
+       // bool result {q.exec()};
 
         /*QSqlRecord rec = q.record();
         while (q.next()){
