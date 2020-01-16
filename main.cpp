@@ -11,7 +11,7 @@
 #include "jugador.h"
 #include <QSqlRecord>
 
-//prueba git
+//probamos cambios
 using JSON = nlohmann::json;
 bool g_logueado;
 
