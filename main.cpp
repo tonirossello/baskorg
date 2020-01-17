@@ -152,11 +152,11 @@ void playersList(ix::WebSocket *webSocket){
     JSON jsonMessage = {
            {"type", "playersList"},
            {"operationSuccess", true},
-           {"total", 3},
+           {"total", 8},
            {"payload", {
              {{"Name", "Name1"},
               {"Team", "Team1"},
-              {"Number", "3"}},
+              {"Number", "6"}},
 
              {{"Name", "Name2"},
               {"Team", "Team2"},

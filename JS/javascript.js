@@ -52,6 +52,7 @@ function updateLoginLabel(){
     switch(object.type){
         case "login": console.log("tipo login");  changeLoginStatus(object); break;
         case "logout": console.log("tipo logout");  changeLoginStatus(object); break;
+        case "playersList": console.log("tipo playerList"); generateTable(object);
         //default: console.log("Tipo no definido"); break;
     }
 
@@ -64,23 +65,22 @@ function updateLoginLabel(){
            logged = false;         
          } else {
            logged = true;
-           generateTable();
          }
       }
       updateLoginLabel();
   }
 
-  function generateTable(){
-    console.log("generate tables");
+  function generateTable(object){
+    //console.log("generate tables");
     var table = document.getElementById("playersList");
-    var rows = 3;
     var cols = 3;
+    var rows = object.total;
     
     for (var r = 0; r< rows; r++){
       table += '<tr>';
-        for(var c=1; c<= cols; c++)
+        for(var c=0; c< cols; c++)
         {
-          table += '<td>' + c + '</td>';
+          table += '<td>' + object.payload[c].Name + '</td>';
         }
       table += '</tr>';
     }
