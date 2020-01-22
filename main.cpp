@@ -180,7 +180,7 @@ void playersList(ix::WebSocket *webSocket){
     if (q2.size() != -1) respuesta["operationSuccess"] = true;
     else respuesta["operationSuccess"] = false;
 
-    //qDebug() << respuesta.dump(4).c_str();
+    qDebug() << respuesta.dump(4).c_str();
 
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente

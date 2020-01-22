@@ -70,22 +70,47 @@ function updateLoginLabel(){
       updateLoginLabel();
   }
 
-  function generateTable(object){
+  /*function generateTable(object){
     //console.log("generate tables");
     var table = document.getElementById("playersList");
-    var cols = 4;
+    var cols = 3;
     var rows = object.total;
     
     for (var r = 0; r< rows; r++){
       table += '<tr>';
         for(var c=0; c< cols; c++)
         {
-          table += '<td>' + object.payload[c].Name + '</td>';
+          if (c==0) table += '<td>' + object.payload[r].nom + '</td>';
+          if (c==1) table += '<td>' + object.payload[r].dni + '</td>';
+          if (c==2) table += '<td>' + object.payload[r].soci + '</td>';
         }
       table += '</tr>';
     }
 
     document.write('<table border=1>' + table + '</table>');
-  }
+  }*/
+  function generateTable(object){
+    var body = document.getElementsByTagName('body')[0];
+    var tbl = document.createElement('table');
+    tbl.style.width = '100%';
+    tbl.setAttribute('border', '2');
+    var rows = object.total;
+
+    var td, tr;
+    var tbdy = document.createElement('tbody');
+    for (var r = 0; r < rows; r++) {
+      tr = document.createElement('tr');
+      for (var c = 0; c < 3; c++) {    
+          td = document.createElement('td');
+          if (c==0) td.textContent = object.payload[r].nom;
+          if (c==1) td.textContent = object.payload[r].dni;
+          if (c==2) td.textContent = object.payload[r].soci;
+          tr.appendChild(td)     
+      }
+      tbdy.appendChild(tr);
+    }
+    tbl.appendChild(tbdy);
+    body.appendChild(tbl)
+}
 
   
