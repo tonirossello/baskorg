@@ -73,7 +73,7 @@ function updateLoginLabel(){
   function generateTable(object){
     //console.log("generate tables");
     var table = document.getElementById("playersList");
-    var cols = 3;
+    var cols = 4;
     var rows = object.total;
     
     for (var r = 0; r< rows; r++){

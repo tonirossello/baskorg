@@ -11,6 +11,8 @@
 #include "jugador.h"
 #include <QSqlRecord>
 
+/*! \file */
+
 //probamos cambios
 using JSON = nlohmann::json;
 bool g_logueado;
@@ -20,6 +22,9 @@ bool exists(const JSON& json, const std::string& key)
     return json.find(key) != json.end();
 }
 
+/**
+ * Función para loguearse en la aplicación
+ */
 void login(ix::WebSocket *webSocket){
 
     ///TO DO comprobrar que user y password son correctos
@@ -148,27 +153,36 @@ void teamDelete(ix::WebSocket *webSocket){
 
 void playersList(ix::WebSocket *webSocket){
 
-    ///TO DO obtener todos los jugadores de la BBDD
-    JSON jsonMessage = {
-           {"type", "playersList"},
-           {"operationSuccess", true},
-           {"total", 8},
-           {"payload", {
-             {{"Name", "Name1"},
-              {"Team", "Team1"},
-              {"Number", "6"}},
 
-             {{"Name", "Name2"},
-              {"Team", "Team2"},
-              {"Number", "40"}},
+    QSqlQuery q2;
 
-             {{"Name", "Name3"},
-              {"Team", "Team1"},
-              {"Number", "60"}},
-           }}
-    };
+    q2.prepare("SELECT nom, dni, soci FROM jugadors");
 
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
+    q2.exec();
+
+
+    JSON respuesta;
+
+    respuesta["type"] = "playersList";
+    respuesta["total"] = q2.size();
+
+    JSON element;
+
+    while (q2.next())
+    {       
+        element["nom"] = q2.value("nom").toString().toStdString();
+        element["dni"] = q2.value("dni").toString().toStdString();
+        element["soci"] = q2.value("soci").toString().toStdString();
+
+        respuesta["payload"].push_back(element);
+    }
+
+    if (q2.size() != -1) respuesta["operationSuccess"] = true;
+    else respuesta["operationSuccess"] = false;
+
+    //qDebug() << respuesta.dump(4).c_str();
+
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
@@ -340,8 +354,13 @@ int main()
                                 }
                                 else if (receivedObject["type"] == "playersList")
                                 {
-                                    if (g_logueado) playersList(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
+                                    if (g_logueado) {
+
+
+                                        playersList(webSocket.get());
+                                    } else {
+                                        std::cout << "No estás logueado" << std::endl;
+                                    }
                                 }
                                 else if (receivedObject["type"] == "teamCreate")
                                 {

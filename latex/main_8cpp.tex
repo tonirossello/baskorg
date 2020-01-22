@@ -1,0 +1,144 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}ixwebsocket/\+I\+X\+Web\+Socket\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ixwebsocket/\+I\+X\+Web\+Socket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ixwebsocket/\+I\+X\+Connection\+State.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$json.\+hpp$>$}\newline
+{\ttfamily \#include $<$Q\+String$>$}\newline
+{\ttfamily \#include $<$Q\+Sql\+Database$>$}\newline
+{\ttfamily \#include $<$Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Q\+Sql\+Error$>$}\newline
+{\ttfamily \#include \char`\"{}jugador.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Sql\+Record$>$}\newline
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_ab6104b89642419db4e355b7b2e40abbe}\label{main_8cpp_ab6104b89642419db4e355b7b2e40abbe}} 
+using {\bfseries J\+S\+ON} = \mbox{\hyperlink{namespacenlohmann_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a57545cfd6177ab52f91ef3042d9a01ae}\label{main_8cpp_a57545cfd6177ab52f91ef3042d9a01ae}} 
+bool {\bfseries exists} (const \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} \&json, const std\+::string \&key)
+\item 
+void \mbox{\hyperlink{main_8cpp_a36c2f611629e0c25ed0304693eff7c2e}{login}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_a51ab66b691a6dbd67b7f220f9ccb3608}{club\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_ab79ee846f7c1b9960d0bedc363a31d72}{club\+Update}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_aefe6bb25d65fe02b9bf3c0779dad26a7}{club\+Delete}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_a5026ebe9f028a5d1b1d18b4a5f2bfda7}{player\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_aa746f001385d689076296c4dc6959e3f}{player\+Update}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_ae8cbeb34c52526e4a1616232d08c7247}{player\+Delete}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_a73ce774e1f7ee3497d67be799d6e81e0}{team\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_afc2e7839ccf2afe62aaea6b37bf471f1}{team\+Update}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_a85722deec3a26b7c2b39672ded1586e7}{team\+Delete}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_a9a78b79f869015a59a5990c4ce3fc0b0}{players\+List}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+void \mbox{\hyperlink{main_8cpp_ab68188d05da5120525d47223630b928f}{logout}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a04c0f1d98cdfeb71fc9c9f71db524c78}\label{main_8cpp_a04c0f1d98cdfeb71fc9c9f71db524c78}} 
+bool {\bfseries g\+\_\+logueado}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a51ab66b691a6dbd67b7f220f9ccb3608}\label{main_8cpp_a51ab66b691a6dbd67b7f220f9ccb3608}} 
+\index{main.\+cpp@{main.\+cpp}!club\+Create@{club\+Create}}
+\index{club\+Create@{club\+Create}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{club\+Create()}{clubCreate()}}
+{\footnotesize\ttfamily void club\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO crear el club en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_aefe6bb25d65fe02b9bf3c0779dad26a7}\label{main_8cpp_aefe6bb25d65fe02b9bf3c0779dad26a7}} 
+\index{main.\+cpp@{main.\+cpp}!club\+Delete@{club\+Delete}}
+\index{club\+Delete@{club\+Delete}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{club\+Delete()}{clubDelete()}}
+{\footnotesize\ttfamily void club\+Delete (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO eliminar el club en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_ab79ee846f7c1b9960d0bedc363a31d72}\label{main_8cpp_ab79ee846f7c1b9960d0bedc363a31d72}} 
+\index{main.\+cpp@{main.\+cpp}!club\+Update@{club\+Update}}
+\index{club\+Update@{club\+Update}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{club\+Update()}{clubUpdate()}}
+{\footnotesize\ttfamily void club\+Update (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO actualizar el club en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_a36c2f611629e0c25ed0304693eff7c2e}\label{main_8cpp_a36c2f611629e0c25ed0304693eff7c2e}} 
+\index{main.\+cpp@{main.\+cpp}!login@{login}}
+\index{login@{login}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void login (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+Función para loguearse en la aplicación TO DO comprobrar que user y password son correctos \mbox{\Hypertarget{main_8cpp_ab68188d05da5120525d47223630b928f}\label{main_8cpp_ab68188d05da5120525d47223630b928f}} 
+\index{main.\+cpp@{main.\+cpp}!logout@{logout}}
+\index{logout@{logout}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily void logout (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO comprobrar que user y password son correctos \mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Text format
+
+2) Decidir acción en base al \textquotesingle{}type\textquotesingle{}
+
+M\+E\+N\+S\+A\+J\+ES D\+EL C\+L\+I\+E\+N\+TE AL S\+E\+R\+V\+I\+D\+OR \mbox{\Hypertarget{main_8cpp_a5026ebe9f028a5d1b1d18b4a5f2bfda7}\label{main_8cpp_a5026ebe9f028a5d1b1d18b4a5f2bfda7}} 
+\index{main.\+cpp@{main.\+cpp}!player\+Create@{player\+Create}}
+\index{player\+Create@{player\+Create}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{player\+Create()}{playerCreate()}}
+{\footnotesize\ttfamily void player\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO crear el jugador en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_ae8cbeb34c52526e4a1616232d08c7247}\label{main_8cpp_ae8cbeb34c52526e4a1616232d08c7247}} 
+\index{main.\+cpp@{main.\+cpp}!player\+Delete@{player\+Delete}}
+\index{player\+Delete@{player\+Delete}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{player\+Delete()}{playerDelete()}}
+{\footnotesize\ttfamily void player\+Delete (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO eliminar el jugador en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_a9a78b79f869015a59a5990c4ce3fc0b0}\label{main_8cpp_a9a78b79f869015a59a5990c4ce3fc0b0}} 
+\index{main.\+cpp@{main.\+cpp}!players\+List@{players\+List}}
+\index{players\+List@{players\+List}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{players\+List()}{playersList()}}
+{\footnotesize\ttfamily void players\+List (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO obtener todos los jugadores de la B\+B\+DD \mbox{\Hypertarget{main_8cpp_aa746f001385d689076296c4dc6959e3f}\label{main_8cpp_aa746f001385d689076296c4dc6959e3f}} 
+\index{main.\+cpp@{main.\+cpp}!player\+Update@{player\+Update}}
+\index{player\+Update@{player\+Update}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{player\+Update()}{playerUpdate()}}
+{\footnotesize\ttfamily void player\+Update (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO actualizar el jugador en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_a73ce774e1f7ee3497d67be799d6e81e0}\label{main_8cpp_a73ce774e1f7ee3497d67be799d6e81e0}} 
+\index{main.\+cpp@{main.\+cpp}!team\+Create@{team\+Create}}
+\index{team\+Create@{team\+Create}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{team\+Create()}{teamCreate()}}
+{\footnotesize\ttfamily void team\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO crear el equipo en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_a85722deec3a26b7c2b39672ded1586e7}\label{main_8cpp_a85722deec3a26b7c2b39672ded1586e7}} 
+\index{main.\+cpp@{main.\+cpp}!team\+Delete@{team\+Delete}}
+\index{team\+Delete@{team\+Delete}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{team\+Delete()}{teamDelete()}}
+{\footnotesize\ttfamily void team\+Delete (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO eliminar el equipo en la B\+B\+DD \mbox{\Hypertarget{main_8cpp_afc2e7839ccf2afe62aaea6b37bf471f1}\label{main_8cpp_afc2e7839ccf2afe62aaea6b37bf471f1}} 
+\index{main.\+cpp@{main.\+cpp}!team\+Update@{team\+Update}}
+\index{team\+Update@{team\+Update}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{team\+Update()}{teamUpdate()}}
+{\footnotesize\ttfamily void team\+Update (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+TO DO actualizar el equipo en la B\+B\+DD 
