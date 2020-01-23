@@ -155,9 +155,7 @@ void playersList(ix::WebSocket *webSocket){
 
 
     QSqlQuery q2;
-
     q2.prepare("SELECT nom, dni, soci FROM jugadors");
-
     q2.exec();
 
 

@@ -4,35 +4,63 @@
     <link href="style.css" rel="stylesheet" type="text/css">
   <meta charset="utf-8">
 		<title>Login</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">  
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">  -->
+      
 
-      </head>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+       
+        background-color: #892E1A;
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+      }
+      
+      li a:hover:not(.active) {
+        background-color: #464646;
+      }
+      
+      li a.active {
+        color: white;
+        background-color: black;
+        font-weight: bold;
+      }
+    </style>
+
 </head>
 
 
 <body>
-  <div class="login">
-    <h1>Login</h1>
-    <form action="authenticate.php" method="post">
-      <label for="username">
-        <i class="fas fa-user"></i>
-      </label>
-      <input type="text" name="username" placeholder="Username" id="username" required>
-      <label for="password">
-        <i class="fas fa-lock"></i>
-      </label>
-      <input type="password" name="password" placeholder="Password" id="password" required>
-      <input type="submit" value="Login">
-    </form>
-  </div>
-  <h1>Gestión de clubs</h1>
+
+  <ul>
+    <li><a class="active" href="#home">Inici</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contacte</a></li>
+    <li><a href="#about">Sobre nosaltres</a></li>
+  </ul>
+
+  <h1>Baskorg</h1>
   <label>Estado: </label>
   <label id="Estado"> No logueado </label><br>
   <label> Tipo recibido: </label>
   <label id="TipoRecibido"></label><br><br>
   <label> Respuesta del servidor: </label>
   <p id="serverResponse"></p>
-  //<table id="playersList"> </table>
+  <table id="playersList"> </table>
 
 
 
