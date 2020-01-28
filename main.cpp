@@ -25,18 +25,73 @@ bool exists(const JSON& json, const std::string& key)
 /**
  * Función para loguearse en la aplicación
  */
-void login(ix::WebSocket *webSocket){
+void login(ix::WebSocket *webSocket, JSON received){
 
-    ///TO DO comprobrar que user y password son correctos
-    JSON jsonMessage = {
-           {"type", "login"},
-           {"operationSuccess", true},
-           {"clubDefault", "Bàsquet Sa Cabaneta"}
-    };
+    std::string user;
+    std::string pass;
+    std::string uuid;
+    received["user"].get_to(user);
+    received["pass"].get_to(pass);
+
+    qDebug() << "estoy en login" << user.c_str();
+    qDebug() << "PASS" << pass.c_str();
+
+
+    QSqlQuery q;
+    q.prepare("SELECT * FROM usuaris WHERE usuari = :user");
+    q.bindValue(":user",  user.c_str());
+    q.exec();
+
+    JSON respuesta;
+    respuesta["type"] = "login";
+
+    if (q.size() > 0){
+        qDebug() << "Existe el usuario";
+
+        ///comprobamos si las contraseñas coinciden
+        QSqlQuery q2;
+        q2.prepare("SELECT ENCRYPT(:pass, :uuid)");
+        q2.bindValue(":pass",  pass.c_str());
+        q2.bindValue(":uuid",  q.value("uuid"));
+        q2.exec();
+
+        std::string encryptedpass;
+
+        if (q2.next()){
+            //encryptedpass = q2.   .toString().toStdString(); NO CONSEGUIMOS OBTENER LA DEVOLUCION DE LA CONSULTA
+            qDebug() << "PASS ENCRYPTED:" << encryptedpass.c_str();
+        } //end if
+
+        if (encryptedpass.compare(pass) == 0){
+            respuesta["operationSuccess"] = "true";
+            qDebug() << "LOGIN SUCCESFUL";
+        } else {
+            respuesta["operationSuccess"] = "false";
+            respuesta["errorMessage"] = "La contrasenya no és correcta";
+            qDebug() << "PASSWORD DOES NOT MATCH";
+        } //end if
+
+    } else {
+        qDebug() << "No existe el usuario";
+        respuesta["operationSuccess"] = "false";
+        respuesta["errorMessage"] = "No existeix l'usuari";
+    } //end if
+
+    /*
+    respuesta["type"] = "playersList";
+    respuesta["total"] = q2.size();
+
+    if (q2.size() != -1) respuesta["operationSuccess"] = true;
+    else respuesta["operationSuccess"] = false;
+
+    qDebug() << respuesta.dump(4).c_str();
+
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
+    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 
     std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-    g_logueado = true;
+    g_logueado = true;*/
 }
 
 void clubCreate(ix::WebSocket *webSocket){
@@ -317,7 +372,7 @@ int main()
                                 //std::cout << "Existe type -> Tipo:" << receivedObject["type"] << std::endl;
                                 if (receivedObject["type"] == "login")
                                 {
-                                    if (!g_logueado) login(webSocket.get());
+                                    if (!g_logueado) login(webSocket.get(), receivedObject);
                                     else std::cout << "Ya estás logueado" << std::endl;
                                 }
                                 else if (receivedObject["type"] == "clubCreate")
