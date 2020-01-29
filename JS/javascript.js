@@ -3,6 +3,7 @@ var tipoRecibido;
 var serverResponse;
 
 function updateLoginLabel(){
+    console.log("Actualizamos label");
     var currentLoginState = document.getElementById("Estado");
     if (!logged){
         currentLoginState.innerHTML="No logueado";
@@ -52,7 +53,7 @@ function updateLoginLabel(){
     switch(object.type){
         case "login": console.log("tipo login");  changeLoginStatus(object); break;
         case "logout": console.log("tipo logout");  changeLoginStatus(object); break;
-        case "playersList": console.log("tipo playerList"); generateTable(object);
+        case "playersList": console.log("tipo playerList"); generateTable(object); break;
         //default: console.log("Tipo no definido"); break;
     }
 
@@ -60,14 +61,16 @@ function updateLoginLabel(){
   }
 
   function changeLoginStatus(object){
-      if (object.operationSuccess){
+      if (object.operationSuccess == true){
          if (logged){
            logged = false;         
          } else {
            logged = true;
          }
+         console.log("operationSuccess" + object.operationSuccess);
+         updateLoginLabel();
       }
-      updateLoginLabel();
+      
   }
 
   /*function generateTable(object){
