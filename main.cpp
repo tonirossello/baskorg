@@ -259,14 +259,6 @@ QString decrypt(QByteArray const& msg, QByteArray const& key){
 
 int main()
 {
-    /*QByteArray key = "clave";
-    QByteArray password[20];
-    QByteArray passEncriptada[20];
-    std::cout << "Introduce tu contraseña: " << std::endl;
-    std::cin >> password;
-    std::cout << "Tu contraseña es: " <<  password << std::endl;
-    passEncriptada = encrypt(password, key);
-    std::cout << "Tu contraseña encriptada es: " <<  passEncriptada << std::endl;*/
 
     g_logueado = false;
 
@@ -321,6 +313,20 @@ int main()
     } // end if */
 
     ix::WebSocketServer server(9990, "0.0.0.0");
+
+    ix::SocketTLSOptions tlsOptions;
+
+    tlsOptions.tls = true;
+    tlsOptions.certFile = "./cert/localhost.crt";
+    tlsOptions.keyFile = "./cert/localhost.key";
+    tlsOptions.caFile = "NONE";
+
+    if (tlsOptions.isValid()){
+        std::cerr << "SSL Valid" << std::endl;
+    }
+
+    server.setTLSOptions(tlsOptions);
+
 
     server.setOnConnectionCallback(
         [&server](std::shared_ptr<ix::WebSocket> webSocket,

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 27, 2020 at 12:23 PM
+-- Generation Time: Feb 07, 2020 at 01:05 PM
 -- Server version: 10.2.29-MariaDB
 -- PHP Version: 7.2.5
 
@@ -394,7 +394,8 @@ CREATE TABLE `usuaris` (
 INSERT INTO `usuaris` (`id`, `usuari`, `uuid`, `pass`) VALUES
 (2, 'prova', 'ab5c85f2-3de0-11ea-96d6-ee85ce7c018e', 'hola'),
 (3, 'hola', '55910417-3de4-11ea-96d6-ee85ce7c018e', '55T28Bh7PBcMI'),
-(4, 'prova', 'eb21bbeb-3de4-11ea-96d6-ee85ce7c018e', 'ebqePeS1KrbRQ');
+(4, 'prova', 'eb21bbeb-3de4-11ea-96d6-ee85ce7c018e', 'ebqePeS1KrbRQ'),
+(5, 'usuario', 'bfa20bf8-41d0-11ea-96eb-ee86d38f54f7', 'bfaMqq6ejv1R2');
 
 --
 -- Triggers `usuaris`
@@ -591,7 +592,7 @@ ALTER TABLE `temporadas`
 -- AUTO_INCREMENT for table `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

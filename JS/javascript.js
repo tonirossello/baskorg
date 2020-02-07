@@ -13,7 +13,7 @@ function updateLoginLabel(){
 }
 
 
-  let socket = new WebSocket("ws://127.0.0.1:9990");
+  let socket = new WebSocket("wss://localhost:9990");
 
   socket.onopen = function(e) {
     //alert("[open] Connection established");
@@ -61,13 +61,16 @@ function updateLoginLabel(){
   }
 
   function changeLoginStatus(object){
-      if (object.operationSuccess == true){
+
+    var success = String(object.operationSuccess).localeCompare("true") == 0;
+
+      if (success){
          if (logged){
            logged = false;         
          } else {
            logged = true;
          }
-         console.log("operationSuccess" + object.operationSuccess);
+         
          updateLoginLabel();
       }
       

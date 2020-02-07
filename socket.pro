@@ -20,7 +20,7 @@ SOURCES += \
         main.cpp \
     jugador.cpp
 
-LIBS += -pthread -lz
+LIBS += -pthread -lz -lssl -lcrypto
 
 
 # Default rules for deployment.
