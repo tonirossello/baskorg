@@ -96,10 +96,10 @@ void login(ix::WebSocket *webSocket, JSON received){
         if (q3.size() > 0){
             respuesta["has_club"] = "true";
             if (q3.next()) respuesta["club_id"] = q3.value("id").toInt();
-            qDebug() << "Tiene club";
+            //qDebug() << "Tiene club";
         } else {
             respuesta["has_club"] = "false";
-            qDebug() << "No tiene club";
+            //qDebug() << "No tiene club";
         } //end if
 
     }

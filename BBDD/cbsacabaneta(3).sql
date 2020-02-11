@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 07, 2020 at 01:05 PM
+-- Generation Time: Feb 11, 2020 at 12:47 PM
 -- Server version: 10.2.29-MariaDB
 -- PHP Version: 7.2.5
 
@@ -91,6 +91,26 @@ INSERT INTO `categoria` (`id`, `Nom`, `Quota`) VALUES
 (9, 'Preinfantil', 320),
 (10, 'Sub23', 450),
 (11, 'Sense equip', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clubs`
+--
+
+CREATE TABLE `clubs` (
+  `id` int(8) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `codi` varchar(8) NOT NULL,
+  `propietari` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clubs`
+--
+
+INSERT INTO `clubs` (`id`, `nom`, `codi`, `propietari`) VALUES
+(1, 'Bàsquet Sa Cabaneta', '', 5);
 
 -- --------------------------------------------------------
 
@@ -250,18 +270,19 @@ CREATE TABLE `jugadors` (
   `poblacio` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `idequip` int(5) UNSIGNED DEFAULT NULL,
-  `idgen` int(1) UNSIGNED DEFAULT NULL
+  `idgen` int(1) UNSIGNED DEFAULT NULL,
+  `idclub` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `jugadors`
 --
 
-INSERT INTO `jugadors` (`id`, `dorsal`, `nom`, `soci`, `naixement`, `dni`, `tfn1`, `tfn2`, `adresa`, `poblacio`, `email`, `idequip`, `idgen`) VALUES
-(237, '45', 'PROVA', 'NO SOCI', '1999-12-20', '2131231Z', '312312', '312321', 'Olesa 4', 'Sa Cabaneta', 'prueba@prueba.com', 4, NULL),
-(238, '45', 'PEP', 'NO SOCI', NULL, '2131231Z', '312312', NULL, NULL, NULL, NULL, NULL, NULL),
-(239, '45', 'PEP', 'NO SOCI', NULL, '2131231Z', '312312', NULL, NULL, NULL, NULL, NULL, NULL),
-(240, '4', 'Jordi Rosselló', NULL, '1999-12-20', NULL, '666999333', NULL, 'Calle', 'Palma', NULL, NULL, NULL);
+INSERT INTO `jugadors` (`id`, `dorsal`, `nom`, `soci`, `naixement`, `dni`, `tfn1`, `tfn2`, `adresa`, `poblacio`, `email`, `idequip`, `idgen`, `idclub`) VALUES
+(237, '45', 'PROVA', 'NO SOCI', '1999-12-20', '2131231Z', '312312', '312321', 'Olesa 4', 'Sa Cabaneta', 'prueba@prueba.com', 4, NULL, 1),
+(238, '45', 'PEP', 'NO SOCI', NULL, '2131231Z', '312312', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(239, '45', 'PEP', 'NO SOCI', NULL, '2131231Z', '312312', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(240, '4', 'Jordi Rosselló', NULL, '1999-12-20', NULL, '666999333', NULL, 'Calle', 'Palma', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -395,7 +416,8 @@ INSERT INTO `usuaris` (`id`, `usuari`, `uuid`, `pass`) VALUES
 (2, 'prova', 'ab5c85f2-3de0-11ea-96d6-ee85ce7c018e', 'hola'),
 (3, 'hola', '55910417-3de4-11ea-96d6-ee85ce7c018e', '55T28Bh7PBcMI'),
 (4, 'prova', 'eb21bbeb-3de4-11ea-96d6-ee85ce7c018e', 'ebqePeS1KrbRQ'),
-(5, 'usuario', 'bfa20bf8-41d0-11ea-96eb-ee86d38f54f7', 'bfaMqq6ejv1R2');
+(5, 'usuario', 'bfa20bf8-41d0-11ea-96eb-ee86d38f54f7', 'bfaMqq6ejv1R2'),
+(6, 'sinclub', '9ae9bf0b-4cc8-11ea-99b1-f6a96a1838d3', '9aiJ3XXERmjTs');
 
 --
 -- Triggers `usuaris`
@@ -424,6 +446,13 @@ ALTER TABLE `activitats`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id`) USING BTREE;
+
+--
+-- Indexes for table `clubs`
+--
+ALTER TABLE `clubs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk1_club` (`propietari`);
 
 --
 -- Indexes for table `comandes`
@@ -466,7 +495,8 @@ ALTER TABLE `genere`
 ALTER TABLE `jugadors`
   ADD PRIMARY KEY (`id`) USING BTREE,
   ADD KEY `fk1_jugador` (`idequip`) USING BTREE,
-  ADD KEY `fk2_jugador` (`idgen`) USING BTREE;
+  ADD KEY `fk2_jugador` (`idgen`) USING BTREE,
+  ADD KEY `fk3_jugador` (`idclub`);
 
 --
 -- Indexes for table `pagaments`
@@ -535,6 +565,12 @@ ALTER TABLE `categoria`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `clubs`
+--
+ALTER TABLE `clubs`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `comandes`
 --
 ALTER TABLE `comandes`
@@ -592,7 +628,7 @@ ALTER TABLE `temporadas`
 -- AUTO_INCREMENT for table `usuaris`
 --
 ALTER TABLE `usuaris`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -603,6 +639,12 @@ ALTER TABLE `usuaris`
 --
 ALTER TABLE `activitats`
   ADD CONSTRAINT `fk1_activitats` FOREIGN KEY (`idtemporada`) REFERENCES `temporadas` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `clubs`
+--
+ALTER TABLE `clubs`
+  ADD CONSTRAINT `fk1_club` FOREIGN KEY (`propietari`) REFERENCES `usuaris` (`id`);
 
 --
 -- Constraints for table `comandes`
@@ -630,7 +672,8 @@ ALTER TABLE `equip`
 --
 ALTER TABLE `jugadors`
   ADD CONSTRAINT `fk1_jugador` FOREIGN KEY (`idequip`) REFERENCES `equip` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk2_jugador` FOREIGN KEY (`idgen`) REFERENCES `genere` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk2_jugador` FOREIGN KEY (`idgen`) REFERENCES `genere` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk3_jugador` FOREIGN KEY (`idclub`) REFERENCES `clubs` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pagaments`
