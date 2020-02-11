@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 11, 2020 at 12:47 PM
+-- Generation Time: Feb 11, 2020 at 01:37 PM
 -- Server version: 10.2.29-MariaDB
 -- PHP Version: 7.2.5
 
@@ -110,7 +110,23 @@ CREATE TABLE `clubs` (
 --
 
 INSERT INTO `clubs` (`id`, `nom`, `codi`, `propietari`) VALUES
-(1, 'Bàsquet Sa Cabaneta', '', 5);
+(1, 'Bàsquet Sa Cabaneta', 'cab12345', 5),
+(2, 'ClubProva', '907907e4', 3);
+
+--
+-- Triggers `clubs`
+--
+DELIMITER $$
+CREATE TRIGGER `before_insert_club` BEFORE INSERT ON `clubs` FOR EACH ROW BEGIN
+
+DECLARE random VARCHAR(8);
+SELECT LEFT(UUID(), 8) INTO random;
+
+SET NEW.codi = random;
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -568,7 +584,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT for table `clubs`
 --
 ALTER TABLE `clubs`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `comandes`
