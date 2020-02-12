@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../CSS/home.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Login</title>
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">  -->
+
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #474A59;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                li a:hover:not(.active) {
+                    background-color: #464646;
+                }
+
+                li a.active {
+                    color: white;
+                    background-color: black;
+                    font-weight: bold;
+                }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div>
+        <img src="../images/logoclub.jpg" alt="logo" class="center">
+    </div>
+
+    <div>
+        <ul>
+            <li><a class="active" href="home.html">Inici</a></li>
+            <li><a href="#contact">Contacte</a></li>
+            <li><a href="#about">Sobre nosaltres</a></li>
+        </ul>
+    </div>
+
+    <h1 style="width:100%;"> Els meus clubs </h1>
+
+    <div id="all_club_container">
+        <div id="club_container">
+            <div id="inside_club"><h2 class="club_name">Bàsquet Sa Cabaneta</h2> <h3 class="club_code">#cab12345</h3></div>
+            <button class="button">Accedir</button>
+        </div>
+
+        <div id="club_container">
+            <div id="inside_club"><h2 class="club_name">Bàsquet Sa Cabaneta</h2> <h3 class="club_code">#cab12345</h3></div>
+            <button class="button">Accedir</button>
+        </div>
+
+
+
+    </div>
+
+    <script src="./JS/home.js"></script>
+
+</body>
+</html>

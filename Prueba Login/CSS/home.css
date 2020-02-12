@@ -1,0 +1,69 @@
+* {
+  	box-sizing: border-box;
+  	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  	font-size: 16px;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+body {
+  	background-color: #ffffff;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 20%;
+}
+
+h1 {
+    width:100%;
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    display: inline;
+}
+
+h3 {
+    font-size: 20px;
+    color: gray;
+    margin-left: 5px;
+    display: inline;
+}
+
+#club_container {
+    border-radius: 25px;
+    border: 2px solid #7C1717;
+    padding: 20px;
+    width: 500px;
+    height: 130px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+#inside_club {
+    margin: 0px auto;
+}
+
+.button {
+    transition-duration: 0.4s;
+    border-radius: 4px;
+    margin-top: 20px;
+    background-color: #7C1717;
+    color: white;
+}
+
+.button:hover {
+    background-color: gray;
+    color: white;
+}
+
+#all_club_container {
+    display: flex;
+}
+
