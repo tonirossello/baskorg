@@ -70,13 +70,13 @@ let socket = new WebSocket("wss://localhost:9990");
     
   };
 
-  socket.onclose = function(event) {
+  /*socket.onclose = function(event) {
     if (event.wasClean) {
       alert(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
     } else {
       alert('[close] Connection died');
     }
-  };
+  };*/
 
   socket.onerror = function(error) {
     alert(`[error] ${error.message}`);
@@ -99,8 +99,47 @@ let socket = new WebSocket("wss://localhost:9990");
   function login(object) {
     if (String(object.operationSuccess).localeCompare("true") == 0){
       console.log("Cambiar a home");
-      window.location.href = "./HTML/home.html";
+      loadjscssfile("home", "css")
+      //document.write('<link rel="stylesheet" type="text/css" href="../CSS/home.css">');
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").innerHTML = '<div><img src="./images/logoclub.jpg" alt="logo" class="center"/></div>'+
+      '<div><ul><li><a class="active" href="./HTML/home.html">Inici</a></li><li><a href="#contact">Contacte</a></li><li><a href="#about">Sobre nosaltres</a></li></ul></div>'+
+
+  '<h1 style="width:100%;"> Els meus clubs </h1>'+
+
+  '<div id="all_club_container">'+
+     '<div id="club_container">'+
+          '<div id="inside_club"><h2 class="club_name">Bàsquet Sa Cabaneta</h2> <h3 class="club_code">#cab12345</h3></div>'+
+          '<button class="button">Accedir</button>'+
+      '</div>'+
+
+      '<div id="club_container">'+
+          '<div id="inside_club"><h2 class="club_name">Bàsquet Sa Cabaneta</h2> <h3 class="club_code">#cab12345</h3></div>'+
+          '<button class="button">Accedir</button>'+
+      '</div>'+
+  '</div>';
+      
     } else {
+      error = document.getElementById("error");
+      error.innerHTML = object.errorMessage;
       console.log("Mostrar error");
     }
   }
+
+  function loadjscssfile(filename, filetype){
+    if (filetype=="js"){ //if filename is a external JavaScript file
+        var fileref=document.createElement('script')
+        fileref.setAttribute("type","text/javascript")
+        fileref.setAttribute("src", filename)
+    }
+    else if (filetype=="css"){ //if filename is an external CSS file
+        var fileref=document.createElement("link")
+        fileref.setAttribute("rel", "stylesheet")
+        fileref.setAttribute("type", "text/css")
+        fileref.setAttribute("href", "./CSS/"+filename+"."+filetype)
+
+        console.log(fileref.getAttribute("href"));
+    }
+    if (typeof fileref!="undefined")
+        document.getElementsByTagName("head")[0].appendChild(fileref)
+}

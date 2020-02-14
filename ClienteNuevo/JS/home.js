@@ -13,7 +13,7 @@ function updateLoginLabel(){
 }
 
 
-  let socket = new WebSocket("wss://localhost:9990");
+  /*let socket = new WebSocket("wss://localhost:9990");
 
   socket.onopen = function(e) {
     //alert("[open] Connection established");
@@ -44,7 +44,7 @@ function updateLoginLabel(){
 
   socket.onerror = function(error) {
     alert(`[error] ${error.message}`);
-  };
+  };*/
 
   
 

@@ -95,7 +95,18 @@ void login(ix::WebSocket *webSocket, JSON received){
         ///si el usuario tiene algun club
         if (q3.size() > 0){
             respuesta["has_club"] = "true";
-            if (q3.next()) respuesta["club_id"] = q3.value("id").toInt();
+            JSON element;
+            while (q3.next())
+            {
+                //respuesta["club_id"] = q3.value("id").toInt();
+                element["id_club"] = q3.value("id").toInt();
+                element["codi_club"] = q3.value("codi").toString().toStdString();
+
+                respuesta["payload"].push_back(element);
+            }
+
+
+
             //qDebug() << "Tiene club";
         } else {
             respuesta["has_club"] = "false";
