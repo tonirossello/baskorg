@@ -1,6 +1,7 @@
 var logged = false;
 var tipoRecibido;
 var serverResponse;
+var user;
 
 function updateLoginLabel(){
     console.log("Actualizamos label");
@@ -76,25 +77,7 @@ function updateLoginLabel(){
       
   }
 
-  /*function generateTable(object){
-    //console.log("generate tables");
-    var table = document.getElementById("playersList");
-    var cols = 3;
-    var rows = object.total;
-    
-    for (var r = 0; r< rows; r++){
-      table += '<tr>';
-        for(var c=0; c< cols; c++)
-        {
-          if (c==0) table += '<td>' + object.payload[r].nom + '</td>';
-          if (c==1) table += '<td>' + object.payload[r].dni + '</td>';
-          if (c==2) table += '<td>' + object.payload[r].soci + '</td>';
-        }
-      table += '</tr>';
-    }
-
-    document.write('<table border=1>' + table + '</table>');
-  }*/
+ 
   function generateTable(object){
     var body = document.getElementsByTagName('body')[0];
     var tbl = document.createElement('table');

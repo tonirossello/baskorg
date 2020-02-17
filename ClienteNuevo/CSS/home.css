@@ -43,6 +43,7 @@ h3 {
     width: 500px;
     height: 130px;
     margin-left: 50px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -63,7 +64,10 @@ h3 {
     color: white;
 }
 
+#crear_club{
+    margin: 0px auto;   
+}
+
 #all_club_container {
     display: flex;
 }
-

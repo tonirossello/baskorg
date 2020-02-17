@@ -47,6 +47,7 @@ void login(ix::WebSocket *webSocket, JSON received){
     JSON respuesta;
     respuesta["type"] = "login";
 
+
     ///comprobamos si el usuario existe
     if (q.size() > 0){
 
@@ -54,8 +55,9 @@ void login(ix::WebSocket *webSocket, JSON received){
         QSqlQuery q2;
         q2.prepare("SELECT ENCRYPT(:pass, :uuid)");
         q2.bindValue(":pass",  pass.c_str());
-        if (q.next()){
+        if (q.next()){          
             g_id_usuario = q.value("id").toInt();
+            respuesta["id_user"] = q.value("id").toString().toStdString();
             qDebug() << "Existe el usuario, id = " << g_id_usuario;
             q2.bindValue(":uuid",  q.value("uuid"));
             q2.exec();
@@ -100,6 +102,7 @@ void login(ix::WebSocket *webSocket, JSON received){
             {
                 //respuesta["club_id"] = q3.value("id").toInt();
                 element["id_club"] = q3.value("id").toInt();
+                element["nom_club"] = q3.value("nom").toString().toStdString();
                 element["codi_club"] = q3.value("codi").toString().toStdString();
 
                 respuesta["payload"].push_back(element);
@@ -119,16 +122,36 @@ void login(ix::WebSocket *webSocket, JSON received){
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
-void clubCreate(ix::WebSocket *webSocket){
+void clubCreate(ix::WebSocket *webSocket, JSON received){
+
+    std::string club_name;
+    std::string id_user;
+
+    received["user"].get_to(id_user);
+    received["club_name"].get_to(club_name);
 
     ///TO DO crear el club en la BBDD
-    JSON jsonMessage = {
-           {"type", "clubCreate"},
-           {"operationSuccess", true},
-           {"clubCode", "3J8Z7T"},
-    };
+    QSqlQuery q;
+    q.prepare("INSERT into clubs (nom, propietari) values (:nom_club, :id_propietari)");
+    q.bindValue(":nom_club",  club_name.c_str());
+    q.bindValue(":id_propietari",  id_user.c_str());
+    q.exec();
 
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
+    JSON respuesta;
+    respuesta["type"] = "clubCreate";
+
+    if (q.next()){
+        JSON element;
+        element["id_club"] = q.value("id").toInt();
+        element["nom_club"] = q.value("nom").toString().toStdString();
+        element["codi_club"] = q.value("codi").toString().toStdString();
+
+        respuesta["payload"].push_back(element);
+    }
+
+
+
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
@@ -231,11 +254,16 @@ void teamDelete(ix::WebSocket *webSocket){
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
-void playersList(ix::WebSocket *webSocket){
+void playersList(ix::WebSocket *webSocket, JSON received){
+
+    std::string club;
+
+    received["id_club"].get_to(club);
 
 
     QSqlQuery q2;
-    q2.prepare("SELECT nom, dni, soci FROM jugadors");
+    q2.prepare("SELECT nom, dni, soci FROM jugadors where idclub = :club");
+    q2.bindValue(":club",  club.c_str());
     q2.exec();
 
 
@@ -259,6 +287,43 @@ void playersList(ix::WebSocket *webSocket){
     else respuesta["operationSuccess"] = false;
 
     qDebug() << respuesta.dump(4).c_str();
+
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
+    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
+}
+
+void clubsList(ix::WebSocket *webSocket, JSON received){
+
+    std::string user;
+
+    received["user"].get_to(user);
+
+    JSON respuesta;
+
+    if (g_logueado == true){
+        QSqlQuery q3;
+        q3.prepare("SELECT * from clubs where propietari = :user ");
+        q3.bindValue(":user",  user.c_str());
+        q3.exec();
+
+        ///si el usuario tiene algun club
+        if (q3.size() > 0){
+            respuesta["has_club"] = "true";
+            JSON element;
+            while (q3.next())
+            {
+                //respuesta["club_id"] = q3.value("id").toInt();
+                element["id_club"] = q3.value("id").toInt();
+                element["nom_club"] = q3.value("nom").toString().toStdString();
+                element["codi_club"] = q3.value("codi").toString().toStdString();
+
+                respuesta["payload"].push_back(element);
+            }
+        } else {
+            respuesta["has_club"] = "false";
+        } //end if
+
+    }
 
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
@@ -408,7 +473,7 @@ int main()
                                 }
                                 else if (receivedObject["type"] == "clubCreate")
                                 {
-                                    if (g_logueado) clubCreate(webSocket.get());
+                                    if (g_logueado) clubCreate(webSocket.get(), receivedObject);
                                     else std::cout << "No estás logueado" << std::endl;
                                 }
                                 else if (receivedObject["type"] == "clubUpdate")
@@ -441,7 +506,7 @@ int main()
                                     if (g_logueado) {
 
 
-                                        playersList(webSocket.get());
+                                        playersList(webSocket.get(), receivedObject);
                                     } else {
                                         std::cout << "No estás logueado" << std::endl;
                                     }
@@ -464,6 +529,11 @@ int main()
                                 else if (receivedObject["type"] == "logout")
                                 {
                                     if (g_logueado) logout(webSocket.get());
+                                    else std::cout << "No estás logueado" << std::endl;
+                                }
+                                else if (receivedObject["type"] == "clubsList")
+                                {
+                                    if (g_logueado) clubsList(webSocket.get(), receivedObject);
                                     else std::cout << "No estás logueado" << std::endl;
                                 }
 
