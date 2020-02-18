@@ -67,18 +67,15 @@ void login(ix::WebSocket *webSocket, JSON received){
 
         if (q2.first()){
             encryptedpass = q2.value(0).toString().toStdString();
-            //qDebug() << "PASS ENCRYPTED:" << encryptedpass.c_str();
         } //end if
 
         ///comprobamos si las contraseñas coinciden
         if (encryptedpass.compare(q.value("pass").toString().toStdString()) == 0){
             respuesta["operationSuccess"] = "true";
-            //qDebug() << "LOGIN SUCCESFULL";
             g_logueado = true;
         } else {
             respuesta["operationSuccess"] = "false";
             respuesta["errorMessage"] = "La contrasenya no és correcta";
-            //qDebug() << "PASSWORD DOES NOT MATCH";
         } //end if
 
     } else {
@@ -104,16 +101,13 @@ void login(ix::WebSocket *webSocket, JSON received){
                 element["id_club"] = q3.value("id").toInt();
                 element["nom_club"] = q3.value("nom").toString().toStdString();
                 element["codi_club"] = q3.value("codi").toString().toStdString();
+                element["color_club"] = q3.value("color").toString().toStdString();
 
                 respuesta["payload"].push_back(element);
             }
 
-
-
-            //qDebug() << "Tiene club";
         } else {
             respuesta["has_club"] = "false";
-            //qDebug() << "No tiene club";
         } //end if
 
     }
@@ -124,32 +118,40 @@ void login(ix::WebSocket *webSocket, JSON received){
 
 void clubCreate(ix::WebSocket *webSocket, JSON received){
 
+    qDebug() << "1";
     std::string club_name;
     std::string id_user;
+    std::string club_color;
 
+    qDebug() << "2";
     received["user"].get_to(id_user);
     received["club_name"].get_to(club_name);
-
+    received["club_color"].get_to(club_color);
+    qDebug() << "3";
     ///TO DO crear el club en la BBDD
     QSqlQuery q;
-    q.prepare("INSERT into clubs (nom, propietari) values (:nom_club, :id_propietari)");
+    q.prepare("INSERT into clubs (nom, propietari,color) values (:nom_club, :id_propietari, :color_club)");
     q.bindValue(":nom_club",  club_name.c_str());
     q.bindValue(":id_propietari",  id_user.c_str());
+    q.bindValue(":color_club",  club_color.c_str());
     q.exec();
+    qDebug() << "4";
 
     JSON respuesta;
     respuesta["type"] = "clubCreate";
 
     if (q.next()){
+        qDebug() << "5";
+        qDebug() << "Creando club";
         JSON element;
         element["id_club"] = q.value("id").toInt();
         element["nom_club"] = q.value("nom").toString().toStdString();
         element["codi_club"] = q.value("codi").toString().toStdString();
+        element["color_club"] = q.value("color").toString().toStdString();
 
         respuesta["payload"].push_back(element);
     }
-
-
+    qDebug() << "6";
 
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
@@ -295,16 +297,15 @@ void playersList(ix::WebSocket *webSocket, JSON received){
 void clubsList(ix::WebSocket *webSocket, JSON received){
 
     std::string user;
-
-    received["user"].get_to(user);
-
+    received["id_user"].get_to(user);
     JSON respuesta;
-
+    respuesta["type"] = "clubsList";
     if (g_logueado == true){
         QSqlQuery q3;
         q3.prepare("SELECT * from clubs where propietari = :user ");
         q3.bindValue(":user",  user.c_str());
         q3.exec();
+        respuesta["total"] = q3.size();
 
         ///si el usuario tiene algun club
         if (q3.size() > 0){
@@ -316,15 +317,14 @@ void clubsList(ix::WebSocket *webSocket, JSON received){
                 element["id_club"] = q3.value("id").toInt();
                 element["nom_club"] = q3.value("nom").toString().toStdString();
                 element["codi_club"] = q3.value("codi").toString().toStdString();
-
+                element["color_club"] = q3.value("color").toString().toStdString();
                 respuesta["payload"].push_back(element);
+                qDebug() << "while";
             }
         } else {
             respuesta["has_club"] = "false";
         } //end if
-
     }
-
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
@@ -342,21 +342,6 @@ void logout(ix::WebSocket *webSocket){
     g_logueado = false;
 }
 
-
-/*QString encrypt(QByteArray msg, QByteArray const& key){
-
-    if(!key.size())
-        return msg;
-
-
-    for (QString::size_type i = 0; i < msg.size(); ++i)
-          msg[i] ^ key[i%key.size()];
-    return msg;
-}
-
-QString decrypt(QByteArray const& msg, QByteArray const& key){
-    return encrypt(msg, key);
-}*/
 
 int main()
 {
@@ -406,8 +391,6 @@ int main()
         while (q.next()){
             qDebug() << q.value("id") << q.value("Nom").toString() << q.value("Data_naixement").toString();
         }*/
-
-
 
         //qDebug() << "result: "<< result;
 

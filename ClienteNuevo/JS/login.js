@@ -1,7 +1,7 @@
 
 var current = null;
 var user;
-var clubs;
+
 
 
 document.querySelector('#user').addEventListener('focus', function(e) {
@@ -96,9 +96,11 @@ let socket = new WebSocket("wss://localhost:9990");
   }
 
   function processMessage(object){
+
     switch(object.type){
         case "login": login(object); break;
         case "playersList": playersList(object); break;
+        case "clubsList": load_clubs(object); break;
         
         //default: console.log("Tipo no definido"); break;
     }
@@ -108,19 +110,20 @@ let socket = new WebSocket("wss://localhost:9990");
     
     if (String(object.operationSuccess).localeCompare("true") == 0){
       user = object.id_user;
-      clubs = object;
+
       loadjscssfile("home", "css");
       loadjscssfile("menu", "css");
 
       document.getElementById("div_login").style.display = "none";
       document.getElementById("top").innerHTML = '<div><img src="./images/logoclub.jpg" alt="logo" class="center"/></div>'+
-      '<div><ul><li><a class="active" onclick="load_clubs(clubs)">Inici</a></li><li><a href="#contact">Contacte</a></li><li><a href="#about">Sobre nosaltres</a></li></ul></div>';
+      '<div><ul><li><a class="active" onclick="refresh_clubs()">Inici</a></li><li><a href="#contact">Contacte</a></li><li><a href="#about">Sobre nosaltres</a></li></ul></div>';
               
       //cargamos los clubes 
       load_clubs(object);
       document.getElementById("login").disabled = true;
 
     } else {
+
       error = document.getElementById("error");
       error.innerHTML = object.errorMessage;
       console.log("Mostrar error");
@@ -212,6 +215,8 @@ function boton_crear_club(){
   
       '<label for="club_name">Nom del club</label>'+
       '<input type="text" id="club_name" name="club_name" placeholder="Escriu el nom del club.."/>'+
+      '<label for="club_name">Color</label>'+
+      '<input type="color" id="club_color" name="club_color" minlength="6" maxlength="6" placeholder="Color Hex.."/>'+
       '<button onclick="crear_club()"> Crear </button>'+
 
   '</div>';
@@ -220,27 +225,39 @@ function boton_crear_club(){
 
 function load_clubs(object){
   document.getElementById("content").innerHTML = '';
-  document.getElementById("content").innerHTML += '<h1 style="width:100%;"> Els meus clubs </h1>';
-  var i;
-  document.getElementById("content").innerHTML += '<div id="all_club_container">';
+  console.log("HAS club: " + object.has_club);
+  if (String(object.has_club).localeCompare("true") == 0){
+    document.getElementById("content").innerHTML = '';
+    document.getElementById("content").innerHTML += '<h1 style="width:100%;"> Els meus clubs </h1>';
+    var i;
+    document.getElementById("content").innerHTML += '<div id="all_club_container">';
 
-      for (i = 0; i < object.payload.length; i++) {
-        console.log("numero de clubs: "+ object.payload.length);
+        for (i = 0; i < object.payload.length; i++) {
+          console.log("numero de clubs: "+ object.payload.length); 
 
-        document.getElementById("all_club_container").innerHTML += '<div id="club_container">'+
-        '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3></div>'+
-        '<button class="button" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>'+
-        '</div>';
-      }
+          document.getElementById("all_club_container").innerHTML += '<div id="club_container"   style ="border: 2px solid #'+ object.payload[i].color_club+';">'+
+          '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3></div>'+
+          '<button class="button" style ="background-color: #'+ object.payload[i].color_club+';" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>'+
+          '</div>';
+        }
 
-      document.getElementById("content").innerHTML += '</div>';
+        document.getElementById("content").innerHTML += '</div>';
+      } 
+
       document.getElementById("content").innerHTML += '<div style="text-align:center;"><button class="button" id="crear_club" onclick="boton_crear_club()"> Crear club </button></div>';
+      
 }
 
 function crear_club(){
   console.log("Crear club: "+ document.getElementById("club_name").value);
-  var text = '{ "type":"clubCreate","club_name":"' +document.getElementById("club_name").value + '", "user":"'+user+'"}';
+  var text = '{ "type":"clubCreate","club_name":"' +document.getElementById("club_name").value + '", "user":"'+user+'", "club_color":"' + document.getElementById("club_color").value.substring(1) + '"}';
   console.log(text);
-  var object = JSON.parse(text);
+  var object = JSON.parse(text); //???
   socket.send(text);
+}
+
+function refresh_clubs(){
+  var text = '{ "type":"clubsList","id_user":"' + user + '"}';
+  var pasar = JSON.parse(text);
+  socket.send(text);  
 }

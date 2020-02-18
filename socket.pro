@@ -18,7 +18,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    jugador.cpp
+    jugador.cpp \
+    club.cpp
 
 LIBS += -pthread -lz -lssl -lcrypto
 
@@ -44,4 +45,5 @@ else:unix: PRE_TARGETDEPS += $$PWD/websockets/lib/libixwebsocket.a
 
 HEADERS += \
     json.hpp \
-    jugador.h
+    jugador.h \
+    club.h
