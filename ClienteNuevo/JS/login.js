@@ -1,6 +1,7 @@
 
 var current = null;
 var user;
+var modal;
 
 
 
@@ -101,6 +102,7 @@ let socket = new WebSocket("wss://localhost:9990");
         case "login": login(object); break;
         case "playersList": playersList(object); break;
         case "clubsList": load_clubs(object); break;
+        case "clubCreate": club_create(object); break;
         
         //default: console.log("Tipo no definido"); break;
     }
@@ -134,7 +136,7 @@ let socket = new WebSocket("wss://localhost:9990");
     if (filetype=="js"){ //if filename is a external JavaScript file
         var fileref=document.createElement('script')
         fileref.setAttribute("type","text/javascript")
-        fileref.setAttribute("src", filename)
+        fileref.setAttribute("src", "./JS/"+filename+"."+filetype)
         fileref.setAttribute("id", filename);
     }
     else if (filetype=="css"){ //if filename is an external CSS file
@@ -170,7 +172,7 @@ function generateTable(object){
   var content = document.getElementById('content');
   var tbl = document.createElement('table');
   tbl.id = "table";
-  tbl.style.width = '100%';
+  tbl.style.width = '80%';
   
 
   var rows = object.total;
@@ -210,16 +212,18 @@ function generateTable(object){
 }
 
 function boton_crear_club(){
+    loadjscssfile("form", "css");
     document.getElementById("content").innerHTML = '';
+    document.getElementById("content").innerHTML += '<h1 style="width:100%;"> Crea un nou club </h1>';
 
-    document.getElementById("content").innerHTML += '<div class="container">'+
+    document.getElementById("content").innerHTML += '<div class="club_creation">'+
 
   
       '<label for="club_name">Nom del club</label>'+
-      '<input type="text" id="club_name" name="club_name" placeholder="Escriu el nom del club.."/>'+
+      '<input type="text" id="club_name" name="club_name" placeholder="Escriu el nom del club.."/> <br>'+
       '<label for="club_name">Color</label>'+
-      '<input type="color" id="club_color" name="club_color" minlength="6" maxlength="6" placeholder="Color Hex.."/>'+
-      '<button onclick="crear_club()"> Crear </button>'+
+      '<input type="color" id="club_color" name="club_color" minlength="6" maxlength="6" placeholder="Color Hex.."/> <br>'+
+      '<button id="boton_crear" onclick="crear_club()"> Crear </button>'+
 
   '</div>';
 
@@ -227,7 +231,6 @@ function boton_crear_club(){
 
 function load_clubs(object){
   document.getElementById("content").innerHTML = '';
-  console.log("HAS club: " + object.has_club);
   if (String(object.has_club).localeCompare("true") == 0){
     document.getElementById("content").innerHTML = '';
     document.getElementById("content").innerHTML += '<h1 style="width:100%;"> Els meus clubs </h1>';
@@ -262,4 +265,30 @@ function refresh_clubs(){
   var text = '{ "type":"clubsList","id_user":"' + user + '"}';
   var pasar = JSON.parse(text);
   socket.send(text);  
+}
+
+function club_create(){
+  document.getElementById("content").innerHTML += '<div id="myModal" class="modal">'+
+  
+  '<div class="modal-content">'+
+    '<span class="close">&times;</span>'+
+    '<p>Some text in the Modal..</p>'+
+  '</div>'+
+'</div>';
+
+  modal = document.getElementById("myModal");
+  modal.style.display = "block";
+
+}
+
+span.onclick = function() {
+  console.log("Click");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    console.log("Click window");
+    modal.style.display = "none";
+  }
 }

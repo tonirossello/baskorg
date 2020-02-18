@@ -70,4 +70,5 @@ h3 {
 
 #all_club_container {
     display: flex;
+    width: 80%;
 }
