@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include "jugador.h"
+#include "club.h"
 #include <QSqlRecord>
 
 /*! \file */
@@ -258,20 +259,25 @@ void teamDelete(ix::WebSocket *webSocket){
 
 void playersList(ix::WebSocket *webSocket, JSON received){
 
-    std::string club;
+    std::string id_club;
 
-    received["id_club"].get_to(club);
-
+    received["id_club"].get_to(id_club);
 
     QSqlQuery q2;
     q2.prepare("SELECT nom, dni, soci FROM jugadors where idclub = :club");
-    q2.bindValue(":club",  club.c_str());
+    q2.bindValue(":club",  id_club.c_str());
     q2.exec();
 
+    club c;
+    c.load(std::stoi(id_club));
+    qDebug() << "Nombre: " << c.getName();
+    qDebug() << "Color: #" << c.getColor();
 
     JSON respuesta;
 
     respuesta["type"] = "playersList";
+    respuesta["club_name"] = c.getName().toStdString();
+    respuesta["club_color"] = c.getColor().toStdString();
     respuesta["total"] = q2.size();
 
     JSON element;

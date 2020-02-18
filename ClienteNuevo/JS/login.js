@@ -161,7 +161,7 @@ function boton_accedir(id){
 function playersList(object){
   console.log("Players list");
   document.getElementById("content").innerHTML = '';
-  document.getElementById("content").innerHTML += '<h1 style="width:100%;"> Nom del club </h1>';
+  document.getElementById("content").innerHTML += '<h1 style="width:100%;">' + object.club_name+ '</h1>';
   generateTable(object);
 }
 
@@ -171,6 +171,7 @@ function generateTable(object){
   var tbl = document.createElement('table');
   tbl.id = "table";
   tbl.style.width = '100%';
+  
 
   var rows = object.total;
 
@@ -178,6 +179,7 @@ function generateTable(object){
 
   ///Cabecera de la tabla
   tr = document.createElement('tr');
+  tr.setAttribute('style', 'background-color: #'+object.club_color+';');
   
   th1 = document.createElement('th');
   th2 = document.createElement('th');

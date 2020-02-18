@@ -82,14 +82,13 @@ void club::load(int id){
     QSqlQuery q;
 
     q.prepare("SELECT * from clubs where id = :idClub LIMIT 1");
-    q.bindValue(":idJugador", id);
-    bool result {q.exec()};
-    qDebug() << q.size();
+    q.bindValue(":idClub", id);
+    q.exec();
+    qDebug() << "ID: " << id << "SIZE: " << q.size();
 
 
-    if (result)
+    if (q.next())
     {
-        q.next();
         m_idClub = id;
         m_name = q.value("nom").toString();
         m_codi = q.value("codi").toString();
