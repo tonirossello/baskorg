@@ -119,40 +119,31 @@ void login(ix::WebSocket *webSocket, JSON received){
 
 void clubCreate(ix::WebSocket *webSocket, JSON received){
 
-    qDebug() << "1";
+
     std::string club_name;
     std::string id_user;
     std::string club_color;
 
-    qDebug() << "2";
+
     received["user"].get_to(id_user);
     received["club_name"].get_to(club_name);
     received["club_color"].get_to(club_color);
-    qDebug() << "3";
+
     ///TO DO crear el club en la BBDD
     QSqlQuery q;
     q.prepare("INSERT into clubs (nom, propietari,color) values (:nom_club, :id_propietari, :color_club)");
     q.bindValue(":nom_club",  club_name.c_str());
     q.bindValue(":id_propietari",  id_user.c_str());
     q.bindValue(":color_club",  club_color.c_str());
-    q.exec();
-    qDebug() << "4";
 
     JSON respuesta;
     respuesta["type"] = "clubCreate";
 
-    if (q.next()){
-        qDebug() << "5";
-        qDebug() << "Creando club";
-        JSON element;
-        element["id_club"] = q.value("id").toInt();
-        element["nom_club"] = q.value("nom").toString().toStdString();
-        element["codi_club"] = q.value("codi").toString().toStdString();
-        element["color_club"] = q.value("color").toString().toStdString();
-
-        respuesta["payload"].push_back(element);
-    }
-    qDebug() << "6";
+    if (q.exec()){
+         respuesta["operationSuccess"] = "true";
+    } else {
+        respuesta["operationSuccess"] = "false";
+    } //end if
 
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente

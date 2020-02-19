@@ -1,7 +1,13 @@
 
 var current = null;
 var user;
+var span;
+
+// Get the modal
 var modal;
+
+// Get the button that opens the modal
+/*var btn = document.getElementById("myBtn");*/
 
 
 
@@ -102,7 +108,7 @@ let socket = new WebSocket("wss://localhost:9990");
         case "login": login(object); break;
         case "playersList": playersList(object); break;
         case "clubsList": load_clubs(object); break;
-        case "clubCreate": club_create(object); break;
+        case "clubCreate": modal_window(object); break;
         
         //default: console.log("Tipo no definido"); break;
     }
@@ -241,9 +247,10 @@ function load_clubs(object){
           console.log("numero de clubs: "+ object.payload.length); 
 
           document.getElementById("all_club_container").innerHTML += '<div id="club_container"   style ="border: 2px solid #'+ object.payload[i].color_club+';">'+
-          '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3></div>'+
+          '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3>'+
           '<button class="button" style ="background-color: #'+ object.payload[i].color_club+';" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>'+
-          '</div>';
+          '</div></div>';
+
         }
 
         document.getElementById("content").innerHTML += '</div>';
@@ -254,11 +261,13 @@ function load_clubs(object){
 }
 
 function crear_club(){
+  
   console.log("Crear club: "+ document.getElementById("club_name").value);
   var text = '{ "type":"clubCreate","club_name":"' +document.getElementById("club_name").value + '", "user":"'+user+'", "club_color":"' + document.getElementById("club_color").value.substring(1) + '"}';
   console.log(text);
   var object = JSON.parse(text); //???
   socket.send(text);
+
 }
 
 function refresh_clubs(){
@@ -267,28 +276,42 @@ function refresh_clubs(){
   socket.send(text);  
 }
 
-function club_create(){
-  document.getElementById("content").innerHTML += '<div id="myModal" class="modal">'+
+function modal_window(){
   
+  document.getElementById("content").innerHTML +=  '<div id="myModal" class="modal">'+
+
+
   '<div class="modal-content">'+
     '<span class="close">&times;</span>'+
-    '<p>Some text in the Modal..</p>'+
+    '<p>Club creat correctament</p>'+
   '</div>'+
-'</div>';
 
+'</div>';
+  span = document.getElementsByClassName("close")[0];
   modal = document.getElementById("myModal");
   modal.style.display = "block";
 
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
 }
 
-span.onclick = function() {
-  console.log("Click");
-  modal.style.display = "none";
-}
 
+
+// Get the <span> element that closes the modal
+
+
+// When the user clicks on the button, open the modal
+/*btn.onclick = function() {
+  
+}*/
+
+
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-    console.log("Click window");
     modal.style.display = "none";
   }
 }
