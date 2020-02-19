@@ -55,7 +55,6 @@ function updateLoginLabel(){
         case "login": console.log("tipo login");  changeLoginStatus(object); break;
         case "logout": console.log("tipo logout");  changeLoginStatus(object); break;
         case "playersList": console.log("tipo playerList"); generateTable(object); break;
-        //default: console.log("Tipo no definido"); break;
     }
 
     tipoRecibido.innerHTML= object.type;

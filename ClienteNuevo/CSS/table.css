@@ -21,3 +21,11 @@
         text-align: left;
         color: white;
       }
+
+    #create_player{
+        display: block; 
+        margin: 0 auto; 
+        margin-top: 20px;
+        border-radius: 8px;
+        color: white;
+    }

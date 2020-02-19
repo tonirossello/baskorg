@@ -171,6 +171,8 @@ function playersList(object){
   document.getElementById("content").innerHTML = '';
   document.getElementById("content").innerHTML += '<h1 style="width:100%;">' + object.club_name+ '</h1>';
   generateTable(object);
+  console.log("DESPUES TABLA")
+  document.getElementById("content").innerHTML += '<div><button id="create_player" style="background-color: #'+object.club_color+';"> + </button></div>';
 }
 
 function generateTable(object){
