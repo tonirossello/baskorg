@@ -50,6 +50,10 @@ int jugador::getIdGen(){
     return m_idGen;
 }
 
+int jugador::getIdClub(){
+    return m_idClub;
+}
+
 
 ///SETTERS
 
@@ -101,6 +105,10 @@ void jugador::setIdGen(int idGen){
     m_idGen = idGen;
 }
 
+void jugador::setIdClub(int idClub){
+    m_idClub = idClub;
+}
+
 
 
 
@@ -112,7 +120,7 @@ bool jugador::save(){
     {
         qDebug() << "Update";
         ///UPDATE
-        q.prepare("UPDATE jugadors SET dorsal = :dorsal, naixement = :data, nom = :name, soci = :soci, dni = :dni, tfn1 = :tfn1, tfn2 = :tfn2, adresa = :adresa, poblacio = :poblacio, email = :email WHERE id = :idjugador");
+        q.prepare("UPDATE jugadors SET dorsal = :dorsal, naixement = :data, nom = :name, soci = :soci, dni = :dni, tfn1 = :tfn1, tfn2 = :tfn2, adresa = :adresa, poblacio = :poblacio, email = :email, idclub = :club WHERE id = :idjugador");
         q.bindValue(":idjugador", m_idJugador);
         q.bindValue(":dorsal", m_number);
         q.bindValue(":name", m_name);
@@ -124,6 +132,7 @@ bool jugador::save(){
         q.bindValue(":poblacio", m_city);
         q.bindValue(":email", m_email);
         q.bindValue(":data", m_birthday);
+        q.bindValue(":club", m_idClub);
 
     }
     else
@@ -131,8 +140,8 @@ bool jugador::save(){
         qDebug() << "Insert";
 
         ///INSERT
-        q.prepare("INSERT INTO jugadors (dorsal,naixement, nom, soci, dni, tfn1, tfn2,adresa, poblacio, email) VALUES (:dorsal, :data, :name, :soci, :dni, :tfn1, :tfn2, :adresa, :poblacio, :email)");
-        q.bindValue(":idjugador", m_idJugador);
+        q.prepare("INSERT INTO jugadors (dorsal,naixement, nom, soci, dni, tfn1, tfn2,adresa, poblacio, email, idclub) VALUES (:dorsal, :data, :name, :soci, :dni, :tfn1, :tfn2, :adresa, :poblacio, :email, :club)");
+        //q.prepare("INSERT INTO jugadors (nom, soci, dni, idclub) VALUES (:name, :soci, :dni, :club)");
         q.bindValue(":dorsal", m_number);
         q.bindValue(":name", m_name);
         q.bindValue(":soci", m_soci);
@@ -143,6 +152,7 @@ bool jugador::save(){
         q.bindValue(":poblacio", m_city);
         q.bindValue(":email", m_email);
         q.bindValue(":data", m_birthday);
+        q.bindValue(":club", m_idClub);
     } //end if
 
     bool result {q.exec()};
@@ -177,6 +187,7 @@ void jugador::load(int id){
         m_email = q.value("email").toString();
         m_idTeam = q.value("idequip").toInt();
         m_idGen = q.value("idgen").toInt();
+        m_idClub = q.value("idclub").toInt();
 
       qDebug() <<  m_name + m_soci + m_birthday.toString() + m_dni + m_phoneNumber1 + m_phoneNumber2 + m_address + m_city + m_email;
     } //end if

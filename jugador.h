@@ -12,7 +12,7 @@
 class jugador
 {
     private:
-        int m_idJugador;
+        int m_idJugador = 0;
         int m_number;
         QString m_name;
         QString m_soci;
@@ -25,6 +25,7 @@ class jugador
         QString m_email;
         int m_idTeam;
         int m_idGen;
+        int m_idClub;
 
 
     public:
@@ -42,6 +43,7 @@ class jugador
         QString getEmail();
         QString getDni();
         int getIdGen();
+        int getIdClub();
 
         ///SETTERS
         void setName(QString name);
@@ -56,6 +58,7 @@ class jugador
         void setEmail(QString email);
         void setDni(QString dni);
         void setIdGen(int idGen);
+        void setIdClub(int idClub);
 
 
         ///BBDD Connectors

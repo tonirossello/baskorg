@@ -174,7 +174,33 @@ void clubDelete(ix::WebSocket *webSocket){
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
-void playerCreate(ix::WebSocket *webSocket){
+void playerCreate(ix::WebSocket *webSocket, JSON received){
+
+    std::string player_name;
+    std::string player_dni;
+    std::string player_soci;
+    std::string player_club;
+
+    qDebug() << "1";
+
+    received["player_name"].get_to(player_name);
+    received["player_dni"].get_to(player_dni);
+    received["player_soci"].get_to(player_soci);
+    received["player_club"].get_to(player_club);
+
+    qDebug() << "2";
+
+    jugador j;
+    j.setName(QString::fromUtf8(player_name.c_str()));
+    j.setDni(QString::fromUtf8(player_dni.c_str()));
+    j.setSoci(QString::fromUtf8(player_soci.c_str()));
+    j.setIdClub(std::stoi(player_club));
+
+    qDebug() << "3";
+
+    j.save();
+
+    qDebug() << "4";
 
     ///TO DO crear el jugador en la BBDD
     JSON jsonMessage = {
@@ -358,21 +384,10 @@ int main()
    if (ok)
     {
 
-        jugador j;
         QDate d {QDate(1999,12,20)};
 
         //QString fecha = d.toString(Qt::ISODate);
 
-        j.load(237);
-        //j.setName("PROVA");
-        //j.setName("Jordi Rosselló");
-        //j.setCity("Palma");
-        //j.setNumber(4);
-        //j.setTeamId(0);
-        //j.setAddress("Calle");
-        j.setBirthday(d);
-        //j.setPhoneNumber1("666999333");
-        j.save();
 
         //j.save();
         /*QSqlQuery q;
@@ -468,7 +483,7 @@ int main()
                                 }
                                 else if (receivedObject["type"] == "playerCreate")
                                 {
-                                    if (g_logueado) playerCreate(webSocket.get());
+                                    if (g_logueado) playerCreate(webSocket.get(), receivedObject);
                                     else std::cout << "No estás logueado" << std::endl;
                                 }
                                 else if (receivedObject["type"] == "playerUpdate")

@@ -2,6 +2,7 @@
 var current = null;
 var user;
 var span;
+var g_club;
 
 // Get the modal
 var modal;
@@ -160,6 +161,7 @@ let socket = new WebSocket("wss://localhost:9990");
 
 function boton_accedir(id){
   var text = '{ "type":"playersList","user":"' +document.getElementById("user").value + '" , "id_club":"'+id + '"}';
+  g_club = id;
   var object = JSON.parse(text);
     console.log(JSON.stringify(object,null,2));
     socket.send(text);
@@ -171,8 +173,7 @@ function playersList(object){
   document.getElementById("content").innerHTML = '';
   document.getElementById("content").innerHTML += '<h1 style="width:100%;">' + object.club_name+ '</h1>';
   generateTable(object);
-  console.log("DESPUES TABLA")
-  document.getElementById("content").innerHTML += '<div><button id="create_player" style="background-color: #'+object.club_color+';"> + </button></div>';
+  document.getElementById("content").innerHTML += '<div><button onclick = "boton_crear_jugador()" id="create_player" style="background-color: #'+object.club_color+'; margin-bottom: 25px;"> + </button></div>';
 }
 
 function generateTable(object){
@@ -272,6 +273,38 @@ function crear_club(){
 
 }
 
+function crear_jugador(){
+  var text = '{ "type":"playerCreate","player_name":"' +document.getElementById("fname").value + '", "player_dni":"' +document.getElementById("fdni").value + '", "player_soci":"' +document.getElementById("fsoci").value + '", "player_club":"'+g_club+'"}';
+  console.log(text);
+  socket.send(text);
+}
+
+function boton_crear_jugador(){
+
+  loadjscssfile("form", "css");
+  document.getElementById("content").innerHTML += 
+  
+    '<div class = "player_form">'+
+
+        '<label for="fname">Nom i llinatges</label>'+
+        '<input type="text" id="fname" name="name">'+
+
+        '<label for="dni">DNI</label>'+
+        '<input type="text" id="fdni" name="dni" pattern="[0-9]{8}[A-Za-z]{1}">'+
+
+        '<label for="soci">Soci</label>'+
+        '<select id="fsoci" name="soci">'+
+          '<option value="Individual">Individual</option>'+
+          '<option value="Familar">Familar</option>'+
+          '<option value="No soci">No</option>'+
+        '</select>'+
+      
+        '<input type="submit" value="Crear jugador" onclick="crear_jugador()">'+
+
+    '</div>';
+
+}
+
 function refresh_clubs(){
   var text = '{ "type":"clubsList","id_user":"' + user + '"}';
   var pasar = JSON.parse(text);
@@ -299,16 +332,6 @@ function modal_window(){
     modal.style.display = "none";
   }
 }
-
-
-
-// Get the <span> element that closes the modal
-
-
-// When the user clicks on the button, open the modal
-/*btn.onclick = function() {
-  
-}*/
 
 
 // When the user clicks anywhere outside of the modal, close it
