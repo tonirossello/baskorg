@@ -277,6 +277,7 @@ function crear_jugador(){
   var text = '{ "type":"playerCreate","player_name":"' +document.getElementById("fname").value + '", "player_dni":"' +document.getElementById("fdni").value + '", "player_soci":"' +document.getElementById("fsoci").value + '", "player_club":"'+g_club+'"}';
   console.log(text);
   socket.send(text);
+  boton_accedir(g_club);
 }
 
 function boton_crear_jugador(){
