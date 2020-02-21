@@ -12,11 +12,11 @@
 
 	<div id="div_login" class="page">
 		<div class="container">
-			<div class="left">
-				<div class="login">Iniciar sessió</div>
-				<div class="eula">No tenc compte, em vull enregistrar</div>
+			<div id="left" class="left">
+				<div id="text_box" class="login">Iniciar sessió</div>
+				<div class="eula"><a id="text_action" onclick="show_register()">No tenc compte, em vull enregistrar</a></div>
 			</div>
-			<div class="right">
+			<div id="right" class="right">
 				<svg viewBox="0 0 320 300">
 					<defs>
 						<linearGradient inkscape:collect="always"
@@ -38,12 +38,24 @@
 				</svg>
 				
 				<div class="form">
-					<label for="user">Usuari</label>
-					<input type="user" id="user">
-					<label for="password">Contrasenya</label>
-					<input type="password" id="password">
-					<input onclick="botonLogin()" type="submit" id="submit" value="Enviar">
-					<label id="error"></label>
+					<div id = "iniciar_sessio">
+						<label for="user">Usuari</label>
+						<input type="user" id="user">
+						<label for="password">Contrasenya</label>
+						<input type="password" id="password">
+						<input onclick="botonLogin()" type="submit" id="submit" value="Enviar">
+						<label id="error"></label>
+					</div>
+
+					<div id = "registre" style="display:none;">
+						<label id="tuser" for="user">Nom d'usuari</label>
+						<input type="user" id="ruser">
+						<label id="tpass" for="password">Contrasenya</label>
+						<input type="password" id="rpassword">
+						<input onclick="botonRegister()" type="submit" id="rsubmit" value="Enregistrar-me">
+						<label id="rerror"></label>
+						
+					</div>
 				</div>
 			</div>
 		</div>

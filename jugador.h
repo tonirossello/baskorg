@@ -13,7 +13,7 @@ class jugador
 {
     private:
         int m_idJugador = 0;
-        int m_number;
+        int m_number = 0;
         QString m_name;
         QString m_soci;
         QDate m_birthday;

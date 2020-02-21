@@ -10,6 +10,7 @@
 #include <QSqlError>
 #include "jugador.h"
 #include "club.h"
+#include "usuari.h"
 #include <QSqlRecord>
 
 /*! \file */
@@ -149,31 +150,6 @@ void clubCreate(ix::WebSocket *webSocket, JSON received){
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
 
-void clubUpdate(ix::WebSocket *webSocket){
-
-    ///TO DO actualizar el club en la BBDD
-    JSON jsonMessage = {
-           {"type", "clubUpdate"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void clubDelete(ix::WebSocket *webSocket){
-
-    ///TO DO eliminar el club en la BBDD
-    JSON jsonMessage = {
-           {"type", "clubDelete"},
-           {"clubName","clubName"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
 void playerCreate(ix::WebSocket *webSocket, JSON received){
 
     std::string player_name;
@@ -181,14 +157,10 @@ void playerCreate(ix::WebSocket *webSocket, JSON received){
     std::string player_soci;
     std::string player_club;
 
-    qDebug() << "1";
-
     received["player_name"].get_to(player_name);
     received["player_dni"].get_to(player_dni);
     received["player_soci"].get_to(player_soci);
     received["player_club"].get_to(player_club);
-
-    qDebug() << "2";
 
     jugador j;
     j.setName(QString::fromUtf8(player_name.c_str()));
@@ -196,77 +168,12 @@ void playerCreate(ix::WebSocket *webSocket, JSON received){
     j.setSoci(QString::fromUtf8(player_soci.c_str()));
     j.setIdClub(std::stoi(player_club));
 
-    qDebug() << "3";
-
     j.save();
 
-    qDebug() << "4";
 
     ///TO DO crear el jugador en la BBDD
     JSON jsonMessage = {
            {"type", "playerCreate"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void playerUpdate(ix::WebSocket *webSocket){
-
-    ///TO DO actualizar el jugador en la BBDD
-    JSON jsonMessage = {
-           {"type", "playerUpdate"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void playerDelete(ix::WebSocket *webSocket){
-
-    ///TO DO eliminar el jugador en la BBDD
-    JSON jsonMessage = {
-           {"type", "playerDelete"},
-           {"playerName","playerName"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void teamCreate(ix::WebSocket *webSocket){
-
-    ///TO DO crear el equipo en la BBDD
-    JSON jsonMessage = {
-           {"type", "teamCreate"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void teamUpdate(ix::WebSocket *webSocket){
-
-    ///TO DO actualizar el equipo en la BBDD
-    JSON jsonMessage = {
-           {"type", "teamUpdate"},
-           {"operationSuccess", true},
-    };
-
-    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
-    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
-}
-
-void teamDelete(ix::WebSocket *webSocket){
-
-    ///TO DO eliminar el equipo en la BBDD
-    JSON jsonMessage = {
-           {"type", "teamDelete"},
-           {"teamName","teamName"},
            {"operationSuccess", true},
     };
 
@@ -365,6 +272,28 @@ void logout(ix::WebSocket *webSocket){
     g_logueado = false;
 }
 
+void userCreate(ix::WebSocket *webSocket, JSON received){
+
+    std::string user_name;
+    std::string user_pass;
+
+    received["usuari"].get_to(user_name);
+    received["password"].get_to(user_pass);
+
+    usuari u;
+    u.setUser(QString::fromUtf8(user_name.c_str()));
+    u.setPass(QString::fromUtf8(user_pass.c_str()));
+
+    u.save();
+
+    JSON jsonMessage = {
+           {"type", "userCreate"},
+           {"operationSuccess", true},
+    };
+
+    std::string messageToSend = jsonMessage.dump(); //el dump lo convierte a JSON
+    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
+}
 
 int main()
 {
@@ -387,17 +316,6 @@ int main()
         QDate d {QDate(1999,12,20)};
 
         //QString fecha = d.toString(Qt::ISODate);
-
-
-        //j.save();
-        /*QSqlQuery q;
-        q.prepare("SELECT * from jugadors");
-        q.exec();
-        qDebug() << q.size();*/
-        //q.prepare("INSERT INTO jugadors (Dorsal, Data_naixement) VALUES (:dorsal,:fecha)");
-         //q.bindValue(":dorsal", 14);
-        //q.bindValue(":fecha", fecha);
-       // bool result {q.exec()};
 
         /*QSqlRecord rec = q.record();
         while (q.next()){
@@ -471,29 +389,9 @@ int main()
                                     if (g_logueado) clubCreate(webSocket.get(), receivedObject);
                                     else std::cout << "No estás logueado" << std::endl;
                                 }
-                                else if (receivedObject["type"] == "clubUpdate")
-                                {
-                                    if (g_logueado) clubUpdate(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
-                                else if (receivedObject["type"] == "clubDelete")
-                                {
-                                    if (g_logueado) clubDelete(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
                                 else if (receivedObject["type"] == "playerCreate")
                                 {
                                     if (g_logueado) playerCreate(webSocket.get(), receivedObject);
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
-                                else if (receivedObject["type"] == "playerUpdate")
-                                {
-                                    if (g_logueado) playerUpdate(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
-                                else if (receivedObject["type"] == "playerDelete")
-                                {
-                                    if (g_logueado) playerDelete(webSocket.get());
                                     else std::cout << "No estás logueado" << std::endl;
                                 }
                                 else if (receivedObject["type"] == "playersList")
@@ -506,21 +404,6 @@ int main()
                                         std::cout << "No estás logueado" << std::endl;
                                     }
                                 }
-                                else if (receivedObject["type"] == "teamCreate")
-                                {
-                                    if (g_logueado) teamCreate(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
-                                else if (receivedObject["type"] == "teamUpdate")
-                                {
-                                    if (g_logueado) teamUpdate(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
-                                else if (receivedObject["type"] == "teamDelete")
-                                {
-                                    if (g_logueado) teamDelete(webSocket.get());
-                                    else std::cout << "No estás logueado" << std::endl;
-                                }
                                 else if (receivedObject["type"] == "logout")
                                 {
                                     if (g_logueado) logout(webSocket.get());
@@ -530,6 +413,11 @@ int main()
                                 {
                                     if (g_logueado) clubsList(webSocket.get(), receivedObject);
                                     else std::cout << "No estás logueado" << std::endl;
+                                }
+
+                                else if (receivedObject["type"] == "userCreate")
+                                {
+                                    userCreate(webSocket.get(), receivedObject);
                                 }
 
                              } else {

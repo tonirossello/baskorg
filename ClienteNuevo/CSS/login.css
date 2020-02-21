@@ -119,11 +119,14 @@ input {
 input::-moz-focus-inner { 
   border: 0; 
 }
-#submit {
+
+#submit, #rsubmit {
   color: #707075;
   margin-top: 40px;
   transition: color 300ms;
 }
+
+
 #submit:focus {
   color: #f2f2f2;
 }
@@ -131,12 +134,17 @@ input::-moz-focus-inner {
   color: #d0d0d2;
 }
 
-#error{
+#error, #rerror{
   width: 100%;
   font-size: 15px;
   text-align: center;
   color: red;
 }
 
-
-      
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

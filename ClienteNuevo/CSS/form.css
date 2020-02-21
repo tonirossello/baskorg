@@ -94,3 +94,10 @@ input[type=submit]:hover {
   width: 80%;
   margin: 0 auto;
 }
+
+#etiqueta_error{
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  color: red;
+}
