@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['little_5fendianess',['little_endianess',['../classnlohmann_1_1detail_1_1binary__reader.html#a1e31dbfcf9567c8c2d4f0e4eb1b0230a',1,'nlohmann::detail::binary_reader']]],
-  ['login',['login',['../main_8cpp.html#a36c2f611629e0c25ed0304693eff7c2e',1,'main.cpp']]],
-  ['logout',['logout',['../main_8cpp.html#ab68188d05da5120525d47223630b928f',1,'main.cpp']]]
+  ['key',['key',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#af2949ac0d70212738030bfda29c5bcc2',1,'nlohmann::detail::iteration_proxy_value::key()'],['../structnlohmann_1_1json__sax.html#a2e0c7ecd80b18d18a8cc76f71cfc2028',1,'nlohmann::json_sax::key()'],['../classnlohmann_1_1detail_1_1iter__impl.html#a15dfb2744fed2ef40c12a9e9a20d6dbc',1,'nlohmann::detail::iter_impl::key()'],['../classnlohmann_1_1detail_1_1json__reverse__iterator.html#adc648a641e8e9a1072c5abd56ad06401',1,'nlohmann::detail::json_reverse_iterator::key()']]]
 ];

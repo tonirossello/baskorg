@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['serializer',['serializer',['../classnlohmann_1_1detail_1_1serializer.html',1,'nlohmann::detail']]],
-  ['static_5fconst',['static_const',['../structnlohmann_1_1detail_1_1static__const.html',1,'nlohmann::detail']]]
+  ['qt_5fmeta_5fstringdata_5fapp_5ft',['qt_meta_stringdata_App_t',['../structqt__meta__stringdata__App__t.html',1,'']]]
 ];

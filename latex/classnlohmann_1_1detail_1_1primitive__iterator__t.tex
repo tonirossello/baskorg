@@ -39,6 +39,27 @@ constexpr bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1primitive__iterator__
 \mbox{\Hypertarget{classnlohmann_1_1detail_1_1primitive__iterator__t_a0bf83ab08abe1ae4b51c790c85cdf151}\label{classnlohmann_1_1detail_1_1primitive__iterator__t_a0bf83ab08abe1ae4b51c790c85cdf151}} 
 \mbox{\hyperlink{classnlohmann_1_1detail_1_1primitive__iterator__t}{primitive\+\_\+iterator\+\_\+t}} \& {\bfseries operator-\/=} (difference\+\_\+type n) noexcept
 \end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1primitive__iterator__t_af3db0d5c90de427d51645fe73a015553}\label{classnlohmann_1_1detail_1_1primitive__iterator__t_af3db0d5c90de427d51645fe73a015553}} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1primitive__iterator__t_a4357355113b0cd7e12b15c2e93703510}\label{classnlohmann_1_1detail_1_1primitive__iterator__t_a4357355113b0cd7e12b15c2e93703510}} 
+difference\+\_\+type \mbox{\hyperlink{classnlohmann_1_1detail_1_1primitive__iterator__t_a4357355113b0cd7e12b15c2e93703510}{m\+\_\+it}} = (std\+::numeric\+\_\+limits$<$std\+::ptrdiff\+\_\+t$>$\+::min)()
+\begin{DoxyCompactList}\small\item\em iterator as signed integer type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1primitive__iterator__t_afcb3bcf9da8aa95bd82067d1a67c2326}\label{classnlohmann_1_1detail_1_1primitive__iterator__t_afcb3bcf9da8aa95bd82067d1a67c2326}} 
+static constexpr difference\+\_\+type {\bfseries begin\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1primitive__iterator__t_aa37c37da44f19e6ec1d7d4a9910511c7}\label{classnlohmann_1_1detail_1_1primitive__iterator__t_aa37c37da44f19e6ec1d7d4a9910511c7}} 
+static constexpr difference\+\_\+type {\bfseries end\+\_\+value} = begin\+\_\+value + 1
+\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 

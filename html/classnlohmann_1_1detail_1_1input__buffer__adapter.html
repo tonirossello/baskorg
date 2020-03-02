@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1input__buffer__adapter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::input_buffer_adapter Class Reference</div>  </div>
@@ -108,6 +109,17 @@ Public Member Functions</h2></td></tr>
 std::char_traits&lt; char &gt;::int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1input__buffer__adapter.html#ae9e195b04f3551fafb0925aafba00124">get_character</a> () noexcept override</td></tr>
 <tr class="memdesc:ae9e195b04f3551fafb0925aafba00124"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a character [0,255] or std::char_traits&lt;char&gt;::eof(). <br /></td></tr>
 <tr class="separator:ae9e195b04f3551fafb0925aafba00124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a49e6c8b6555af489a45ef51737eafa1c"><td class="memItemLeft" align="right" valign="top"><a id="a49e6c8b6555af489a45ef51737eafa1c"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1input__buffer__adapter.html#a49e6c8b6555af489a45ef51737eafa1c">cursor</a></td></tr>
+<tr class="memdesc:a49e6c8b6555af489a45ef51737eafa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the current character <br /></td></tr>
+<tr class="separator:a49e6c8b6555af489a45ef51737eafa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbea9cdb1862e55bc1e142a72a947da4"><td class="memItemLeft" align="right" valign="top"><a id="abbea9cdb1862e55bc1e142a72a947da4"></a>
+const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1input__buffer__adapter.html#abbea9cdb1862e55bc1e142a72a947da4">limit</a></td></tr>
+<tr class="memdesc:abbea9cdb1862e55bc1e142a72a947da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer past the last character <br /></td></tr>
+<tr class="separator:abbea9cdb1862e55bc1e142a72a947da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>input adapter for buffer input </p>

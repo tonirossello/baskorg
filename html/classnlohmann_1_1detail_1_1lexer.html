@@ -69,6 +69,10 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1lexer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::lexer&lt; BasicJsonType &gt; Class Template Reference</div>  </div>
@@ -165,6 +169,112 @@ Static Public Member Functions</h2></td></tr>
 JSON_HEDLEY_RETURNS_NON_NULL static JSON_HEDLEY_CONST const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#adb831e1f692a45c2281ed3d59ddf1e17">token_type_name</a> (const <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a> t) noexcept</td></tr>
 <tr class="memdesc:adb831e1f692a45c2281ed3d59ddf1e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">return name of values of type token_type (only used for errors) <br /></td></tr>
 <tr class="separator:adb831e1f692a45c2281ed3d59ddf1e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a9cd1b11cc67edbfb2613c788b5bd337c"><td class="memItemLeft" align="right" valign="top"><a id="a9cd1b11cc67edbfb2613c788b5bd337c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>number_integer_t</b> = typename BasicJsonType::number_integer_t</td></tr>
+<tr class="separator:a9cd1b11cc67edbfb2613c788b5bd337c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105d1dfeab414a572655895cdd96a52a"><td class="memItemLeft" align="right" valign="top"><a id="a105d1dfeab414a572655895cdd96a52a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>number_unsigned_t</b> = typename BasicJsonType::number_unsigned_t</td></tr>
+<tr class="separator:a105d1dfeab414a572655895cdd96a52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f9e7b2bcd311fb86e2da43761a6619"><td class="memItemLeft" align="right" valign="top"><a id="aa7f9e7b2bcd311fb86e2da43761a6619"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>number_float_t</b> = typename BasicJsonType::number_float_t</td></tr>
+<tr class="separator:aa7f9e7b2bcd311fb86e2da43761a6619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63d35c658887592a4b09ad26eb4c795"><td class="memItemLeft" align="right" valign="top"><a id="ab63d35c658887592a4b09ad26eb4c795"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>string_t</b> = typename BasicJsonType::string_t</td></tr>
+<tr class="separator:ab63d35c658887592a4b09ad26eb4c795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a820b20e25ff255c3c791c37f2bf48380"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a820b20e25ff255c3c791c37f2bf48380">get_codepoint</a> ()</td></tr>
+<tr class="memdesc:a820b20e25ff255c3c791c37f2bf48380"><td class="mdescLeft">&#160;</td><td class="mdescRight">get codepoint from 4 hex characters following <code>\u</code>  <a href="#a820b20e25ff255c3c791c37f2bf48380">More...</a><br /></td></tr>
+<tr class="separator:a820b20e25ff255c3c791c37f2bf48380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2faa544ab5475523ead81f9cdef41a0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a2faa544ab5475523ead81f9cdef41a0a">next_byte_in_range</a> (std::initializer_list&lt; int &gt; ranges)</td></tr>
+<tr class="memdesc:a2faa544ab5475523ead81f9cdef41a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the next byte(s) are inside a given range  <a href="#a2faa544ab5475523ead81f9cdef41a0a">More...</a><br /></td></tr>
+<tr class="separator:a2faa544ab5475523ead81f9cdef41a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad271045d1c91df9d6a119482b4aeae7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#ad271045d1c91df9d6a119482b4aeae7f">scan_string</a> ()</td></tr>
+<tr class="memdesc:ad271045d1c91df9d6a119482b4aeae7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">scan a string literal  <a href="#ad271045d1c91df9d6a119482b4aeae7f">More...</a><br /></td></tr>
+<tr class="separator:ad271045d1c91df9d6a119482b4aeae7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd7e6cdb0380a9df663f1c7f115f34f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a6bd7e6cdb0380a9df663f1c7f115f34f">scan_number</a> ()</td></tr>
+<tr class="memdesc:a6bd7e6cdb0380a9df663f1c7f115f34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">scan a number literal  <a href="#a6bd7e6cdb0380a9df663f1c7f115f34f">More...</a><br /></td></tr>
+<tr class="separator:a6bd7e6cdb0380a9df663f1c7f115f34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f717deb553337736f27cdacccaee536"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a6f717deb553337736f27cdacccaee536">scan_literal</a> (const char *literal_text, const std::size_t length, <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a> return_type)</td></tr>
+<tr class="separator:a6f717deb553337736f27cdacccaee536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba34bc18af19f93186e682d02c3942d"><td class="memItemLeft" align="right" valign="top"><a id="acba34bc18af19f93186e682d02c3942d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#acba34bc18af19f93186e682d02c3942d">reset</a> () noexcept</td></tr>
+<tr class="memdesc:acba34bc18af19f93186e682d02c3942d"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset token_buffer; current character is beginning of token <br /></td></tr>
+<tr class="separator:acba34bc18af19f93186e682d02c3942d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901e45a34e1fb1d97ab62350b0c3ef26"><td class="memItemLeft" align="right" valign="top"><a id="a901e45a34e1fb1d97ab62350b0c3ef26"></a>
+std::char_traits&lt; char &gt;::int_type&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
+<tr class="separator:a901e45a34e1fb1d97ab62350b0c3ef26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626f145768762057dc68a4666eb577db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a626f145768762057dc68a4666eb577db">unget</a> ()</td></tr>
+<tr class="memdesc:a626f145768762057dc68a4666eb577db"><td class="mdescLeft">&#160;</td><td class="mdescRight">unget current character (read it again on next get)  <a href="#a626f145768762057dc68a4666eb577db">More...</a><br /></td></tr>
+<tr class="separator:a626f145768762057dc68a4666eb577db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acec899d31af1fd647911e46e8535c283"><td class="memItemLeft" align="right" valign="top"><a id="acec899d31af1fd647911e46e8535c283"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#acec899d31af1fd647911e46e8535c283">add</a> (int c)</td></tr>
+<tr class="memdesc:acec899d31af1fd647911e46e8535c283"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a character to token_buffer <br /></td></tr>
+<tr class="separator:acec899d31af1fd647911e46e8535c283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ae90334f30e7c12d5394c116bcfecac19"><td class="memItemLeft" align="right" valign="top"><a id="ae90334f30e7c12d5394c116bcfecac19"></a>
+static JSON_HEDLEY_PURE char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#ae90334f30e7c12d5394c116bcfecac19">get_decimal_point</a> () noexcept</td></tr>
+<tr class="memdesc:ae90334f30e7c12d5394c116bcfecac19"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the locale-dependent decimal point <br /></td></tr>
+<tr class="separator:ae90334f30e7c12d5394c116bcfecac19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2d4cc5d9fed4783aa2a98497925511"><td class="memItemLeft" align="right" valign="top"><a id="a1a2d4cc5d9fed4783aa2a98497925511"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>strtof</b> (float &amp;f, const char *str, char **endptr) noexcept</td></tr>
+<tr class="separator:a1a2d4cc5d9fed4783aa2a98497925511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd877d10b31bc819e4f030292737ea6"><td class="memItemLeft" align="right" valign="top"><a id="a8cd877d10b31bc819e4f030292737ea6"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>strtof</b> (double &amp;f, const char *str, char **endptr) noexcept</td></tr>
+<tr class="separator:a8cd877d10b31bc819e4f030292737ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e28dda9a1e007d55d03e8d39dd3b9fa"><td class="memItemLeft" align="right" valign="top"><a id="a0e28dda9a1e007d55d03e8d39dd3b9fa"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>strtof</b> (long double &amp;f, const char *str, char **endptr) noexcept</td></tr>
+<tr class="separator:a0e28dda9a1e007d55d03e8d39dd3b9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa7e69cd9d51451fd798eaf501b40421f"><td class="memItemLeft" align="right" valign="top"><a id="aa7e69cd9d51451fd798eaf501b40421f"></a>
+<a class="el" href="namespacenlohmann_1_1detail.html#ae132f8cd5bb24c5e9b40ad0eafedf1c2">detail::input_adapter_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#aa7e69cd9d51451fd798eaf501b40421f">ia</a> = nullptr</td></tr>
+<tr class="memdesc:aa7e69cd9d51451fd798eaf501b40421f"><td class="mdescLeft">&#160;</td><td class="mdescRight">input adapter <br /></td></tr>
+<tr class="separator:aa7e69cd9d51451fd798eaf501b40421f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47169f9aaf0da4c9885e61d3109859aa"><td class="memItemLeft" align="right" valign="top"><a id="a47169f9aaf0da4c9885e61d3109859aa"></a>
+std::char_traits&lt; char &gt;::int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a47169f9aaf0da4c9885e61d3109859aa">current</a> = std::char_traits&lt;char&gt;::eof()</td></tr>
+<tr class="memdesc:a47169f9aaf0da4c9885e61d3109859aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">the current character <br /></td></tr>
+<tr class="separator:a47169f9aaf0da4c9885e61d3109859aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bedb97b907ba6347c5b2f2666ca01f"><td class="memItemLeft" align="right" valign="top"><a id="ae8bedb97b907ba6347c5b2f2666ca01f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#ae8bedb97b907ba6347c5b2f2666ca01f">next_unget</a> = false</td></tr>
+<tr class="memdesc:ae8bedb97b907ba6347c5b2f2666ca01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether the next get() call should just return current <br /></td></tr>
+<tr class="separator:ae8bedb97b907ba6347c5b2f2666ca01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932a1b4133619f08fc7442b52368385e"><td class="memItemLeft" align="right" valign="top"><a id="a932a1b4133619f08fc7442b52368385e"></a>
+<a class="el" href="structnlohmann_1_1detail_1_1position__t.html">position_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a932a1b4133619f08fc7442b52368385e">position</a> {}</td></tr>
+<tr class="memdesc:a932a1b4133619f08fc7442b52368385e"><td class="mdescLeft">&#160;</td><td class="mdescRight">the start position of the current token <br /></td></tr>
+<tr class="separator:a932a1b4133619f08fc7442b52368385e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2960e3d54af8fb8d572a8f6f7731d62"><td class="memItemLeft" align="right" valign="top"><a id="ad2960e3d54af8fb8d572a8f6f7731d62"></a>
+std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#ad2960e3d54af8fb8d572a8f6f7731d62">token_string</a> {}</td></tr>
+<tr class="memdesc:ad2960e3d54af8fb8d572a8f6f7731d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">raw input token string (for error messages) <br /></td></tr>
+<tr class="separator:ad2960e3d54af8fb8d572a8f6f7731d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f43746570e5cadbc9b2b6b0c4c8e051"><td class="memItemLeft" align="right" valign="top"><a id="a8f43746570e5cadbc9b2b6b0c4c8e051"></a>
+string_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a8f43746570e5cadbc9b2b6b0c4c8e051">token_buffer</a> {}</td></tr>
+<tr class="memdesc:a8f43746570e5cadbc9b2b6b0c4c8e051"><td class="mdescLeft">&#160;</td><td class="mdescRight">buffer for variable-length tokens (numbers, strings) <br /></td></tr>
+<tr class="separator:a8f43746570e5cadbc9b2b6b0c4c8e051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a15e440f1889e0ab0c6a35344e48df"><td class="memItemLeft" align="right" valign="top"><a id="ae2a15e440f1889e0ab0c6a35344e48df"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#ae2a15e440f1889e0ab0c6a35344e48df">error_message</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:ae2a15e440f1889e0ab0c6a35344e48df"><td class="mdescLeft">&#160;</td><td class="mdescRight">a description of occurred lexer errors <br /></td></tr>
+<tr class="separator:ae2a15e440f1889e0ab0c6a35344e48df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353d8eeca5b2f21b3e88540c17afb9bc"><td class="memItemLeft" align="right" valign="top"><a id="a353d8eeca5b2f21b3e88540c17afb9bc"></a>
+number_integer_t&#160;</td><td class="memItemRight" valign="bottom"><b>value_integer</b> = 0</td></tr>
+<tr class="separator:a353d8eeca5b2f21b3e88540c17afb9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af250180459c23ca71c3e10a99fb5ba3e"><td class="memItemLeft" align="right" valign="top"><a id="af250180459c23ca71c3e10a99fb5ba3e"></a>
+number_unsigned_t&#160;</td><td class="memItemRight" valign="bottom"><b>value_unsigned</b> = 0</td></tr>
+<tr class="separator:af250180459c23ca71c3e10a99fb5ba3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a861ce804da2d257ee373d1e0b55780e1"><td class="memItemLeft" align="right" valign="top"><a id="a861ce804da2d257ee373d1e0b55780e1"></a>
+number_float_t&#160;</td><td class="memItemRight" valign="bottom"><b>value_float</b> = 0</td></tr>
+<tr class="separator:a861ce804da2d257ee373d1e0b55780e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16593b0475f6d1cddd5eaf7c045771f3"><td class="memItemLeft" align="right" valign="top"><a id="a16593b0475f6d1cddd5eaf7c045771f3"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a16593b0475f6d1cddd5eaf7c045771f3">decimal_point_char</a> = '.'</td></tr>
+<tr class="memdesc:a16593b0475f6d1cddd5eaf7c045771f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">the decimal point <br /></td></tr>
+<tr class="separator:a16593b0475f6d1cddd5eaf7c045771f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename BasicJsonType&gt;<br />
@@ -236,6 +346,38 @@ template&lt;typename BasicJsonType &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a820b20e25ff255c3c791c37f2bf48380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820b20e25ff255c3c791c37f2bf48380">&#9670;&nbsp;</a></span>get_codepoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::get_codepoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get codepoint from 4 hex characters following <code>\u</code> </p>
+<p>For input "\u c1 c2 c3 c4" the codepoint is: (c1 * 0x1000) + (c2 * 0x0100) + (c3 * 0x0010) + c4 = (c1 &lt;&lt; 12) + (c2 &lt;&lt; 8) + (c3 &lt;&lt; 4) + (c4 &lt;&lt; 0)</p>
+<p>Furthermore, the possible characters '0'..'9', 'A'..'F', and 'a'..'f' must be converted to the integers 0x0..0x9, 0xA..0xF, 0xA..0xF, resp. The conversion is done by subtracting the offset (0x30, 0x37, and 0x57) between the ASCII value of the character and the desired integer value.</p>
+<dl class="section return"><dt>Returns</dt><dd>codepoint (0x0000..0xFFFF) or -1 in case of an error (e.g. EOF or non-hex character) </dd></dl>
+
+</div>
+</div>
 <a id="a4aef7e72e539be04e139c34872421f2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4aef7e72e539be04e139c34872421f2a">&#9670;&nbsp;</a></span>get_token_string()</h2>
 
@@ -261,6 +403,189 @@ template&lt;typename BasicJsonType &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>return the last read token (for errors only). Will never contain EOF (an arbitrary value that is not a valid char value, often -1), because 255 may legitimately occur. May contain NUL, which should be escaped. </p>
+
+</div>
+</div>
+<a id="a2faa544ab5475523ead81f9cdef41a0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2faa544ab5475523ead81f9cdef41a0a">&#9670;&nbsp;</a></span>next_byte_in_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::next_byte_in_range </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>ranges</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check if the next byte(s) are inside a given range </p>
+<p>Adds the current byte and, for each passed range, reads a new byte and checks if it is inside the range. If a violation was detected, set up an error message and return false. Otherwise, return true.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ranges</td><td>list of integers; interpreted as list of pairs of inclusive lower and upper bound, respectively</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>The passed list <em>ranges</em> must have 2, 4, or 6 elements; that is, 1, 2, or 3 pairs. This precondition is enforced by an assertion.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if and only if no range violation was detected </dd></dl>
+
+</div>
+</div>
+<a id="a6f717deb553337736f27cdacccaee536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f717deb553337736f27cdacccaee536">&#9670;&nbsp;</a></span>scan_literal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a> <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::scan_literal </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>literal_text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a>&#160;</td>
+          <td class="paramname"><em>return_type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">literal_text</td><td>the literal text to expect </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>the length of the passed literal text </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">return_type</td><td>the token type to return on success </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6bd7e6cdb0380a9df663f1c7f115f34f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd7e6cdb0380a9df663f1c7f115f34f">&#9670;&nbsp;</a></span>scan_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a> <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::scan_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>scan a number literal </p>
+<p>This function scans a string according to Sect. 6 of RFC 7159.</p>
+<p>The function is realized with a deterministic finite state machine derived from the grammar described in RFC 7159. Starting in state "init", the input is read and used to determined the next state. Only state "done" accepts the number. State "error" is a trap state to model errors. In the table below, "anything" means any character but the ones listed before.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">state  </th><th class="markdownTableHeadNone">0  </th><th class="markdownTableHeadNone">1-9  </th><th class="markdownTableHeadNone">e E  </th><th class="markdownTableHeadNone">+  </th><th class="markdownTableHeadNone">-  </th><th class="markdownTableHeadNone">.  </th><th class="markdownTableHeadNone">anything<ul>
+<li></li>
+</ul>
+</th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">init  </td><td class="markdownTableBodyNone">zero  </td><td class="markdownTableBodyNone">any1  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">minus  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">minus  </td><td class="markdownTableBodyNone">zero  </td><td class="markdownTableBodyNone">any1  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">zero  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">exponent  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">decimal1  </td><td class="markdownTableBodyNone">done   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">any1  </td><td class="markdownTableBodyNone">any1  </td><td class="markdownTableBodyNone">any1  </td><td class="markdownTableBodyNone">exponent  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">decimal1  </td><td class="markdownTableBodyNone">done   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">decimal1  </td><td class="markdownTableBodyNone">decimal2  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">decimal2  </td><td class="markdownTableBodyNone">decimal2  </td><td class="markdownTableBodyNone">decimal2  </td><td class="markdownTableBodyNone">exponent  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">exponent  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">sign  </td><td class="markdownTableBodyNone">sign  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">sign  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]  </td><td class="markdownTableBodyNone">[error]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">any2  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done  </td><td class="markdownTableBodyNone">done   </td></tr>
+</table>
+<p>The state machine is realized with one label per state (prefixed with "scan_number_") and <code>goto</code> statements between them. The state machine contains cycles, but any cycle can be left when EOF is read. Therefore, the function is guaranteed to terminate.</p>
+<p>During scanning, the read bytes are stored in token_buffer. This string is then converted to a signed integer, an unsigned integer, or a floating-point number.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098aaf1f040fcd2f674d2e5893d7a731078f" title="an unsigned integer – use get_number_unsigned() for actual value ">token_type::value_unsigned</a>, <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a5064b6655d88a50ae16665cf7751c0ee" title="a signed integer – use get_number_integer() for actual value ">token_type::value_integer</a>, or <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a0d2671a6f81efb91e77f6ac3bdb11443" title="an floating point number – use get_number_float() for actual value ">token_type::value_float</a> if number could be successfully scanned, <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d" title="indicating a parse error ">token_type::parse_error</a> otherwise</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The scanner is independent of the current locale. Internally, the locale's decimal point is used instead of <code>.</code> to work with the locale-dependent converters. </dd></dl>
+
+</div>
+</div>
+<a id="ad271045d1c91df9d6a119482b4aeae7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad271045d1c91df9d6a119482b4aeae7f">&#9670;&nbsp;</a></span>scan_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098">token_type</a> <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::scan_string </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>scan a string literal </p>
+<p>This function scans a string according to Sect. 7 of RFC 7159. While scanning, bytes are escaped and copied into buffer token_buffer. Then the function returns successfully, token_buffer is <em>not</em> null-terminated (as it may contain \0 bytes), and token_buffer.size() is the number of bytes in the string.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a2b490e8bf366b4cbe3ebd99b26ce15ce" title="a string – use get_string() for actual value ">token_type::value_string</a> if string could be successfully scanned, <a class="el" href="classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a456e19aeafa334241c7ff3f589547f9d" title="indicating a parse error ">token_type::parse_error</a> otherwise</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In case of errors, variable error_message contains a textual description. </dd></dl>
 
 </div>
 </div>
@@ -291,6 +616,36 @@ template&lt;typename BasicJsonType &gt; </div>
 
 <p>skip the UTF-8 byte order mark </p>
 <dl class="section return"><dt>Returns</dt><dd>true iff there is no BOM or the correct BOM has been skipped </dd></dl>
+
+</div>
+</div>
+<a id="a626f145768762057dc68a4666eb577db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626f145768762057dc68a4666eb577db">&#9670;&nbsp;</a></span>unget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classnlohmann_1_1detail_1_1lexer.html">nlohmann::detail::lexer</a>&lt; BasicJsonType &gt;::unget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>unget current character (read it again on next get) </p>
+<p>We implement unget by setting variable next_unget to true. The input is not changed - we just simulate ungetting by modifying chars_read_total, chars_read_current_line, and token_string. The next call to get() will behave as if the unget character is read again. </p>
 
 </div>
 </div>

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['max_5fsize',['max_size',['../classnlohmann_1_1basic__json.html#a2f47d3c6a441c57dd2be00449fbb88e1',1,'nlohmann::basic_json']]],
-  ['merge_5fpatch',['merge_patch',['../classnlohmann_1_1basic__json.html#a7c43ed2a3004c1fa9543913f37b9fca9',1,'nlohmann::basic_json']]],
-  ['meta',['meta',['../classnlohmann_1_1basic__json.html#a677318a34ade7f8177a2784c06aa3671',1,'nlohmann::basic_json']]],
-  ['mul',['mul',['../structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#aa5f250d12ce89c81fdb08900c6a823e8',1,'nlohmann::detail::dtoa_impl::diyfp']]]
+  ['little_5fendianess',['little_endianess',['../classnlohmann_1_1detail_1_1binary__reader.html#a1e31dbfcf9567c8c2d4f0e4eb1b0230a',1,'nlohmann::detail::binary_reader']]],
+  ['load',['load',['../classclub.html#a689d67e008113cbb123c5f0c4c19166e',1,'club::load()'],['../classjugador.html#a9b57bb55fbd19cf2a1fee8397eeb0135',1,'jugador::load()'],['../classusuari.html#a88ddcdb51b491f7b6804980c88c753a9',1,'usuari::load()']]],
+  ['login',['login',['../classapp.html#a0bb96ab42618921392ac30e13444391c',1,'app']]],
+  ['logout',['logout',['../classapp.html#a93176ba428640e16ea767d95319ce0c2',1,'app']]]
 ];

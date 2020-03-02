@@ -6,31 +6,36 @@
 #include <QSqlQuery>
 #include <QVariant>
 
+/*! \file */
 
-/*socket.send('{"type":"playerCreate","payload": {"name":"NombreJugador","State":"Balearican Islands","country":"Spain","number":"42",
-                        "teamId":"passedByDefault","birthday":"1/1/1999", "address":"olesa 4", "city":"Sa Cabaneta", "zip":"07141", "phoneNumber":"654321987"}}')*/
+//! Clase jugador
+/*! La clase jugador hace referencia a la tabla 'jugadors' de la BBDD.
+ * Encontramos las funciones correspodientes para poder cargar,
+ * crear y actualizar nuevos registros en esta tabla.
+ */
 class jugador
 {
     private:
-        int m_idJugador = 0;
-        int m_number = 0;
-        QString m_name;
-        QString m_soci;
-        QDate m_birthday;
-        QString m_dni;
-        QString m_phoneNumber1;
-        QString m_phoneNumber2;
-        QString m_address;
-        QString m_city;
-        QString m_email;
-        int m_idTeam;
-        int m_idGen;
-        int m_idClub;
+        QSqlDatabase *m_db;
+        int m_idJugador = 0;        /*!< Id del jugador. */
+        int m_number = 0;           /*!< Dorsal del jugador. */
+        QString m_name;             /*!< Nombre del jugador. */
+        QString m_soci;             /*!< Socio del jugador. */
+        QDate m_birthday;           /*!< Cumpleaños del jugador. */
+        QString m_dni;              /*!< Dni del jugador. */
+        QString m_phoneNumber1;     /*!< Móvil del jugador. */
+        QString m_phoneNumber2;     /*!< Móvil 2 del jugador. */
+        QString m_address;          /*!< Dirección del jugador. */
+        QString m_city;             /*!< Ciudad del jugador. */
+        QString m_email;            /*!< Email del jugador. */
+        int m_idTeam;               /*!< Id del equipo del jugador. */
+        int m_idGen;                /*!< Id del género del jugador. */
+        int m_idClub;               /*!< Id del club del jugador. */
 
 
     public:
-
-        ///GETTERS
+        jugador(QSqlDatabase *db);
+        //GETTERS
         QString getName();
         int getNumber();
         int getTeamId();
@@ -45,7 +50,7 @@ class jugador
         int getIdGen();
         int getIdClub();
 
-        ///SETTERS
+        //SETTERS
         void setName(QString name);
         void setNumber(int number);
         void setTeamId(int idTeam);
@@ -61,7 +66,7 @@ class jugador
         void setIdClub(int idClub);
 
 
-        ///BBDD Connectors
+        //BBDD Connectors
         bool save();
         void load(int id);
 

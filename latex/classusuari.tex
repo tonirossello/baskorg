@@ -1,0 +1,175 @@
+\hypertarget{classusuari}{}\section{usuari Class Reference}
+\label{classusuari}\index{usuari@{usuari}}
+
+
+Clase usuario.  
+
+
+
+
+{\ttfamily \#include $<$usuari.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classusuari_a3db26e8f6096aeee40d54fd1f02b94e3}\label{classusuari_a3db26e8f6096aeee40d54fd1f02b94e3}} 
+{\bfseries usuari} (Q\+Sql\+Database $\ast$db)
+\item 
+int \mbox{\hyperlink{classusuari_a21ba8ae0a0d63bd1196cd62331573cde}{get\+User\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el id del usuario. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classusuari_adbe5be463437f9e51ca6f4370fa54a5b}{get\+User}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el nombre del usuario. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classusuari_aa8cc58aa9b8a1c8a7ef5fce3ad5fa819}{get\+Pass}} ()
+\begin{DoxyCompactList}\small\item\em Obtener la contraseña del usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classusuari_aa3db9874672456c37ce3651a08654eef}{set\+User}} (Q\+String user)
+\begin{DoxyCompactList}\small\item\em Modificar el nombre de un usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classusuari_a4c275e6e79e42efdae64f748dcabb843}{set\+Pass}} (Q\+String pass)
+\begin{DoxyCompactList}\small\item\em Modificar la contraseña de un usuario. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classusuari_a033dbdad161e4dabeb4efd0c26165d0a}{save}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza o inserta un nuevo usuario a la B\+B\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classusuari_a88ddcdb51b491f7b6804980c88c753a9}{load}} (int id)
+\begin{DoxyCompactList}\small\item\em Carga los datos de un usuario en el objeto usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classusuari_a102b2012a2e1ca9cd0f73abbd3ae086d}\label{classusuari_a102b2012a2e1ca9cd0f73abbd3ae086d}} 
+Q\+Sql\+Database $\ast$ {\bfseries m\+\_\+db}
+\item 
+int \mbox{\hyperlink{classusuari_a782f5e6371fec121527d11ee7bfb1298}{m\+\_\+id\+User}} = 0
+\item 
+Q\+String \mbox{\hyperlink{classusuari_a888f2ca58e20a8396f4d065a943e4425}{m\+\_\+user}}
+\item 
+Q\+String \mbox{\hyperlink{classusuari_aa9568f0272be3b558bc2e68911820f9b}{m\+\_\+pass}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase usuario. 
+
+La clase usuario hace referencia a la tabla \textquotesingle{}usuaris\textquotesingle{} de la B\+B\+DD. Encontramos las funciones correspodientes para poder cargar, crear y actualizar nuevos registros en esta tabla. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classusuari_aa8cc58aa9b8a1c8a7ef5fce3ad5fa819}\label{classusuari_aa8cc58aa9b8a1c8a7ef5fce3ad5fa819}} 
+\index{usuari@{usuari}!get\+Pass@{get\+Pass}}
+\index{get\+Pass@{get\+Pass}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{get\+Pass()}{getPass()}}
+{\footnotesize\ttfamily Q\+String usuari\+::get\+Pass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener la contraseña del usuario. 
+
+\begin{DoxyReturn}{Returns}
+Contraseña del usuario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classusuari_adbe5be463437f9e51ca6f4370fa54a5b}\label{classusuari_adbe5be463437f9e51ca6f4370fa54a5b}} 
+\index{usuari@{usuari}!get\+User@{get\+User}}
+\index{get\+User@{get\+User}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{get\+User()}{getUser()}}
+{\footnotesize\ttfamily Q\+String usuari\+::get\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el nombre del usuario. 
+
+\begin{DoxyReturn}{Returns}
+Código del usuario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classusuari_a21ba8ae0a0d63bd1196cd62331573cde}\label{classusuari_a21ba8ae0a0d63bd1196cd62331573cde}} 
+\index{usuari@{usuari}!get\+User\+Id@{get\+User\+Id}}
+\index{get\+User\+Id@{get\+User\+Id}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{get\+User\+Id()}{getUserId()}}
+{\footnotesize\ttfamily int usuari\+::get\+User\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el id del usuario. 
+
+\begin{DoxyReturn}{Returns}
+Id del usuario 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classusuari_a88ddcdb51b491f7b6804980c88c753a9}\label{classusuari_a88ddcdb51b491f7b6804980c88c753a9}} 
+\index{usuari@{usuari}!load@{load}}
+\index{load@{load}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void usuari\+::load (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de un usuario en el objeto usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & --$>$ id del usuario a cargar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classusuari_a033dbdad161e4dabeb4efd0c26165d0a}\label{classusuari_a033dbdad161e4dabeb4efd0c26165d0a}} 
+\index{usuari@{usuari}!save@{save}}
+\index{save@{save}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool usuari\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualiza o inserta un nuevo usuario a la B\+B\+DD. 
+
+\begin{DoxyReturn}{Returns}
+Si se ha realizado la consulta sin errores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classusuari_a4c275e6e79e42efdae64f748dcabb843}\label{classusuari_a4c275e6e79e42efdae64f748dcabb843}} 
+\index{usuari@{usuari}!set\+Pass@{set\+Pass}}
+\index{set\+Pass@{set\+Pass}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{set\+Pass()}{setPass()}}
+{\footnotesize\ttfamily void usuari\+::set\+Pass (\begin{DoxyParamCaption}\item[{Q\+String}]{pass }\end{DoxyParamCaption})}
+
+
+
+Modificar la contraseña de un usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pass} & --$>$ Nueva contraseña \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classusuari_aa3db9874672456c37ce3651a08654eef}\label{classusuari_aa3db9874672456c37ce3651a08654eef}} 
+\index{usuari@{usuari}!set\+User@{set\+User}}
+\index{set\+User@{set\+User}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{set\+User()}{setUser()}}
+{\footnotesize\ttfamily void usuari\+::set\+User (\begin{DoxyParamCaption}\item[{Q\+String}]{username }\end{DoxyParamCaption})}
+
+
+
+Modificar el nombre de un usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & --$>$ Nuevo nombre de usuario \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classusuari_a782f5e6371fec121527d11ee7bfb1298}\label{classusuari_a782f5e6371fec121527d11ee7bfb1298}} 
+\index{usuari@{usuari}!m\+\_\+id\+User@{m\+\_\+id\+User}}
+\index{m\+\_\+id\+User@{m\+\_\+id\+User}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{m\+\_\+id\+User}{m\_idUser}}
+{\footnotesize\ttfamily int usuari\+::m\+\_\+id\+User = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Id del usuario. \mbox{\Hypertarget{classusuari_aa9568f0272be3b558bc2e68911820f9b}\label{classusuari_aa9568f0272be3b558bc2e68911820f9b}} 
+\index{usuari@{usuari}!m\+\_\+pass@{m\+\_\+pass}}
+\index{m\+\_\+pass@{m\+\_\+pass}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{m\+\_\+pass}{m\_pass}}
+{\footnotesize\ttfamily Q\+String usuari\+::m\+\_\+pass\hspace{0.3cm}{\ttfamily [private]}}
+
+Contraseña del usuario. \mbox{\Hypertarget{classusuari_a888f2ca58e20a8396f4d065a943e4425}\label{classusuari_a888f2ca58e20a8396f4d065a943e4425}} 
+\index{usuari@{usuari}!m\+\_\+user@{m\+\_\+user}}
+\index{m\+\_\+user@{m\+\_\+user}!usuari@{usuari}}
+\subsubsection{\texorpdfstring{m\+\_\+user}{m\_user}}
+{\footnotesize\ttfamily Q\+String usuari\+::m\+\_\+user\hspace{0.3cm}{\ttfamily [private]}}
+
+Nombre del usuario. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{usuari_8h}{usuari.\+h}}\item 
+\mbox{\hyperlink{usuari_8cpp}{usuari.\+cpp}}\end{DoxyCompactItemize}

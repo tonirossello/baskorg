@@ -7,5 +7,6 @@ var searchData=
   ['json_5fsax_5facceptor',['json_sax_acceptor',['../classnlohmann_1_1detail_1_1json__sax__acceptor.html',1,'nlohmann::detail']]],
   ['json_5fsax_5fdom_5fcallback_5fparser',['json_sax_dom_callback_parser',['../classnlohmann_1_1detail_1_1json__sax__dom__callback__parser.html',1,'nlohmann::detail']]],
   ['json_5fsax_5fdom_5fparser',['json_sax_dom_parser',['../classnlohmann_1_1detail_1_1json__sax__dom__parser.html',1,'nlohmann::detail']]],
+  ['json_5fvalue',['json_value',['../unionnlohmann_1_1basic__json_1_1json__value.html',1,'nlohmann::basic_json']]],
   ['jugador',['jugador',['../classjugador.html',1,'']]]
 ];

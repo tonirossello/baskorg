@@ -78,6 +78,67 @@ bool {\bfseries parse\+\_\+error} (std\+::size\+\_\+t, const \mbox{\hyperlink{na
 \mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a167fd9bf385d3d08bcbbba8a927c0eff}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a167fd9bf385d3d08bcbbba8a927c0eff}} 
 constexpr bool {\bfseries is\+\_\+errored} () const
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Value $>$ }\\std\+::pair$<$ bool, Basic\+Json\+Type $\ast$ $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a875e678e20e75b37b93b80be78fe60e6}{handle\+\_\+value}} (Value \&\&v, const bool skip\+\_\+callback=false)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a7b12037ca38be3ddec09c42bd71080cc}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a7b12037ca38be3ddec09c42bd71080cc}} 
+Basic\+Json\+Type \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a7b12037ca38be3ddec09c42bd71080cc}{root}}
+\begin{DoxyCompactList}\small\item\em the parsed J\+S\+ON value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a82a0e49479660b9903597e1ef55c6601}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a82a0e49479660b9903597e1ef55c6601}} 
+std\+::vector$<$ Basic\+Json\+Type $\ast$ $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a82a0e49479660b9903597e1ef55c6601}{ref\+\_\+stack}} \{\}
+\begin{DoxyCompactList}\small\item\em stack to model hierarchy of values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ac24fd6c9f1b31b44328c16d65755ae76}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ac24fd6c9f1b31b44328c16d65755ae76}} 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ac24fd6c9f1b31b44328c16d65755ae76}{keep\+\_\+stack}} \{\}
+\begin{DoxyCompactList}\small\item\em stack to manage which values to keep \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8f0e96e8bc4f692169024105693f5706}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8f0e96e8bc4f692169024105693f5706}} 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8f0e96e8bc4f692169024105693f5706}{key\+\_\+keep\+\_\+stack}} \{\}
+\begin{DoxyCompactList}\small\item\em stack to manage which object keys to keep \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a2a8adecd936ba6ec187f1216241b508f}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a2a8adecd936ba6ec187f1216241b508f}} 
+Basic\+Json\+Type $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a2a8adecd936ba6ec187f1216241b508f}{object\+\_\+element}} = nullptr
+\begin{DoxyCompactList}\small\item\em helper to hold the reference for the next object element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ab06baaa640cfaae5846daa7c3594b116}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ab06baaa640cfaae5846daa7c3594b116}} 
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_ab06baaa640cfaae5846daa7c3594b116}{errored}} = false
+\begin{DoxyCompactList}\small\item\em whether a syntax error occurred \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a46a72dffd5be4a25602af00f0033c126}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a46a72dffd5be4a25602af00f0033c126}} 
+const parser\+\_\+callback\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a46a72dffd5be4a25602af00f0033c126}{callback}} = nullptr
+\begin{DoxyCompactList}\small\item\em callback function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a0a1390c23e2a3da774d75c050f9b3f13}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a0a1390c23e2a3da774d75c050f9b3f13}} 
+const bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a0a1390c23e2a3da774d75c050f9b3f13}{allow\+\_\+exceptions}} = true
+\begin{DoxyCompactList}\small\item\em whether to throw exceptions in case of errors \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8997ee6dc3bd39116b951465b946445e}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8997ee6dc3bd39116b951465b946445e}} 
+Basic\+Json\+Type \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a8997ee6dc3bd39116b951465b946445e}{discarded}} = Basic\+Json\+Type\+::value\+\_\+t\+::discarded
+\begin{DoxyCompactList}\small\item\em a discarded value for the callback \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a875e678e20e75b37b93b80be78fe60e6}\label{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser_a875e678e20e75b37b93b80be78fe60e6}} 
+\index{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser@{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser}!handle\+\_\+value@{handle\+\_\+value}}
+\index{handle\+\_\+value@{handle\+\_\+value}!nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser@{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser}}
+\subsubsection{\texorpdfstring{handle\+\_\+value()}{handle\_value()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type$>$ \\
+template$<$typename Value $>$ \\
+std\+::pair$<$bool, Basic\+Json\+Type$\ast$$>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__callback__parser}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+callback\+\_\+parser}}$<$ Basic\+Json\+Type $>$\+::handle\+\_\+value (\begin{DoxyParamCaption}\item[{Value \&\&}]{v,  }\item[{const bool}]{skip\+\_\+callback = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em v} & value to add to the J\+S\+ON value we build during parsing \\
+\hline
+\mbox{\tt in}  & {\em skip\+\_\+callback} & whether we should skip calling the callback function; this is required after start\+\_\+array() and start\+\_\+object() S\+AX events, because otherwise we would call the callback function with an empty array or object, respectively.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyInvariant}{Invariant}
+If the ref stack is empty, then the passed value will be the new root. 
+
+If the ref stack contains a value, then it is an array or an object to which we can add elements
+\end{DoxyInvariant}
+\begin{DoxyReturn}{Returns}
+pair of boolean (whether value should be kept) and pointer (to the passed value in the ref\+\_\+stack hierarchy; nullptr if not kept) 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

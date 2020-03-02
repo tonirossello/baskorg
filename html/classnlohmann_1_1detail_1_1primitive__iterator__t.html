@@ -67,6 +67,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classnlohmann_1_1detail_1_1primitive__iterator__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -116,6 +119,28 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memitem:a0bf83ab08abe1ae4b51c790c85cdf151"><td class="memItemLeft" align="right" valign="top"><a id="a0bf83ab08abe1ae4b51c790c85cdf151"></a>
 <a class="el" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html">primitive_iterator_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (difference_type n) noexcept</td></tr>
 <tr class="separator:a0bf83ab08abe1ae4b51c790c85cdf151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:af3db0d5c90de427d51645fe73a015553"><td class="memItemLeft" align="right" valign="top"><a id="af3db0d5c90de427d51645fe73a015553"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>difference_type</b> = std::ptrdiff_t</td></tr>
+<tr class="separator:af3db0d5c90de427d51645fe73a015553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4357355113b0cd7e12b15c2e93703510"><td class="memItemLeft" align="right" valign="top"><a id="a4357355113b0cd7e12b15c2e93703510"></a>
+difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1primitive__iterator__t.html#a4357355113b0cd7e12b15c2e93703510">m_it</a> = (std::numeric_limits&lt;std::ptrdiff_t&gt;::min)()</td></tr>
+<tr class="memdesc:a4357355113b0cd7e12b15c2e93703510"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator as signed integer type <br /></td></tr>
+<tr class="separator:a4357355113b0cd7e12b15c2e93703510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:afcb3bcf9da8aa95bd82067d1a67c2326"><td class="memItemLeft" align="right" valign="top"><a id="afcb3bcf9da8aa95bd82067d1a67c2326"></a>
+static constexpr difference_type&#160;</td><td class="memItemRight" valign="bottom"><b>begin_value</b> = 0</td></tr>
+<tr class="separator:afcb3bcf9da8aa95bd82067d1a67c2326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37c37da44f19e6ec1d7d4a9910511c7"><td class="memItemLeft" align="right" valign="top"><a id="aa37c37da44f19e6ec1d7d4a9910511c7"></a>
+static constexpr difference_type&#160;</td><td class="memItemRight" valign="bottom"><b>end_value</b> = begin_value + 1</td></tr>
+<tr class="separator:aa37c37da44f19e6ec1d7d4a9910511c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>

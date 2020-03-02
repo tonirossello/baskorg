@@ -1,7 +1,10 @@
 var searchData=
 [
+  ['ia',['ia',['../classnlohmann_1_1detail_1_1input__adapter.html#ad5a11d0b65b68f6950cfbe8c8366b7da',1,'nlohmann::detail::input_adapter::ia()'],['../classnlohmann_1_1detail_1_1binary__reader.html#a21ceb754c46a4920b966be7de48c34ad',1,'nlohmann::detail::binary_reader::ia()'],['../classnlohmann_1_1detail_1_1lexer.html#aa7e69cd9d51451fd798eaf501b40421f',1,'nlohmann::detail::lexer::ia()']]],
   ['id',['id',['../classnlohmann_1_1detail_1_1exception.html#a0d4589a3fb54e81646d986c05efa3b9a',1,'nlohmann::detail::exception']]],
   ['ignore',['ignore',['../namespacenlohmann_1_1detail.html#a5a76b60b26dc8c47256a996d18d967dfa567bc1d268f135496de3d5b946b691f3',1,'nlohmann::detail']]],
+  ['indent_5fchar',['indent_char',['../classnlohmann_1_1detail_1_1serializer.html#a9a55e6b028d09676fe35aefa0c72ea5b',1,'nlohmann::detail::serializer']]],
+  ['indent_5fstring',['indent_string',['../classnlohmann_1_1detail_1_1serializer.html#ae9268a10d88a5526e32735a55a132fc6',1,'nlohmann::detail::serializer']]],
   ['index_5fsequence',['index_sequence',['../structnlohmann_1_1detail_1_1index__sequence.html',1,'nlohmann::detail']]],
   ['index_5fsequence_3c_200_20_3e',['index_sequence&lt; 0 &gt;',['../structnlohmann_1_1detail_1_1index__sequence.html',1,'nlohmann::detail']]],
   ['index_5fsequence_3c_20i1_2e_2e_2e_2c_28sizeof_2e_2e_2e_28i1_29_2bi2_29_2e_2e_2e_20_3e',['index_sequence&lt; I1...,(sizeof...(I1)+I2)... &gt;',['../structnlohmann_1_1detail_1_1index__sequence.html',1,'nlohmann::detail']]],
@@ -18,6 +21,7 @@ var searchData=
   ['internal_5fiterator',['internal_iterator',['../structnlohmann_1_1detail_1_1internal__iterator.html',1,'nlohmann::detail']]],
   ['internal_5fiterator_3c_20typename_20std_3a_3aremove_5fconst_3c_20basicjsontype_20_3e_3a_3atype_20_3e',['internal_iterator&lt; typename std::remove_const&lt; BasicJsonType &gt;::type &gt;',['../structnlohmann_1_1detail_1_1internal__iterator.html',1,'nlohmann::detail']]],
   ['invalid_5fiterator',['invalid_iterator',['../classnlohmann_1_1detail_1_1invalid__iterator.html',1,'nlohmann::detail::invalid_iterator'],['../classnlohmann_1_1basic__json.html#ac13d32f7cbd02d616e71d8dc30dadcbf',1,'nlohmann::basic_json::invalid_iterator()']]],
+  ['is',['is',['../classnlohmann_1_1detail_1_1input__stream__adapter.html#ac3afada8eaf7d6cd2b475a3388d5e992',1,'nlohmann::detail::input_stream_adapter']]],
   ['is_5farray',['is_array',['../classnlohmann_1_1basic__json.html#aef9ce5dd2381caee1f8ddcdb5bdd9c65',1,'nlohmann::basic_json']]],
   ['is_5fbasic_5fjson',['is_basic_json',['../structnlohmann_1_1detail_1_1is__basic__json.html',1,'nlohmann::detail']]],
   ['is_5fbasic_5fjson_3c_20nlohmann_5fbasic_5fjson_5ftpl_20_3e',['is_basic_json&lt; NLOHMANN_BASIC_JSON_TPL &gt;',['../structnlohmann_1_1detail_1_1is__basic__json_3_01NLOHMANN__BASIC__JSON__TPL_01_4.html',1,'nlohmann::detail']]],
@@ -64,6 +68,7 @@ var searchData=
   ['is_5fend',['is_end',['../classnlohmann_1_1detail_1_1primitive__iterator__t.html#a45a7e301c23b5b90417baf2277f40b1d',1,'nlohmann::detail::primitive_iterator_t']]],
   ['is_5fiterator_5ftraits',['is_iterator_traits',['../structnlohmann_1_1detail_1_1is__iterator__traits.html',1,'nlohmann::detail']]],
   ['is_5fiterator_5ftraits_3c_20iterator_5ftraits_3c_20t_20_3e_20_3e',['is_iterator_traits&lt; iterator_traits&lt; T &gt; &gt;',['../structnlohmann_1_1detail_1_1is__iterator__traits_3_01iterator__traits_3_01T_01_4_01_4.html',1,'nlohmann::detail']]],
+  ['is_5flittle_5fendian',['is_little_endian',['../classnlohmann_1_1detail_1_1binary__reader.html#aa846bdda08720535b26d8c90b939bc37',1,'nlohmann::detail::binary_reader::is_little_endian()'],['../classnlohmann_1_1detail_1_1binary__writer.html#a048887c907afe39759b777e8c888414c',1,'nlohmann::detail::binary_writer::is_little_endian()']]],
   ['is_5fnull',['is_null',['../classnlohmann_1_1basic__json.html#a8faa039ca82427ed29c486ffd00600c3',1,'nlohmann::basic_json']]],
   ['is_5fnumber',['is_number',['../classnlohmann_1_1basic__json.html#a2b9852390abb4b1ef5fac6984e2fc0f3',1,'nlohmann::basic_json']]],
   ['is_5fnumber_5ffloat',['is_number_float',['../classnlohmann_1_1basic__json.html#a33b4bf898b857c962e798fc7f6e86e70',1,'nlohmann::basic_json']]],

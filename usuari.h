@@ -5,27 +5,34 @@
 #include <QSqlQuery>
 #include <QVariant>
 
+/*! \file */
+
+//! Clase usuario
+/*! La clase usuario hace referencia a la tabla 'usuaris' de la BBDD.
+ * Encontramos las funciones correspodientes para poder cargar,
+ * crear y actualizar nuevos registros en esta tabla.
+ */
 class usuari
 {
 
 private:
-    int m_idUser = 0;
-    QString m_user;
-    QString m_pass;
+    QSqlDatabase *m_db;
+    int m_idUser = 0;           /*!< Id del usuario. */
+    QString m_user;             /*!< Nombre del usuario. */
+    QString m_pass;             /*!< Contraseña del usuario. */
 
 public:
-
-    ///GETTERS
+    usuari(QSqlDatabase *db);
+    //GETTERS
     int getUserId();
     QString getUser();
     QString getPass();
 
-    ///SETTERS
+    //SETTERS
     void setUser(QString user);
     void setPass(QString pass);
 
-
-    ///BBDD Connectors
+    //BBDD Connectors
     bool save();
     void load(int id);
 };

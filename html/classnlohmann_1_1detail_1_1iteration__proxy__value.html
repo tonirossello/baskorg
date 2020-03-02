@@ -68,6 +68,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1iteration__proxy__value-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::iteration_proxy_value&lt; IteratorType &gt; Class Template Reference</div>  </div>
@@ -124,6 +125,29 @@ const string_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a cl
 IteratorType::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#ab8e33bd01c285a1a80b737a1905ceb97">value</a> () const</td></tr>
 <tr class="memdesc:ab8e33bd01c285a1a80b737a1905ceb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">return value of the iterator <br /></td></tr>
 <tr class="separator:ab8e33bd01c285a1a80b737a1905ceb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a073741b6536b7a5166467a5515bc59cb"><td class="memItemLeft" align="right" valign="top"><a id="a073741b6536b7a5166467a5515bc59cb"></a>
+IteratorType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#a073741b6536b7a5166467a5515bc59cb">anchor</a></td></tr>
+<tr class="memdesc:a073741b6536b7a5166467a5515bc59cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">the iterator <br /></td></tr>
+<tr class="separator:a073741b6536b7a5166467a5515bc59cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d18c83aff5e9f4bdbf99385b29a39a"><td class="memItemLeft" align="right" valign="top"><a id="ad3d18c83aff5e9f4bdbf99385b29a39a"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#ad3d18c83aff5e9f4bdbf99385b29a39a">array_index</a> = 0</td></tr>
+<tr class="memdesc:ad3d18c83aff5e9f4bdbf99385b29a39a"><td class="mdescLeft">&#160;</td><td class="mdescRight">an index for arrays (used to create key names) <br /></td></tr>
+<tr class="separator:ad3d18c83aff5e9f4bdbf99385b29a39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac6e7cc0c17242a0a42c14d1e714747c"><td class="memItemLeft" align="right" valign="top"><a id="aac6e7cc0c17242a0a42c14d1e714747c"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#aac6e7cc0c17242a0a42c14d1e714747c">array_index_last</a> = 0</td></tr>
+<tr class="memdesc:aac6e7cc0c17242a0a42c14d1e714747c"><td class="mdescLeft">&#160;</td><td class="mdescRight">last stringified array index <br /></td></tr>
+<tr class="separator:aac6e7cc0c17242a0a42c14d1e714747c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b34133f45a3610070492d32978f2ea"><td class="memItemLeft" align="right" valign="top"><a id="ab0b34133f45a3610070492d32978f2ea"></a>
+string_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#ab0b34133f45a3610070492d32978f2ea">array_index_str</a> = &quot;0&quot;</td></tr>
+<tr class="memdesc:ab0b34133f45a3610070492d32978f2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">a string representation of the array index <br /></td></tr>
+<tr class="separator:ab0b34133f45a3610070492d32978f2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298dae04e3c0a64719752c16754d1d71"><td class="memItemLeft" align="right" valign="top"><a id="a298dae04e3c0a64719752c16754d1d71"></a>
+const string_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1iteration__proxy__value.html#a298dae04e3c0a64719752c16754d1d71">empty_str</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:a298dae04e3c0a64719752c16754d1d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">an empty string (to return a reference for primitive values) <br /></td></tr>
+<tr class="separator:a298dae04e3c0a64719752c16754d1d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="json_8hpp_source.html">json.hpp</a></li>

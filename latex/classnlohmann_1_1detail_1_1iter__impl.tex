@@ -81,6 +81,40 @@ const object\+\_\+t\+::key\+\_\+type \& \mbox{\hyperlink{classnlohmann_1_1detail
 \begin{DoxyCompactList}\small\item\em return the key of an object iterator \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_a5be8001be099c6b82310f4d387b953ce}{reference}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_ab447c50354c6611fa2ae0100ac17845c}{value}} () const
 \begin{DoxyCompactList}\small\item\em return the value of an iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_ab9a9598052e83fa14a2288e56d5dda7c}\label{classnlohmann_1_1detail_1_1iter__impl_ab9a9598052e83fa14a2288e56d5dda7c}} 
+using {\bfseries object\+\_\+t} = typename Basic\+Json\+Type\+::object\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_aef02cf75b1cb199286fd2f666c60e38e}\label{classnlohmann_1_1detail_1_1iter__impl_aef02cf75b1cb199286fd2f666c60e38e}} 
+using {\bfseries array\+\_\+t} = typename Basic\+Json\+Type\+::array\+\_\+t
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_a5d5f92c7f6848814bc82cf7e4e541820}{set\+\_\+begin}} () noexcept
+\begin{DoxyCompactList}\small\item\em set the iterator to the first value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_a23e50ad4c13aa62d9ac7f60a123823ee}{set\+\_\+end}} () noexcept
+\begin{DoxyCompactList}\small\item\em set the iterator past the last value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_abf18f18793f84b0222aebb5a2a87da7a}\label{classnlohmann_1_1detail_1_1iter__impl_abf18f18793f84b0222aebb5a2a87da7a}} 
+friend {\bfseries Basic\+Json\+Type}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_a28328d17a18d9754c89c5c8159677a6f}\label{classnlohmann_1_1detail_1_1iter__impl_a28328d17a18d9754c89c5c8159677a6f}} 
+friend {\bfseries iteration\+\_\+proxy$<$ iter\+\_\+impl $>$}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_ac501dc2374b4d17a884fc9a656e80d5a}\label{classnlohmann_1_1detail_1_1iter__impl_ac501dc2374b4d17a884fc9a656e80d5a}} 
+friend {\bfseries iteration\+\_\+proxy\+\_\+value$<$ iter\+\_\+impl $>$}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_aca84f84be598bdfaaddd23d928c42bbb}\label{classnlohmann_1_1detail_1_1iter__impl_aca84f84be598bdfaaddd23d928c42bbb}} 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_a69e52f890ce8c556fd68ce109e24b360}{pointer}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_aca84f84be598bdfaaddd23d928c42bbb}{m\+\_\+object}} = nullptr
+\begin{DoxyCompactList}\small\item\em associated J\+S\+ON instance \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_a8a86a7c0d4af0cc4ab345b6f0e13cdfa}\label{classnlohmann_1_1detail_1_1iter__impl_a8a86a7c0d4af0cc4ab345b6f0e13cdfa}} 
+\mbox{\hyperlink{structnlohmann_1_1detail_1_1internal__iterator}{internal\+\_\+iterator}}$<$ typename std\+::remove\+\_\+const$<$ Basic\+Json\+Type $>$\+::type $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl_a8a86a7c0d4af0cc4ab345b6f0e13cdfa}{m\+\_\+it}} \{\}
+\begin{DoxyCompactList}\small\item\em the actual iterator of the associated instance \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -500,6 +534,34 @@ The iterator is initialized; i.\+e. {\ttfamily m\+\_\+object != nullptr}.
 
 
 access to successor 
+
+\begin{DoxyPrecond}{Precondition}
+The iterator is initialized; i.\+e. {\ttfamily m\+\_\+object != nullptr}. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_a5d5f92c7f6848814bc82cf7e4e541820}\label{classnlohmann_1_1detail_1_1iter__impl_a5d5f92c7f6848814bc82cf7e4e541820}} 
+\index{nlohmann\+::detail\+::iter\+\_\+impl@{nlohmann\+::detail\+::iter\+\_\+impl}!set\+\_\+begin@{set\+\_\+begin}}
+\index{set\+\_\+begin@{set\+\_\+begin}!nlohmann\+::detail\+::iter\+\_\+impl@{nlohmann\+::detail\+::iter\+\_\+impl}}
+\subsubsection{\texorpdfstring{set\+\_\+begin()}{set\_begin()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type$>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl}{nlohmann\+::detail\+::iter\+\_\+impl}}$<$ Basic\+Json\+Type $>$\+::set\+\_\+begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+set the iterator to the first value 
+
+\begin{DoxyPrecond}{Precondition}
+The iterator is initialized; i.\+e. {\ttfamily m\+\_\+object != nullptr}. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1iter__impl_a23e50ad4c13aa62d9ac7f60a123823ee}\label{classnlohmann_1_1detail_1_1iter__impl_a23e50ad4c13aa62d9ac7f60a123823ee}} 
+\index{nlohmann\+::detail\+::iter\+\_\+impl@{nlohmann\+::detail\+::iter\+\_\+impl}!set\+\_\+end@{set\+\_\+end}}
+\index{set\+\_\+end@{set\+\_\+end}!nlohmann\+::detail\+::iter\+\_\+impl@{nlohmann\+::detail\+::iter\+\_\+impl}}
+\subsubsection{\texorpdfstring{set\+\_\+end()}{set\_end()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type$>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1iter__impl}{nlohmann\+::detail\+::iter\+\_\+impl}}$<$ Basic\+Json\+Type $>$\+::set\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+set the iterator past the last value 
 
 \begin{DoxyPrecond}{Precondition}
 The iterator is initialized; i.\+e. {\ttfamily m\+\_\+object != nullptr}. 

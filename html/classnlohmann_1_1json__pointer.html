@@ -67,6 +67,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classnlohmann_1_1json__pointer-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -96,7 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abdd21567b2b1d69329af0f520335e68b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#abdd21567b2b1d69329af0f520335e68b">operator/=</a> (std::string token)</td></tr>
 <tr class="memdesc:abdd21567b2b1d69329af0f520335e68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">append an unescaped reference token at the end of this JSON pointer  <a href="#abdd21567b2b1d69329af0f520335e68b">More...</a><br /></td></tr>
 <tr class="separator:abdd21567b2b1d69329af0f520335e68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c8401529131bad1e486d91d703795f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a64c8401529131bad1e486d91d703795f">operator/=</a> (std::size_t array_index)</td></tr>
+<tr class="memitem:a64c8401529131bad1e486d91d703795f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a64c8401529131bad1e486d91d703795f">operator/=</a> (std::size_t <a class="el" href="classnlohmann_1_1json__pointer.html#ac53f5b79dd91da78743c437832f57ce4">array_index</a>)</td></tr>
 <tr class="memdesc:a64c8401529131bad1e486d91d703795f"><td class="mdescLeft">&#160;</td><td class="mdescRight">append an array index at the end of this JSON pointer  <a href="#a64c8401529131bad1e486d91d703795f">More...</a><br /></td></tr>
 <tr class="separator:a64c8401529131bad1e486d91d703795f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdaacce1edb7145e0434e014f0e8685a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#afdaacce1edb7145e0434e014f0e8685a">parent_pointer</a> () const</td></tr>
@@ -118,6 +121,57 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a649252bda4a2e75a0915b11a25d8bcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">return whether pointer points to the root document  <a href="#a649252bda4a2e75a0915b11a25d8bcc3">More...</a><br /></td></tr>
 <tr class="separator:a649252bda4a2e75a0915b11a25d8bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a00eff109d9a0091e42ada9b16b90c8d9"><td class="memItemLeft" align="right" valign="top"><a id="a00eff109d9a0091e42ada9b16b90c8d9"></a>
+<a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>top</b> () const</td></tr>
+<tr class="separator:a00eff109d9a0091e42ada9b16b90c8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583c726016f440ffe65553935c101ff5"><td class="memItemLeft" align="right" valign="top">BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a583c726016f440ffe65553935c101ff5">get_and_create</a> (BasicJsonType &amp;j) const</td></tr>
+<tr class="memdesc:a583c726016f440ffe65553935c101ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">create and return a reference to the pointed to value  <a href="#a583c726016f440ffe65553935c101ff5">More...</a><br /></td></tr>
+<tr class="separator:a583c726016f440ffe65553935c101ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577512ee6b7f030e8872b4d29fa5c3e5"><td class="memItemLeft" align="right" valign="top">BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a577512ee6b7f030e8872b4d29fa5c3e5">get_unchecked</a> (BasicJsonType *ptr) const</td></tr>
+<tr class="memdesc:a577512ee6b7f030e8872b4d29fa5c3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a reference to the pointed to value  <a href="#a577512ee6b7f030e8872b4d29fa5c3e5">More...</a><br /></td></tr>
+<tr class="separator:a577512ee6b7f030e8872b4d29fa5c3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366d68a67e40d86676d3bdb52e167294"><td class="memItemLeft" align="right" valign="top">BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a366d68a67e40d86676d3bdb52e167294">get_checked</a> (BasicJsonType *ptr) const</td></tr>
+<tr class="separator:a366d68a67e40d86676d3bdb52e167294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a01f8e1556eef68e5a49b33fef1548"><td class="memItemLeft" align="right" valign="top">const BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#ad6a01f8e1556eef68e5a49b33fef1548">get_unchecked</a> (const BasicJsonType *ptr) const</td></tr>
+<tr class="memdesc:ad6a01f8e1556eef68e5a49b33fef1548"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a const reference to the pointed to value  <a href="#ad6a01f8e1556eef68e5a49b33fef1548">More...</a><br /></td></tr>
+<tr class="separator:ad6a01f8e1556eef68e5a49b33fef1548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a5bbbc3007e479607304a3e8cb9bf5"><td class="memItemLeft" align="right" valign="top">const BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a55a5bbbc3007e479607304a3e8cb9bf5">get_checked</a> (const BasicJsonType *ptr) const</td></tr>
+<tr class="separator:a55a5bbbc3007e479607304a3e8cb9bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d38e45e2d3add52d824bc55da8f772"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a90d38e45e2d3add52d824bc55da8f772">contains</a> (const BasicJsonType *ptr) const</td></tr>
+<tr class="separator:a90d38e45e2d3add52d824bc55da8f772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ac53f5b79dd91da78743c437832f57ce4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#ac53f5b79dd91da78743c437832f57ce4">array_index</a> (const std::string &amp;s)</td></tr>
+<tr class="separator:ac53f5b79dd91da78743c437832f57ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01c32c6a071c2e5198d5dfcce290e50"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#ae01c32c6a071c2e5198d5dfcce290e50">split</a> (const std::string &amp;reference_string)</td></tr>
+<tr class="memdesc:ae01c32c6a071c2e5198d5dfcce290e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">split the string input to reference tokens  <a href="#ae01c32c6a071c2e5198d5dfcce290e50">More...</a><br /></td></tr>
+<tr class="separator:ae01c32c6a071c2e5198d5dfcce290e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7649d30da9fc10b0e20704a27aea2a9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#aa7649d30da9fc10b0e20704a27aea2a9">replace_substring</a> (std::string &amp;s, const std::string &amp;f, const std::string &amp;t)</td></tr>
+<tr class="memdesc:aa7649d30da9fc10b0e20704a27aea2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">replace all occurrences of a substring by another string  <a href="#aa7649d30da9fc10b0e20704a27aea2a9">More...</a><br /></td></tr>
+<tr class="separator:aa7649d30da9fc10b0e20704a27aea2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8abf3577f9a0087f29a233893cdc73ad"><td class="memItemLeft" align="right" valign="top"><a id="a8abf3577f9a0087f29a233893cdc73ad"></a>
+static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a8abf3577f9a0087f29a233893cdc73ad">escape</a> (std::string s)</td></tr>
+<tr class="memdesc:a8abf3577f9a0087f29a233893cdc73ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">escape "~" to "~0" and "/" to "~1" <br /></td></tr>
+<tr class="separator:a8abf3577f9a0087f29a233893cdc73ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85442d5fbcc289b79beeefc2175446f"><td class="memItemLeft" align="right" valign="top"><a id="ab85442d5fbcc289b79beeefc2175446f"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#ab85442d5fbcc289b79beeefc2175446f">unescape</a> (std::string &amp;s)</td></tr>
+<tr class="memdesc:ab85442d5fbcc289b79beeefc2175446f"><td class="mdescLeft">&#160;</td><td class="mdescRight">unescape "~1" to tilde and "~0" to slash (order is important!) <br /></td></tr>
+<tr class="separator:ab85442d5fbcc289b79beeefc2175446f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0d7759d0caa6a0c0187916da28e6ee7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#ab0d7759d0caa6a0c0187916da28e6ee7">flatten</a> (const std::string &amp;reference_string, const BasicJsonType &amp;value, BasicJsonType &amp;result)</td></tr>
+<tr class="separator:ab0d7759d0caa6a0c0187916da28e6ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920065221e3c81676c3211c100d024a7"><td class="memItemLeft" align="right" valign="top">static BasicJsonType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a920065221e3c81676c3211c100d024a7">unflatten</a> (const BasicJsonType &amp;value)</td></tr>
+<tr class="separator:a920065221e3c81676c3211c100d024a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a07a990a6838de4f38ee9d881e7b9fd61"><td class="memItemLeft" align="right" valign="top"><a id="a07a990a6838de4f38ee9d881e7b9fd61"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a07a990a6838de4f38ee9d881e7b9fd61">reference_tokens</a></td></tr>
+<tr class="memdesc:a07a990a6838de4f38ee9d881e7b9fd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">the reference tokens <br /></td></tr>
+<tr class="separator:a07a990a6838de4f38ee9d881e7b9fd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ada3100cdb8700566051828f1355fa745"><td class="memItemLeft" align="right" valign="top"><a id="ada3100cdb8700566051828f1355fa745"></a>
@@ -129,7 +183,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>basic_json</b></td><
 <tr class="memitem:a926c9065dbed1bedc17857a813f7a46f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a926c9065dbed1bedc17857a813f7a46f">operator/</a> (const <a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;ptr, std::string token)</td></tr>
 <tr class="memdesc:a926c9065dbed1bedc17857a813f7a46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new JSON pointer by appending the unescaped token at the end of the JSON pointer  <a href="#a926c9065dbed1bedc17857a813f7a46f">More...</a><br /></td></tr>
 <tr class="separator:a926c9065dbed1bedc17857a813f7a46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f6bc6f4d4668b4e9a19d8b8ac29da4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a9f6bc6f4d4668b4e9a19d8b8ac29da4f">operator/</a> (const <a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;ptr, std::size_t array_index)</td></tr>
+<tr class="memitem:a9f6bc6f4d4668b4e9a19d8b8ac29da4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a9f6bc6f4d4668b4e9a19d8b8ac29da4f">operator/</a> (const <a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> &amp;ptr, std::size_t <a class="el" href="classnlohmann_1_1json__pointer.html#ac53f5b79dd91da78743c437832f57ce4">array_index</a>)</td></tr>
 <tr class="memdesc:a9f6bc6f4d4668b4e9a19d8b8ac29da4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new JSON pointer by appending the array-index-token at the end of the JSON pointer  <a href="#a9f6bc6f4d4668b4e9a19d8b8ac29da4f">More...</a><br /></td></tr>
 <tr class="separator:a9f6bc6f4d4668b4e9a19d8b8ac29da4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4667ef558c8c3f8a646bfda0c6654653"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1json__pointer.html#a4667ef558c8c3f8a646bfda0c6654653">operator==</a> (<a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> const &amp;lhs, <a class="el" href="classnlohmann_1_1json__pointer.html">json_pointer</a> const &amp;rhs) noexcept</td></tr>
@@ -195,6 +249,47 @@ template&lt;typename BasicJsonType &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac53f5b79dd91da78743c437832f57ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53f5b79dd91da78743c437832f57ce4">&#9670;&nbsp;</a></span>array_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::array_index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>reference token to be converted into an array index</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>integer representation of <em>s</em> </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">out_of_range.404</td><td>if string <em>s</em> could not be converted to an integer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a213bc67c32a30c68ac6bf06f5195d482"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a213bc67c32a30c68ac6bf06f5195d482">&#9670;&nbsp;</a></span>back()</h2>
 
@@ -235,6 +330,41 @@ template&lt;typename BasicJsonType &gt; </div>
 
 </div>
 </div>
+<a id="a90d38e45e2d3add52d824bc55da8f772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d38e45e2d3add52d824bc55da8f772">&#9670;&nbsp;</a></span>contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype">const BasicJsonType *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.106</td><td>if an array index begins with '0' </td></tr>
+    <tr><td class="paramname">parse_error.109</td><td>if an array index was not a number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a649252bda4a2e75a0915b11a25d8bcc3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a649252bda4a2e75a0915b11a25d8bcc3">&#9670;&nbsp;</a></span>empty()</h2>
 
@@ -266,6 +396,264 @@ template&lt;typename BasicJsonType &gt; </div>
 <p>No-throw guarantee: this function never throws exceptions.</p>
 <p>{The example shows the result of <code>empty</code> for different JSON Pointers.,json_pointer__empty}</p>
 <dl class="section since"><dt>Since</dt><dd>version 3.6.0 </dd></dl>
+
+</div>
+</div>
+<a id="ab0d7759d0caa6a0c0187916da28e6ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0d7759d0caa6a0c0187916da28e6ee7">&#9670;&nbsp;</a></span>flatten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::flatten </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reference_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">reference_string</td><td>the reference string to the current value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>the value to consider </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">result</td><td>the result object to insert values to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Empty objects or arrays are flattened to <code>null</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a583c726016f440ffe65553935c101ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583c726016f440ffe65553935c101ff5">&#9670;&nbsp;</a></span>get_and_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType&amp; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::get_and_create </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>j</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create and return a reference to the pointed to value </p>
+<p>Linear in the number of reference tokens.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.109</td><td>if array index is not a number </td></tr>
+    <tr><td class="paramname">type_error.313</td><td>if value cannot be unflattened </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a366d68a67e40d86676d3bdb52e167294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366d68a67e40d86676d3bdb52e167294">&#9670;&nbsp;</a></span>get_checked() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType&amp; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::get_checked </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.106</td><td>if an array index begins with '0' </td></tr>
+    <tr><td class="paramname">parse_error.109</td><td>if an array index was not a number </td></tr>
+    <tr><td class="paramname">out_of_range.402</td><td>if the array index '-' is used </td></tr>
+    <tr><td class="paramname">out_of_range.404</td><td>if the JSON pointer can not be resolved </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55a5bbbc3007e479607304a3e8cb9bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a5bbbc3007e479607304a3e8cb9bf5">&#9670;&nbsp;</a></span>get_checked() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const BasicJsonType&amp; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::get_checked </td>
+          <td>(</td>
+          <td class="paramtype">const BasicJsonType *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.106</td><td>if an array index begins with '0' </td></tr>
+    <tr><td class="paramname">parse_error.109</td><td>if an array index was not a number </td></tr>
+    <tr><td class="paramname">out_of_range.402</td><td>if the array index '-' is used </td></tr>
+    <tr><td class="paramname">out_of_range.404</td><td>if the JSON pointer can not be resolved </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a577512ee6b7f030e8872b4d29fa5c3e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577512ee6b7f030e8872b4d29fa5c3e5">&#9670;&nbsp;</a></span>get_unchecked() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType&amp; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::get_unchecked </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return a reference to the pointed to value </p>
+<dl class="section note"><dt>Note</dt><dd>This version does not throw if a value is not present, but tries to create nested values instead. For instance, calling this function with pointer <code>"/this/that"</code> on a null value is equivalent to calling <code>operator[]("this").operator[]("that")</code> on that value, effectively changing the null value to an object.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>a JSON value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>reference to the JSON value pointed to by the JSON pointer</dd></dl>
+<p>Linear in the length of the JSON pointer.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.106</td><td>if an array index begins with '0' </td></tr>
+    <tr><td class="paramname">parse_error.109</td><td>if an array index was not a number </td></tr>
+    <tr><td class="paramname">out_of_range.404</td><td>if the JSON pointer can not be resolved </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6a01f8e1556eef68e5a49b33fef1548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a01f8e1556eef68e5a49b33fef1548">&#9670;&nbsp;</a></span>get_unchecked() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const BasicJsonType&amp; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::get_unchecked </td>
+          <td>(</td>
+          <td class="paramtype">const BasicJsonType *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>return a const reference to the pointed to value </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>a JSON value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>const reference to the JSON value pointed to by the JSON pointer</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.106</td><td>if an array index begins with '0' </td></tr>
+    <tr><td class="paramname">parse_error.109</td><td>if an array index was not a number </td></tr>
+    <tr><td class="paramname">out_of_range.402</td><td>if the array index '-' is used </td></tr>
+    <tr><td class="paramname">out_of_range.404</td><td>if the JSON pointer can not be resolved </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -587,6 +975,100 @@ template&lt;typename BasicJsonType &gt; </div>
 
 </div>
 </div>
+<a id="aa7649d30da9fc10b0e20704a27aea2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7649d30da9fc10b0e20704a27aea2a9">&#9670;&nbsp;</a></span>replace_substring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::replace_substring </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>replace all occurrences of a substring by another string </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">s</td><td>the string to manipulate; changed so that all occurrences of <em>f</em> are replaced with <em>t</em> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>the substring to replace with <em>t</em> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>the string to replace <em>f</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>The search string <em>f</em> must not be empty. <b>This precondition is enforced with an assertion.</b></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>version 2.0.0 </dd></dl>
+
+</div>
+</div>
+<a id="ae01c32c6a071c2e5198d5dfcce290e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01c32c6a071c2e5198d5dfcce290e50">&#9670;&nbsp;</a></span>split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;std::string&gt; <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::split </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reference_string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>split the string input to reference tokens </p>
+<dl class="section note"><dt>Note</dt><dd>This function is only called by the <a class="el" href="classnlohmann_1_1json__pointer.html" title="JSON Pointer. ">json_pointer</a> constructor. All exceptions below are documented there.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.107</td><td>if the pointer is not empty or begins with '/' </td></tr>
+    <tr><td class="paramname">parse_error.108</td><td>if character '~' is not followed by '0' or '1' </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3d4b15d32d096e3776c5d2c773b524f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d4b15d32d096e3776c5d2c773b524f5">&#9670;&nbsp;</a></span>to_string()</h2>
 
@@ -617,6 +1099,50 @@ template&lt;typename BasicJsonType &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>a string representation of the JSON pointer</dd></dl>
 <p>{The example shows the result of <code>to_string</code>.,json_pointer__to_string}</p>
 <dl class="section since"><dt>Since</dt><dd>version 2.0.0 </dd></dl>
+
+</div>
+</div>
+<a id="a920065221e3c81676c3211c100d024a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920065221e3c81676c3211c100d024a7">&#9670;&nbsp;</a></span>unflatten()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static BasicJsonType <a class="el" href="classnlohmann_1_1json__pointer.html">nlohmann::json_pointer</a>&lt; BasicJsonType &gt;::unflatten </td>
+          <td>(</td>
+          <td class="paramtype">const BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>flattened JSON</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unflattened JSON</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.109</td><td>if array index is not a number </td></tr>
+    <tr><td class="paramname">type_error.314</td><td>if value is not an object </td></tr>
+    <tr><td class="paramname">type_error.315</td><td>if object values are not primitive </td></tr>
+    <tr><td class="paramname">type_error.313</td><td>if value cannot be unflattened </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

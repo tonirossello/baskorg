@@ -1,0 +1,255 @@
+\hypertarget{classclub}{}\section{club Class Reference}
+\label{classclub}\index{club@{club}}
+
+
+Clase club.  
+
+
+
+
+{\ttfamily \#include $<$club.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclub_a90226b5a0fe26735578eb5174ebd01ca}\label{classclub_a90226b5a0fe26735578eb5174ebd01ca}} 
+{\bfseries club} (Q\+Sql\+Database $\ast$db)
+\item 
+Q\+String \mbox{\hyperlink{classclub_a4a0112cb510ec1e3ec29957f0bb6a873}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el nombre del club. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classclub_ac6e69f12ebd2a446f942860bf08fd1fa}{get\+Club\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el id del club. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classclub_acc2da4046baef9b45398997c1769539a}{get\+Codi}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el código del club. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{classclub_a06ce786578d87f7e15f5372f043f6050}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el color del club. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classclub_a4f67353b1c96f0d89cc1e9ae2e33ba51}{get\+Id\+Propietari}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el propietario del club. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclub_a7c1e4e25822c9e54407dcad080e8c59a}{set\+Name}} (Q\+String name)
+\begin{DoxyCompactList}\small\item\em Modificar el nombre del club. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclub_af845385d60a9833c6c9ce50929a134a8}{set\+Codi}} (Q\+String codi)
+\begin{DoxyCompactList}\small\item\em Modificar el código del club. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclub_ac29fce99b2429c5645a85c595528fc9a}{set\+Color}} (Q\+String color)
+\begin{DoxyCompactList}\small\item\em Modificar el color del club. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclub_ae1e13f2514221a45c7d566bbad4bd188}{set\+Id\+Propietario}} (int get\+Id\+Propietario)
+\begin{DoxyCompactList}\small\item\em Modificar el propietario del club. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classclub_a88805452e8d11cbe90d377321ec40779}{save}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza o inserta un nuevo club a la B\+B\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classclub_a689d67e008113cbb123c5f0c4c19166e}{load}} (int id)
+\begin{DoxyCompactList}\small\item\em Carga los datos de un club en el objeto club. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclub_a10157a609edf98fe5ce66a4974cdea84}\label{classclub_a10157a609edf98fe5ce66a4974cdea84}} 
+Q\+Sql\+Database $\ast$ {\bfseries m\+\_\+db}
+\item 
+int \mbox{\hyperlink{classclub_a903a48e2c7351cac51ecbf416f905d6e}{m\+\_\+id\+Club}} = 0
+\item 
+Q\+String \mbox{\hyperlink{classclub_a5662adc7efe68e0cdfb873137d8ed019}{m\+\_\+name}}
+\item 
+Q\+String \mbox{\hyperlink{classclub_ade18982a1b4b4a30ca9317bd9490dd7d}{m\+\_\+codi}}
+\item 
+Q\+String \mbox{\hyperlink{classclub_ae8238bd2abbdd6fef94f03c2d7c846b1}{m\+\_\+color}}
+\item 
+int \mbox{\hyperlink{classclub_ab1d8565c370614f5903c2cc199216af9}{m\+\_\+propietario}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Clase club. 
+
+La clase club hace referencia a la tabla \textquotesingle{}clubs\textquotesingle{} de la B\+B\+DD. Encontramos las funciones correspodientes para poder cargar, crear y actualizar nuevos registros en esta tabla. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classclub_ac6e69f12ebd2a446f942860bf08fd1fa}\label{classclub_ac6e69f12ebd2a446f942860bf08fd1fa}} 
+\index{club@{club}!get\+Club\+Id@{get\+Club\+Id}}
+\index{get\+Club\+Id@{get\+Club\+Id}!club@{club}}
+\subsubsection{\texorpdfstring{get\+Club\+Id()}{getClubId()}}
+{\footnotesize\ttfamily int club\+::get\+Club\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el id del club. 
+
+\begin{DoxyReturn}{Returns}
+Id del club 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_acc2da4046baef9b45398997c1769539a}\label{classclub_acc2da4046baef9b45398997c1769539a}} 
+\index{club@{club}!get\+Codi@{get\+Codi}}
+\index{get\+Codi@{get\+Codi}!club@{club}}
+\subsubsection{\texorpdfstring{get\+Codi()}{getCodi()}}
+{\footnotesize\ttfamily Q\+String club\+::get\+Codi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el código del club. 
+
+\begin{DoxyReturn}{Returns}
+Código del club 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_a06ce786578d87f7e15f5372f043f6050}\label{classclub_a06ce786578d87f7e15f5372f043f6050}} 
+\index{club@{club}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!club@{club}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily Q\+String club\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el color del club. 
+
+\begin{DoxyReturn}{Returns}
+Color del club 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_a4f67353b1c96f0d89cc1e9ae2e33ba51}\label{classclub_a4f67353b1c96f0d89cc1e9ae2e33ba51}} 
+\index{club@{club}!get\+Id\+Propietari@{get\+Id\+Propietari}}
+\index{get\+Id\+Propietari@{get\+Id\+Propietari}!club@{club}}
+\subsubsection{\texorpdfstring{get\+Id\+Propietari()}{getIdPropietari()}}
+{\footnotesize\ttfamily int club\+::get\+Id\+Propietari (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el propietario del club. 
+
+\begin{DoxyReturn}{Returns}
+Id del propietario del club 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_a4a0112cb510ec1e3ec29957f0bb6a873}\label{classclub_a4a0112cb510ec1e3ec29957f0bb6a873}} 
+\index{club@{club}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!club@{club}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily Q\+String club\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el nombre del club. 
+
+\begin{DoxyReturn}{Returns}
+Nombre del club 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_a689d67e008113cbb123c5f0c4c19166e}\label{classclub_a689d67e008113cbb123c5f0c4c19166e}} 
+\index{club@{club}!load@{load}}
+\index{load@{load}!club@{club}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void club\+::load (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Carga los datos de un club en el objeto club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & --$>$ id del club a cargar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classclub_a88805452e8d11cbe90d377321ec40779}\label{classclub_a88805452e8d11cbe90d377321ec40779}} 
+\index{club@{club}!save@{save}}
+\index{save@{save}!club@{club}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool club\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Actualiza o inserta un nuevo club a la B\+B\+DD. 
+
+\begin{DoxyReturn}{Returns}
+Si se ha realizado la consulta sin errores 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classclub_af845385d60a9833c6c9ce50929a134a8}\label{classclub_af845385d60a9833c6c9ce50929a134a8}} 
+\index{club@{club}!set\+Codi@{set\+Codi}}
+\index{set\+Codi@{set\+Codi}!club@{club}}
+\subsubsection{\texorpdfstring{set\+Codi()}{setCodi()}}
+{\footnotesize\ttfamily void club\+::set\+Codi (\begin{DoxyParamCaption}\item[{Q\+String}]{codi }\end{DoxyParamCaption})}
+
+
+
+Modificar el código del club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codi} & --$>$ Nuevo código del club \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classclub_ac29fce99b2429c5645a85c595528fc9a}\label{classclub_ac29fce99b2429c5645a85c595528fc9a}} 
+\index{club@{club}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!club@{club}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void club\+::set\+Color (\begin{DoxyParamCaption}\item[{Q\+String}]{color }\end{DoxyParamCaption})}
+
+
+
+Modificar el color del club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & --$>$ Nuevo color del club \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classclub_ae1e13f2514221a45c7d566bbad4bd188}\label{classclub_ae1e13f2514221a45c7d566bbad4bd188}} 
+\index{club@{club}!set\+Id\+Propietario@{set\+Id\+Propietario}}
+\index{set\+Id\+Propietario@{set\+Id\+Propietario}!club@{club}}
+\subsubsection{\texorpdfstring{set\+Id\+Propietario()}{setIdPropietario()}}
+{\footnotesize\ttfamily void club\+::set\+Id\+Propietario (\begin{DoxyParamCaption}\item[{int}]{id\+Propietario }\end{DoxyParamCaption})}
+
+
+
+Modificar el propietario del club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Propietario} & --$>$ Nuevo propietario del club \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classclub_a7c1e4e25822c9e54407dcad080e8c59a}\label{classclub_a7c1e4e25822c9e54407dcad080e8c59a}} 
+\index{club@{club}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!club@{club}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void club\+::set\+Name (\begin{DoxyParamCaption}\item[{Q\+String}]{name }\end{DoxyParamCaption})}
+
+
+
+Modificar el nombre del club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & --$>$ Nuevo nombre del club \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classclub_ade18982a1b4b4a30ca9317bd9490dd7d}\label{classclub_ade18982a1b4b4a30ca9317bd9490dd7d}} 
+\index{club@{club}!m\+\_\+codi@{m\+\_\+codi}}
+\index{m\+\_\+codi@{m\+\_\+codi}!club@{club}}
+\subsubsection{\texorpdfstring{m\+\_\+codi}{m\_codi}}
+{\footnotesize\ttfamily Q\+String club\+::m\+\_\+codi\hspace{0.3cm}{\ttfamily [private]}}
+
+Código del club. \mbox{\Hypertarget{classclub_ae8238bd2abbdd6fef94f03c2d7c846b1}\label{classclub_ae8238bd2abbdd6fef94f03c2d7c846b1}} 
+\index{club@{club}!m\+\_\+color@{m\+\_\+color}}
+\index{m\+\_\+color@{m\+\_\+color}!club@{club}}
+\subsubsection{\texorpdfstring{m\+\_\+color}{m\_color}}
+{\footnotesize\ttfamily Q\+String club\+::m\+\_\+color\hspace{0.3cm}{\ttfamily [private]}}
+
+Color del club. \mbox{\Hypertarget{classclub_a903a48e2c7351cac51ecbf416f905d6e}\label{classclub_a903a48e2c7351cac51ecbf416f905d6e}} 
+\index{club@{club}!m\+\_\+id\+Club@{m\+\_\+id\+Club}}
+\index{m\+\_\+id\+Club@{m\+\_\+id\+Club}!club@{club}}
+\subsubsection{\texorpdfstring{m\+\_\+id\+Club}{m\_idClub}}
+{\footnotesize\ttfamily int club\+::m\+\_\+id\+Club = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+Id del club. \mbox{\Hypertarget{classclub_a5662adc7efe68e0cdfb873137d8ed019}\label{classclub_a5662adc7efe68e0cdfb873137d8ed019}} 
+\index{club@{club}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!club@{club}}
+\subsubsection{\texorpdfstring{m\+\_\+name}{m\_name}}
+{\footnotesize\ttfamily Q\+String club\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+Nombre del club. \mbox{\Hypertarget{classclub_ab1d8565c370614f5903c2cc199216af9}\label{classclub_ab1d8565c370614f5903c2cc199216af9}} 
+\index{club@{club}!m\+\_\+propietario@{m\+\_\+propietario}}
+\index{m\+\_\+propietario@{m\+\_\+propietario}!club@{club}}
+\subsubsection{\texorpdfstring{m\+\_\+propietario}{m\_propietario}}
+{\footnotesize\ttfamily int club\+::m\+\_\+propietario\hspace{0.3cm}{\ttfamily [private]}}
+
+Id del propietario del club. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{club_8h}{club.\+h}}\item 
+\mbox{\hyperlink{club_8cpp}{club.\+cpp}}\end{DoxyCompactItemize}

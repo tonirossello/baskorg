@@ -38,6 +38,54 @@ bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc9
 \mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}\label{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}} 
 {\footnotesize template$<$typename S\+AX $>$ }\\bool {\bfseries sax\+\_\+parse} (S\+AX $\ast$sax, const bool \mbox{\hyperlink{namespacenlohmann_1_1detail_a5a76b60b26dc8c47256a996d18d967dfa2133fd717402a7966ee88d06f9e0b792}{strict}}=true)
 \end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}\label{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}} 
+using {\bfseries number\+\_\+integer\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}\label{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}} 
+using {\bfseries number\+\_\+unsigned\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}\label{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}} 
+using {\bfseries number\+\_\+float\+\_\+t} = typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}\label{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}} 
+using {\bfseries string\+\_\+t} = typename Basic\+Json\+Type\+::string\+\_\+t
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}\label{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}} 
+using {\bfseries lexer\+\_\+t} = \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}}$<$ Basic\+Json\+Type $>$
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}\label{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}} 
+using {\bfseries token\+\_\+type} = typename \mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{lexer\+\_\+t\+::token\+\_\+type}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}\label{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}} 
+{\footnotesize template$<$typename S\+AX $>$ }\\bool {\bfseries sax\+\_\+parse\+\_\+internal} (S\+AX $\ast$sax)
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}\label{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}} 
+token\+\_\+type \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}{get\+\_\+token}} ()
+\begin{DoxyCompactList}\small\item\em get next token from lexer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}\label{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}} 
+\mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{std\+::string}} {\bfseries exception\+\_\+message} (const token\+\_\+type expected, const \mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{std\+::string}} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}\label{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}} 
+const parser\+\_\+callback\+\_\+t \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}{callback}} = nullptr
+\begin{DoxyCompactList}\small\item\em callback function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}\label{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}} 
+token\+\_\+type \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}{last\+\_\+token}} = token\+\_\+type\+::uninitialized
+\begin{DoxyCompactList}\small\item\em the type of the last read token \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}\label{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}} 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer\+\_\+t}} \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}{m\+\_\+lexer}}
+\begin{DoxyCompactList}\small\item\em the lexer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}\label{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}} 
+const bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}{allow\+\_\+exceptions}} = true
+\begin{DoxyCompactList}\small\item\em whether to throw exceptions in case of errors \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

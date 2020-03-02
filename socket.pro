@@ -5,6 +5,11 @@ QT += sql
 CONFIG += c++11 console
 CONFIG -= app_bundle
 
+
+TRANSLATIONS += my_app_ca_ES.ts
+TRANSLATIONS += my_app_es_ES.ts
+TRANSLATIONS += my_app_en_US.ts
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -20,9 +25,10 @@ SOURCES += \
         main.cpp \
     jugador.cpp \
     club.cpp \
-    usuari.cpp
+    usuari.cpp \
+    app.cpp
 
-LIBS += -pthread -lz -lssl -lcrypto
+LIBS += -pthread -lz -lssl -lcrypto -lixwebsocket
 
 
 # Default rules for deployment.
@@ -48,4 +54,5 @@ HEADERS += \
     json.hpp \
     jugador.h \
     club.h \
-    usuari.h
+    usuari.h \
+    app.h

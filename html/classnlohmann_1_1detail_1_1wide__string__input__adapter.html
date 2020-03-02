@@ -67,6 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1wide__string__input__adapter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::wide_string_input_adapter&lt; WideStringType &gt; Class Template Reference</div>  </div>
@@ -91,6 +93,36 @@ Public Member Functions</h2></td></tr>
 std::char_traits&lt; char &gt;::int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#abb62b34cf77e557ce5321b7f2490c3b0">get_character</a> () noexcept override</td></tr>
 <tr class="memdesc:abb62b34cf77e557ce5321b7f2490c3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a character [0,255] or std::char_traits&lt;char&gt;::eof(). <br /></td></tr>
 <tr class="separator:abb62b34cf77e557ce5321b7f2490c3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab718e44c524fa7ec74b0a0ae1ad64ca4"><td class="memTemplParams" colspan="2"><a id="ab718e44c524fa7ec74b0a0ae1ad64ca4"></a>
+template&lt;size_t T&gt; </td></tr>
+<tr class="memitem:ab718e44c524fa7ec74b0a0ae1ad64ca4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>fill_buffer</b> ()</td></tr>
+<tr class="separator:ab718e44c524fa7ec74b0a0ae1ad64ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a30fcb522f072d58eb0fb52cfb784e9c9"><td class="memItemLeft" align="right" valign="top"><a id="a30fcb522f072d58eb0fb52cfb784e9c9"></a>
+const WideStringType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a30fcb522f072d58eb0fb52cfb784e9c9">str</a></td></tr>
+<tr class="memdesc:a30fcb522f072d58eb0fb52cfb784e9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">the wstring to process <br /></td></tr>
+<tr class="separator:a30fcb522f072d58eb0fb52cfb784e9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196fe1fb07310dc8c2ca3a0a9ef9b27a"><td class="memItemLeft" align="right" valign="top"><a id="a196fe1fb07310dc8c2ca3a0a9ef9b27a"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a196fe1fb07310dc8c2ca3a0a9ef9b27a">current_wchar</a> = 0</td></tr>
+<tr class="memdesc:a196fe1fb07310dc8c2ca3a0a9ef9b27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">index of the current wchar in str <br /></td></tr>
+<tr class="separator:a196fe1fb07310dc8c2ca3a0a9ef9b27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0854ae66725357d074912379a235128"><td class="memItemLeft" align="right" valign="top"><a id="af0854ae66725357d074912379a235128"></a>
+<a class="el" href="namespacenlohmann_1_1detail.html#a1ed8fc6239da25abcaf681d30ace4985af1f713c9e000f5d3f280adbd124df4f5">std::array</a>&lt; std::char_traits&lt; char &gt;::int_type, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#af0854ae66725357d074912379a235128">utf8_bytes</a> = {{0, 0, 0, 0}}</td></tr>
+<tr class="memdesc:af0854ae66725357d074912379a235128"><td class="mdescLeft">&#160;</td><td class="mdescRight">a buffer for UTF-8 bytes <br /></td></tr>
+<tr class="separator:af0854ae66725357d074912379a235128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d87bc3e8b427e06cda936383283e0c4"><td class="memItemLeft" align="right" valign="top"><a id="a6d87bc3e8b427e06cda936383283e0c4"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a6d87bc3e8b427e06cda936383283e0c4">utf8_bytes_index</a> = 0</td></tr>
+<tr class="memdesc:a6d87bc3e8b427e06cda936383283e0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">index to the utf8_codes array for the next valid byte <br /></td></tr>
+<tr class="separator:a6d87bc3e8b427e06cda936383283e0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc33bf0974526336e53ea530c7097ff"><td class="memItemLeft" align="right" valign="top"><a id="a9fc33bf0974526336e53ea530c7097ff"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a9fc33bf0974526336e53ea530c7097ff">utf8_bytes_filled</a> = 0</td></tr>
+<tr class="memdesc:a9fc33bf0974526336e53ea530c7097ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of valid bytes in the utf8_codes array <br /></td></tr>
+<tr class="separator:a9fc33bf0974526336e53ea530c7097ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="json_8hpp_source.html">json.hpp</a></li>

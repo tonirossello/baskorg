@@ -68,6 +68,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1json__sax__dom__parser-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::json_sax_dom_parser&lt; BasicJsonType &gt; Class Template Reference</div>  </div>
@@ -149,6 +151,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>parse_error</b> (std:
 <tr class="memitem:ad1b9f3681fadbbb2e0127f5c8a99c662"><td class="memItemLeft" align="right" valign="top"><a id="ad1b9f3681fadbbb2e0127f5c8a99c662"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_errored</b> () const</td></tr>
 <tr class="separator:ad1b9f3681fadbbb2e0127f5c8a99c662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa1a5e21be350727cf61a101aa5c6796e"><td class="memTemplParams" colspan="2">template&lt;typename Value &gt; </td></tr>
+<tr class="memitem:aa1a5e21be350727cf61a101aa5c6796e"><td class="memTemplItemLeft" align="right" valign="top">JSON_HEDLEY_RETURNS_NON_NULL BasicJsonType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#aa1a5e21be350727cf61a101aa5c6796e">handle_value</a> (Value &amp;&amp;v)</td></tr>
+<tr class="separator:aa1a5e21be350727cf61a101aa5c6796e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aef0477277389e399d7128898841b71c0"><td class="memItemLeft" align="right" valign="top"><a id="aef0477277389e399d7128898841b71c0"></a>
+BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#aef0477277389e399d7128898841b71c0">root</a></td></tr>
+<tr class="memdesc:aef0477277389e399d7128898841b71c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">the parsed JSON value <br /></td></tr>
+<tr class="separator:aef0477277389e399d7128898841b71c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7526e7ae7be7f63803a23fd8cf36e5d"><td class="memItemLeft" align="right" valign="top"><a id="aa7526e7ae7be7f63803a23fd8cf36e5d"></a>
+std::vector&lt; BasicJsonType * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#aa7526e7ae7be7f63803a23fd8cf36e5d">ref_stack</a> {}</td></tr>
+<tr class="memdesc:aa7526e7ae7be7f63803a23fd8cf36e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack to model hierarchy of values <br /></td></tr>
+<tr class="separator:aa7526e7ae7be7f63803a23fd8cf36e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c03c76d3a8e89c8928097ba0b92c2db"><td class="memItemLeft" align="right" valign="top"><a id="a9c03c76d3a8e89c8928097ba0b92c2db"></a>
+BasicJsonType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#a9c03c76d3a8e89c8928097ba0b92c2db">object_element</a> = nullptr</td></tr>
+<tr class="memdesc:a9c03c76d3a8e89c8928097ba0b92c2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper to hold the reference for the next object element <br /></td></tr>
+<tr class="separator:a9c03c76d3a8e89c8928097ba0b92c2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ccb472ed855e2f2370fd091d91aad7"><td class="memItemLeft" align="right" valign="top"><a id="a31ccb472ed855e2f2370fd091d91aad7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#a31ccb472ed855e2f2370fd091d91aad7">errored</a> = false</td></tr>
+<tr class="memdesc:a31ccb472ed855e2f2370fd091d91aad7"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether a syntax error occurred <br /></td></tr>
+<tr class="separator:a31ccb472ed855e2f2370fd091d91aad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0953e8d888339421d909d9016bc6e2c"><td class="memItemLeft" align="right" valign="top"><a id="ad0953e8d888339421d909d9016bc6e2c"></a>
+const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html#ad0953e8d888339421d909d9016bc6e2c">allow_exceptions</a> = true</td></tr>
+<tr class="memdesc:ad0953e8d888339421d909d9016bc6e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to throw exceptions in case of errors <br /></td></tr>
+<tr class="separator:ad0953e8d888339421d909d9016bc6e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename BasicJsonType&gt;<br />
@@ -206,6 +237,40 @@ template&lt;typename BasicJsonType&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1a5e21be350727cf61a101aa5c6796e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a5e21be350727cf61a101aa5c6796e">&#9670;&nbsp;</a></span>handle_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType&gt; </div>
+<div class="memtemplate">
+template&lt;typename Value &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JSON_HEDLEY_RETURNS_NON_NULL BasicJsonType* <a class="el" href="classnlohmann_1_1detail_1_1json__sax__dom__parser.html">nlohmann::detail::json_sax_dom_parser</a>&lt; BasicJsonType &gt;::handle_value </td>
+          <td>(</td>
+          <td class="paramtype">Value &amp;&amp;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section invariant"><dt>Invariant</dt><dd>If the ref stack is empty, then the passed value will be the new root. </dd>
+<dd>
+If the ref stack contains a value, then it is an array or an object to which we can add elements </dd></dl>
 
 </div>
 </div>

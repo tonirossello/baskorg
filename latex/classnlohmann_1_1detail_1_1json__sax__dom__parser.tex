@@ -80,6 +80,29 @@ bool {\bfseries parse\+\_\+error} (std\+::size\+\_\+t, const \mbox{\hyperlink{na
 \mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_ad1b9f3681fadbbb2e0127f5c8a99c662}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_ad1b9f3681fadbbb2e0127f5c8a99c662}} 
 constexpr bool {\bfseries is\+\_\+errored} () const
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Value $>$ }\\J\+S\+O\+N\+\_\+\+H\+E\+D\+L\+E\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+S\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL Basic\+Json\+Type $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa1a5e21be350727cf61a101aa5c6796e}{handle\+\_\+value}} (Value \&\&v)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_aef0477277389e399d7128898841b71c0}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_aef0477277389e399d7128898841b71c0}} 
+Basic\+Json\+Type \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_aef0477277389e399d7128898841b71c0}{root}}
+\begin{DoxyCompactList}\small\item\em the parsed J\+S\+ON value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa7526e7ae7be7f63803a23fd8cf36e5d}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa7526e7ae7be7f63803a23fd8cf36e5d}} 
+std\+::vector$<$ Basic\+Json\+Type $\ast$ $>$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa7526e7ae7be7f63803a23fd8cf36e5d}{ref\+\_\+stack}} \{\}
+\begin{DoxyCompactList}\small\item\em stack to model hierarchy of values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_a9c03c76d3a8e89c8928097ba0b92c2db}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_a9c03c76d3a8e89c8928097ba0b92c2db}} 
+Basic\+Json\+Type $\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_a9c03c76d3a8e89c8928097ba0b92c2db}{object\+\_\+element}} = nullptr
+\begin{DoxyCompactList}\small\item\em helper to hold the reference for the next object element \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_a31ccb472ed855e2f2370fd091d91aad7}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_a31ccb472ed855e2f2370fd091d91aad7}} 
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_a31ccb472ed855e2f2370fd091d91aad7}{errored}} = false
+\begin{DoxyCompactList}\small\item\em whether a syntax error occurred \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_ad0953e8d888339421d909d9016bc6e2c}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_ad0953e8d888339421d909d9016bc6e2c}} 
+const bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser_ad0953e8d888339421d909d9016bc6e2c}{allow\+\_\+exceptions}} = true
+\begin{DoxyCompactList}\small\item\em whether to throw exceptions in case of errors \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -114,6 +137,22 @@ After successful parsing, the value that is passed by reference to the construct
 \mbox{\tt in}  & {\em allow\+\_\+exceptions\+\_\+} & whether parse errors yield exceptions \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa1a5e21be350727cf61a101aa5c6796e}\label{classnlohmann_1_1detail_1_1json__sax__dom__parser_aa1a5e21be350727cf61a101aa5c6796e}} 
+\index{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+parser@{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+parser}!handle\+\_\+value@{handle\+\_\+value}}
+\index{handle\+\_\+value@{handle\+\_\+value}!nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+parser@{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+parser}}
+\subsubsection{\texorpdfstring{handle\+\_\+value()}{handle\_value()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type$>$ \\
+template$<$typename Value $>$ \\
+J\+S\+O\+N\+\_\+\+H\+E\+D\+L\+E\+Y\+\_\+\+R\+E\+T\+U\+R\+N\+S\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL Basic\+Json\+Type$\ast$ \mbox{\hyperlink{classnlohmann_1_1detail_1_1json__sax__dom__parser}{nlohmann\+::detail\+::json\+\_\+sax\+\_\+dom\+\_\+parser}}$<$ Basic\+Json\+Type $>$\+::handle\+\_\+value (\begin{DoxyParamCaption}\item[{Value \&\&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\begin{DoxyInvariant}{Invariant}
+If the ref stack is empty, then the passed value will be the new root. 
+
+If the ref stack contains a value, then it is an array or an object to which we can add elements 
+\end{DoxyInvariant}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

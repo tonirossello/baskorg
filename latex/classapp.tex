@@ -1,0 +1,225 @@
+\hypertarget{classapp}{}\section{app Class Reference}
+\label{classapp}\index{app@{app}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classapp_ad4bae55c0e3beb4a4c65b9e9d657ab59}\label{classapp_ad4bae55c0e3beb4a4c65b9e9d657ab59}} 
+{\bfseries app} (Q\+Sql\+Database \&db, bool server\+\_\+on=true)
+\item 
+void \mbox{\hyperlink{classapp_a0bb96ab42618921392ac30e13444391c}{login}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Login en la aplicación. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classapp_a6642515de9db6d78f89d3969553be999}{user\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Creamos un usuario en la B\+B\+DD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classapp_afb7363d3bc58746f8c71425ba6050db1}{club\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Creamos un club en la B\+B\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_a6f44f304590371aa8aae2a2e7b504a64}{player\+Create}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Creamos un jugador en la B\+B\+DD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_aeddfad0a193f1b1c8581d31977ff4c10}{players\+List}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Respuesta J\+S\+ON con los jugadores del club. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_aacb1fe686708ce187073676232491baf}{clubs\+List}} (ix\+::\+Web\+Socket $\ast$web\+Socket, \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} received)
+\begin{DoxyCompactList}\small\item\em Respuesta J\+S\+ON con los clubes del usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_a93176ba428640e16ea767d95319ce0c2}{logout}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\begin{DoxyCompactList}\small\item\em Logout del usuario. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classapp_a42e2a44d3325daf63b3ec57b8921d1b5}{exists}} (const \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} \&json, const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Comprobar si J\+S\+ON contiene una clave. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classapp_a9d5d32bf19b4ae0a9c9d7fab8d87ac0f}{get\+Logueado}} ()
+\begin{DoxyCompactList}\small\item\em Getter de login. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classapp_af87506f90057b288a801f2a0d4c00ef4}{string2bool}} (const std\+::string \&v)
+\begin{DoxyCompactList}\small\item\em Convierte un string en booleano. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classapp_a28638f5d121e9e12247d69575bda5e6d}\label{classapp_a28638f5d121e9e12247d69575bda5e6d}} 
+using {\bfseries J\+S\+ON} = \mbox{\hyperlink{namespacenlohmann_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classapp_a68f450976044452caeb444182c5166ff}\label{classapp_a68f450976044452caeb444182c5166ff}} 
+Q\+Sql\+Database $\ast$ {\bfseries m\+\_\+db}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classapp_afb7363d3bc58746f8c71425ba6050db1}\label{classapp_afb7363d3bc58746f8c71425ba6050db1}} 
+\index{app@{app}!club\+Create@{club\+Create}}
+\index{club\+Create@{club\+Create}!app@{app}}
+\subsubsection{\texorpdfstring{club\+Create()}{clubCreate()}}
+{\footnotesize\ttfamily bool app\+::club\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Creamos un club en la B\+B\+DD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_aacb1fe686708ce187073676232491baf}\label{classapp_aacb1fe686708ce187073676232491baf}} 
+\index{app@{app}!clubs\+List@{clubs\+List}}
+\index{clubs\+List@{clubs\+List}!app@{app}}
+\subsubsection{\texorpdfstring{clubs\+List()}{clubsList()}}
+{\footnotesize\ttfamily void app\+::clubs\+List (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Respuesta J\+S\+ON con los clubes del usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_a42e2a44d3325daf63b3ec57b8921d1b5}\label{classapp_a42e2a44d3325daf63b3ec57b8921d1b5}} 
+\index{app@{app}!exists@{exists}}
+\index{exists@{exists}!app@{app}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool app\+::exists (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}} \&}]{json,  }\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Comprobar si J\+S\+ON contiene una clave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & --$>$ correspondiente J\+S\+ON \\
+\hline
+{\em key} & --$>$ clave a comprobar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+booleano para saber si la clave está o no en el J\+S\+ON 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classapp_a9d5d32bf19b4ae0a9c9d7fab8d87ac0f}\label{classapp_a9d5d32bf19b4ae0a9c9d7fab8d87ac0f}} 
+\index{app@{app}!get\+Logueado@{get\+Logueado}}
+\index{get\+Logueado@{get\+Logueado}!app@{app}}
+\subsubsection{\texorpdfstring{get\+Logueado()}{getLogueado()}}
+{\footnotesize\ttfamily bool app\+::get\+Logueado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter de login. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de g\+\_\+logueado 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classapp_a0bb96ab42618921392ac30e13444391c}\label{classapp_a0bb96ab42618921392ac30e13444391c}} 
+\index{app@{app}!login@{login}}
+\index{login@{login}!app@{app}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily void app\+::login (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Login en la aplicación. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_a93176ba428640e16ea767d95319ce0c2}\label{classapp_a93176ba428640e16ea767d95319ce0c2}} 
+\index{app@{app}!logout@{logout}}
+\index{logout@{logout}!app@{app}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily void app\+::logout (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+
+
+Logout del usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_a6f44f304590371aa8aae2a2e7b504a64}\label{classapp_a6f44f304590371aa8aae2a2e7b504a64}} 
+\index{app@{app}!player\+Create@{player\+Create}}
+\index{player\+Create@{player\+Create}!app@{app}}
+\subsubsection{\texorpdfstring{player\+Create()}{playerCreate()}}
+{\footnotesize\ttfamily void app\+::player\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Creamos un jugador en la B\+B\+DD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_aeddfad0a193f1b1c8581d31977ff4c10}\label{classapp_aeddfad0a193f1b1c8581d31977ff4c10}} 
+\index{app@{app}!players\+List@{players\+List}}
+\index{players\+List@{players\+List}!app@{app}}
+\subsubsection{\texorpdfstring{players\+List()}{playersList()}}
+{\footnotesize\ttfamily void app\+::players\+List (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Respuesta J\+S\+ON con los jugadores del club. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_af87506f90057b288a801f2a0d4c00ef4}\label{classapp_af87506f90057b288a801f2a0d4c00ef4}} 
+\index{app@{app}!string2bool@{string2bool}}
+\index{string2bool@{string2bool}!app@{app}}
+\subsubsection{\texorpdfstring{string2bool()}{string2bool()}}
+{\footnotesize\ttfamily bool app\+::string2bool (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Convierte un string en booleano. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & --$>$ string a convertir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool --$>$ booleano convertido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classapp_a6642515de9db6d78f89d3969553be999}\label{classapp_a6642515de9db6d78f89d3969553be999}} 
+\index{app@{app}!user\+Create@{user\+Create}}
+\index{user\+Create@{user\+Create}!app@{app}}
+\subsubsection{\texorpdfstring{user\+Create()}{userCreate()}}
+{\footnotesize\ttfamily bool app\+::user\+Create (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{\mbox{\hyperlink{classnlohmann_1_1basic__json}{J\+S\+ON}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Creamos un usuario en la B\+B\+DD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+booleano que confirmar si la operación se ha podido realizar o no 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+app.\+h\item 
+app.\+cpp\end{DoxyCompactItemize}

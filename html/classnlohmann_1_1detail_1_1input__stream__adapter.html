@@ -67,6 +67,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classnlohmann_1_1detail_1_1input__stream__adapter-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">nlohmann::detail::input_stream_adapter Class Reference</div>  </div>
@@ -105,6 +106,16 @@ Public Member Functions</h2></td></tr>
 std::char_traits&lt; char &gt;::int_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1input__stream__adapter.html#ae0760af923583de6354725e901d1869d">get_character</a> () override</td></tr>
 <tr class="memdesc:ae0760af923583de6354725e901d1869d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a character [0,255] or std::char_traits&lt;char&gt;::eof(). <br /></td></tr>
 <tr class="separator:ae0760af923583de6354725e901d1869d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac3afada8eaf7d6cd2b475a3388d5e992"><td class="memItemLeft" align="right" valign="top"><a id="ac3afada8eaf7d6cd2b475a3388d5e992"></a>
+std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnlohmann_1_1detail_1_1input__stream__adapter.html#ac3afada8eaf7d6cd2b475a3388d5e992">is</a></td></tr>
+<tr class="memdesc:ac3afada8eaf7d6cd2b475a3388d5e992"><td class="mdescLeft">&#160;</td><td class="mdescRight">the associated input stream <br /></td></tr>
+<tr class="separator:ac3afada8eaf7d6cd2b475a3388d5e992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd96de4b5cbd9925ed5d8a0f0261143"><td class="memItemLeft" align="right" valign="top"><a id="addd96de4b5cbd9925ed5d8a0f0261143"></a>
+std::streambuf &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sb</b></td></tr>
+<tr class="separator:addd96de4b5cbd9925ed5d8a0f0261143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input adapter for a (caching) istream. Ignores a UFT Byte Order Mark at beginning of input. Does not support changing the underlying std::streambuf in mid-input. Maintains underlying std::istream and std::streambuf to support subsequent use of standard std::istream operations to process any input characters following those used in parsing the JSON input. Clears the std::istream flags; any input errors (e.g., EOF) will be detected by the first subsequent call for input from the std::istream. </p>
