@@ -1,10 +1,23 @@
 var searchData=
 [
-  ['allow_5fexceptions',['allow_exceptions',['../classnlohmann_1_1detail_1_1json__sax__dom__parser.html#ad0953e8d888339421d909d9016bc6e2c',1,'nlohmann::detail::json_sax_dom_parser::allow_exceptions()'],['../classnlohmann_1_1detail_1_1json__sax__dom__callback__parser.html#a0a1390c23e2a3da774d75c050f9b3f13',1,'nlohmann::detail::json_sax_dom_callback_parser::allow_exceptions()'],['../classnlohmann_1_1detail_1_1parser.html#a3de1ea054cfa606e79fa07741f081b5f',1,'nlohmann::detail::parser::allow_exceptions()']]],
-  ['anchor',['anchor',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#a073741b6536b7a5166467a5515bc59cb',1,'nlohmann::detail::iteration_proxy_value']]],
-  ['array',['array',['../unionnlohmann_1_1basic__json_1_1json__value.html#a7947687f3ae1911d6e9847e2b3226157',1,'nlohmann::basic_json::json_value']]],
-  ['array_5findex',['array_index',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#ad3d18c83aff5e9f4bdbf99385b29a39a',1,'nlohmann::detail::iteration_proxy_value']]],
-  ['array_5findex_5flast',['array_index_last',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#aac6e7cc0c17242a0a42c14d1e714747c',1,'nlohmann::detail::iteration_proxy_value']]],
-  ['array_5findex_5fstr',['array_index_str',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#ab0b34133f45a3610070492d32978f2ea',1,'nlohmann::detail::iteration_proxy_value']]],
-  ['array_5fiterator',['array_iterator',['../structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d',1,'nlohmann::detail::internal_iterator']]]
+  ['m_5faddress',['m_address',['../classjugador.html#a1b6be8d5abdbf71ab907ba36c67a524f',1,'jugador']]],
+  ['m_5fbirthday',['m_birthday',['../classjugador.html#aacd583397f387472642e9fd4ac140a82',1,'jugador']]],
+  ['m_5fcity',['m_city',['../classjugador.html#a17b4e71f585da8d1e475e51ed4a7dfd4',1,'jugador']]],
+  ['m_5fcodi',['m_codi',['../classclub.html#ade18982a1b4b4a30ca9317bd9490dd7d',1,'club']]],
+  ['m_5fcolor',['m_color',['../classclub.html#ae8238bd2abbdd6fef94f03c2d7c846b1',1,'club']]],
+  ['m_5fdni',['m_dni',['../classjugador.html#ad4740e0c58d680cd43ae162e41b901b9',1,'jugador']]],
+  ['m_5femail',['m_email',['../classjugador.html#a86974778b3d88602db5f2aaf5f875fdb',1,'jugador']]],
+  ['m_5fidclub',['m_idClub',['../classclub.html#a903a48e2c7351cac51ecbf416f905d6e',1,'club::m_idClub()'],['../classjugador.html#ac2789e004276f7bc979e42f087875340',1,'jugador::m_idClub()']]],
+  ['m_5fidgen',['m_idGen',['../classjugador.html#a2ff01541fe85cdbc81af2a82e5ca9360',1,'jugador']]],
+  ['m_5fidjugador',['m_idJugador',['../classjugador.html#a860c4f9519d760185c9387d1aaa878c3',1,'jugador']]],
+  ['m_5fidteam',['m_idTeam',['../classjugador.html#aee35082fbfb0bbde814adfd2f6f3e4ae',1,'jugador']]],
+  ['m_5fiduser',['m_idUser',['../classusuari.html#a782f5e6371fec121527d11ee7bfb1298',1,'usuari']]],
+  ['m_5fname',['m_name',['../classclub.html#a5662adc7efe68e0cdfb873137d8ed019',1,'club::m_name()'],['../classjugador.html#ab53628a425ca9e0beb632f965e3b1242',1,'jugador::m_name()']]],
+  ['m_5fnumber',['m_number',['../classjugador.html#a7e760c3cafc8d788217705008219b4b5',1,'jugador']]],
+  ['m_5fpass',['m_pass',['../classusuari.html#aa9568f0272be3b558bc2e68911820f9b',1,'usuari']]],
+  ['m_5fphonenumber1',['m_phoneNumber1',['../classjugador.html#a1ea251ca9e7696bd7580683e5900d265',1,'jugador']]],
+  ['m_5fphonenumber2',['m_phoneNumber2',['../classjugador.html#aed7290d4b5d54775a3ed94304b6f6a30',1,'jugador']]],
+  ['m_5fpropietario',['m_propietario',['../classclub.html#ab1d8565c370614f5903c2cc199216af9',1,'club']]],
+  ['m_5fsoci',['m_soci',['../classjugador.html#af17085c4ca78df6e7820c46c902a8a44',1,'jugador']]],
+  ['m_5fuser',['m_user',['../classusuari.html#a888f2ca58e20a8396f4d065a943e4425',1,'usuari']]]
 ];

@@ -28,7 +28,7 @@ SOURCES += \
     usuari.cpp \
     app.cpp
 
-LIBS += -pthread -lz -lssl -lcrypto -lixwebsocket
+LIBS += -pthread -lz -lssl -lcrypto
 
 
 # Default rules for deployment.
@@ -41,14 +41,9 @@ win32:CONFIG(release, debug|release): LIBS += -L$$PWD/websockets/lib/release/ -l
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/websockets/lib/debug/ -lixwebsocket
 else:unix: LIBS += -L$$PWD/websockets/lib/ -lixwebsocket
 
-INCLUDEPATH += $$PWD/websockets/include
-DEPENDPATH += $$PWD/websockets/include
+INCLUDEPATH += $$PWD/../baskorg/websockets/include
+DEPENDPATH += $$PWD/../baskorg/websockets/include
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/websockets/lib/release/libixwebsocket.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/websockets/lib/debug/libixwebsocket.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/websockets/lib/release/ixwebsocket.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/websockets/lib/debug/ixwebsocket.lib
-else:unix: PRE_TARGETDEPS += $$PWD/websockets/lib/libixwebsocket.a
 
 HEADERS += \
     json.hpp \

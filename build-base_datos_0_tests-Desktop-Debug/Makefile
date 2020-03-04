@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = base_datos_0_tests1.0.0
-DISTDIR = /home/usuario/Escriptori/25FEB/baskorg/build-base_datos_0_tests-Desktop-Debug/.tmp/base_datos_0_tests1.0.0
+DISTDIR = /home/usuario/Desktop/26FEB/26FEB/25FEB/baskorg/build-base_datos_0_tests-Desktop-Debug/.tmp/base_datos_0_tests1.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS) -pthread -lz -lssl -lcrypto -L../websockets/lib/ -lixwebsocket -lQt5Sql -L/usr/lib64 -lQt5Core -lpthread 
@@ -671,7 +671,7 @@ moc_apptest.cpp: ../base_datos_0_tests/doctest.h \
 		../base_datos_0_tests/apptest.h \
 		moc_predefs.h \
 		/usr/lib64/qt5/bin/moc
-	/usr/lib64/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib64/qt5/mkspecs/linux-g++ -I/home/usuario/Escriptori/25FEB/baskorg/base_datos_0_tests -I/home/usuario/Escriptori/25FEB/baskorg -I/home/usuario/Escriptori/25FEB/baskorg/websockets/include -I/usr/include/qt5 -I/usr/include/qt5/QtSql -I/usr/include/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/c++/7/x86_64-suse-linux -I/usr/include/c++/7/backward -I/usr/lib64/gcc/x86_64-suse-linux/7/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/7/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../base_datos_0_tests/apptest.h -o moc_apptest.cpp
+	/usr/lib64/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib64/qt5/mkspecs/linux-g++ -I/home/usuario/Desktop/26FEB/26FEB/25FEB/baskorg/base_datos_0_tests -I/home/usuario/Desktop/26FEB/26FEB/25FEB/baskorg -I/home/usuario/Desktop/26FEB/26FEB/25FEB/baskorg/websockets/include -I/usr/include/qt5 -I/usr/include/qt5/QtSql -I/usr/include/qt5/QtCore -I. -I/usr/include/c++/7 -I/usr/include/c++/7/x86_64-suse-linux -I/usr/include/c++/7/backward -I/usr/lib64/gcc/x86_64-suse-linux/7/include -I/usr/local/include -I/usr/lib64/gcc/x86_64-suse-linux/7/include-fixed -I/usr/x86_64-suse-linux/include -I/usr/include ../base_datos_0_tests/apptest.h -o moc_apptest.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
