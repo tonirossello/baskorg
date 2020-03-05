@@ -30,6 +30,8 @@ public:
     bool exists(const JSON& json, const std::string& key);
     bool getLogueado();
     bool string2bool (const std::string & v);
+    void checkLoginStatus(ix::WebSocket *webSocket);
+
 
 
 };

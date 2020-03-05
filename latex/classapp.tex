@@ -25,7 +25,9 @@ bool \mbox{\hyperlink{classapp_a42e2a44d3325daf63b3ec57b8921d1b5}{exists}} (cons
 bool \mbox{\hyperlink{classapp_a9d5d32bf19b4ae0a9c9d7fab8d87ac0f}{get\+Logueado}} ()
 \begin{DoxyCompactList}\small\item\em Getter de login. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classapp_af87506f90057b288a801f2a0d4c00ef4}{string2bool}} (const std\+::string \&v)
-\begin{DoxyCompactList}\small\item\em Convierte un string en booleano. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convierte un string en booleano. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_a77a1d0cb7a5a4982bcd618a5380e6edf}{check\+Login\+Status}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
+\begin{DoxyCompactList}\small\item\em Saber si se está logueado y saber que usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +43,21 @@ Q\+Sql\+Database $\ast$ {\bfseries m\+\_\+db}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classapp_a77a1d0cb7a5a4982bcd618a5380e6edf}\label{classapp_a77a1d0cb7a5a4982bcd618a5380e6edf}} 
+\index{app@{app}!check\+Login\+Status@{check\+Login\+Status}}
+\index{check\+Login\+Status@{check\+Login\+Status}!app@{app}}
+\subsubsection{\texorpdfstring{check\+Login\+Status()}{checkLoginStatus()}}
+{\footnotesize\ttfamily void app\+::check\+Login\+Status (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket }\end{DoxyParamCaption})}
+
+
+
+Saber si se está logueado y saber que usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classapp_afb7363d3bc58746f8c71425ba6050db1}\label{classapp_afb7363d3bc58746f8c71425ba6050db1}} 
 \index{app@{app}!club\+Create@{club\+Create}}
 \index{club\+Create@{club\+Create}!app@{app}}
@@ -105,11 +122,6 @@ booleano para saber si la clave está o no en el J\+S\+ON
 
 Getter de login. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em web\+Socket} & --$>$ correspondiente conexión \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 valor de g\+\_\+logueado 
 \end{DoxyReturn}

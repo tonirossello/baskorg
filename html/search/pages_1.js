@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documentación_20de_20baskorg',['Documentación de Baskorg',['../index.html',1,'']]]
+  ['index',['index',['../md_index.html',1,'']]]
 ];

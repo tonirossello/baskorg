@@ -117,6 +117,7 @@ let socket = new WebSocket("ws://localhost:9990");
         case "clubCreate": modal_window(object); break;
         case "logout": logout(object); break;
         case "userCreate": userCreate(object); break;
+        case "checkLoginStatus": checkLoginStatus(object); break;
 
     } //end switch
   }
@@ -135,7 +136,7 @@ let socket = new WebSocket("ws://localhost:9990");
 
       document.getElementById("div_login").style.display = "none";
       document.getElementById("top").innerHTML = '<div><img src="./images/logoclub.jpg" alt="logo" class="center"/></div>'+
-      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
+      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li><a>Administrar clubs</a></li><li><a>Contacte</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
               
       //cargamos los clubes en la pantalla de inicio
       refresh_clubs();
@@ -182,6 +183,13 @@ let socket = new WebSocket("ws://localhost:9990");
 
     } //end if
 
+  }
+
+  function checkLoginStatus(object){
+    console.log("Check");
+    if (String(object.operationSuccess).localeCompare("true") == 0){ //ya logueado
+      login(object);
+    }
   }
 
   /* --> Carga de forma dinámica un archivo
@@ -298,9 +306,18 @@ function playersList(object){
 
   document.getElementById("content").innerHTML = '';
   document.getElementById("content").innerHTML += '<h1 style="width:100%;">' + object.club_name+ '</h1>';
+  
+  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button  id="additional_buttons" style="background-color: #'+object.club_color+';'+
+  '+margin-bottom: 25px;"> Gestor de comandes </button></div>';
+
+  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button  id="additional_buttons" style="background-color: #'+object.club_color+';'+
+  '+margin-bottom: 25px;"> Gestor d\'activitats </button></div>';
+  document.getElementById("content").innerHTML += '<h2 style="margin-left:195px;"> Llistat de jugadors </h2>';
+  
   generateTable(object);
   document.getElementById("content").innerHTML += '<div><button onclick = "boton_crear_jugador()" id="create_player" style="background-color: #'+object.club_color+';'+
   '+margin-bottom: 25px;"> + </button></div>';
+
 
 }
 

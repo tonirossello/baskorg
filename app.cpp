@@ -6,12 +6,31 @@ int g_id_usuario;
 
 /**
  * @brief Getter de login
- * @param webSocket --> correspondiente conexión
  * @return valor de g_logueado
  */
 bool app::getLogueado(){
     return g_logueado;
 }
+
+/**
+ * @brief Saber si se está logueado y saber que usuario
+ * @param webSocket --> correspondiente conexión
+ */
+void app::checkLoginStatus(ix::WebSocket *webSocket){
+    JSON respuesta;
+    respuesta["type"] = "checkLoginStatus";
+    if (g_logueado == true){
+            respuesta["operationSuccess"] = "true";
+            respuesta["id_user"] = g_id_usuario;
+    } else {
+            respuesta["operationSuccess"] = "false";
+    }
+
+    qDebug() << "check";
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
+    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
+}
+
 
 /**
  * @brief Comprobar si JSON contiene una clave
@@ -347,6 +366,8 @@ app::app(QSqlDatabase &db, bool server_on) : m_db (&db)
                         if (msg->type == ix::WebSocketMessageType::Open)
                         {
                             std::cout << "Nueva conexión" << std::endl;
+                            checkLoginStatus(webSocket.get());
+
                         }
 
                         //si recibimos un mensaje de cierre de conexión

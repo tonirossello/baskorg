@@ -29,3 +29,13 @@
         border-radius: 8px;
         color: white;
     }
+
+    #additional_buttons{
+      display: block; 
+      margin: 0 auto; 
+      border-radius: 8px;
+      color: white;
+      text-align: center;
+      padding: 15px 32px;
+
+  }

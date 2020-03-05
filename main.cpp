@@ -4,6 +4,8 @@
 #include <QCoreApplication>
 #include <QLocale>
 #include "app.h"
+#include <QSettings>
+#include <QDir>
 
 /*! \file */
 
@@ -30,14 +32,25 @@ int main(int argc, char *argv[])
     myappTranslator.load("myapp_" + QLocale::system().name());
     a.installTranslator(&myappTranslator);
 
-    //conexión a la base de datos
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("cbsacabaneta");
-    db.setPort(3306);
-    db.setUserName("pitu");
-    db.setPassword("pitu");
+    //Conexión a la BBDD
+    QSettings settings("../baskorg/config.prop", QSettings::IniFormat);
+
+    qDebug() << QDir::currentPath();
+    QString driver = settings.value("driver").toString();
+    QString host = settings.value("host").toString();
+    QString database = settings.value("database").toString();
+    int port = settings.value("port").toInt();
+    QString username = settings.value("username").toString();
+    QString password = settings.value("password").toString();
+
+    QSqlDatabase db = QSqlDatabase::addDatabase(driver);
+    db.setHostName(host);
+    db.setDatabaseName(database);
+    db.setPort(port);
+    db.setUserName(username);
+    db.setPassword(password);
     db.open();
+
 
     app app(db, true);
 
