@@ -137,7 +137,7 @@ let socket = new WebSocket("ws://localhost:9990");
 
       document.getElementById("div_login").style.display = "none";
       document.getElementById("top").innerHTML = '<div><img src="./images/logoclub.jpg" alt="logo" class="center"/></div>'+
-      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li><a>Administrar clubs</a></li><li><a>Unir-se a un club</a><li><a>Contacte</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
+      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li onclick = "administrar_clubs()"><a>Administrar clubs</a></li><li onclick = "unirse_clubs()"><a>Unir-se a un club</a><li><a>Contacte</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
               
       //cargamos los clubes en la pantalla de inicio
       refresh_clubs();
@@ -151,6 +151,21 @@ let socket = new WebSocket("ws://localhost:9990");
     }
   }
 
+  /* Función que ejecutamos cuando se pulsa en 'Administrar clubs' del menú
+    --> Carga la pantalla de administración de menú (TO DO) */
+  function administrar_clubs(){
+    document.getElementById("content").innerHTML = '';
+    document.getElementById("content").innerHTML += '<div><img style="width:100%; height:100%;" src="./images/administrar.jpg" alt="logo" class="center"/></div>'
+  }
+
+  /* Función que ejecutamos cuando se pulsa en 'Unir-se a un club' del menú
+    --> Carga la pantalla de unirse a un club (TO DO) */
+  function unirse_clubs(){
+    document.getElementById("content").innerHTML = '';
+    document.getElementById("content").innerHTML += '<div><img style="width:100%; height:100%;" src="./images/unirse.jpg" alt="logo" class="center"/></div>'
+  }
+
+  
   /* Función que ejecutamos cuando se recibe un mensaje respuesta de tipo logout servidor
   --> Vacía todo el contenido HTML y habilita el div de login */
   function logout(object) {
@@ -308,10 +323,10 @@ function playersList(object){
   document.getElementById("content").innerHTML = '';
   document.getElementById("content").innerHTML += '<h1 style="width:100%;">' + object.club_name+ '</h1>';
   
-  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button  id="additional_buttons" style="background-color: #'+object.club_color+';'+
+  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button onclick="gestor_comandes()" id="additional_buttons" style="background-color: #'+object.club_color+';'+
   '+margin-bottom: 25px;"> Gestor de comandes </button></div>';
 
-  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button  id="additional_buttons" style="background-color: #'+object.club_color+';'+
+  document.getElementById("content").innerHTML += '<div style="width:50%; float:left; margin-bottom:30px;"><button onclick="gestor_activitats()" id="additional_buttons" style="background-color: #'+object.club_color+';'+
   '+margin-bottom: 25px;"> Gestor d\'activitats </button></div>';
   document.getElementById("content").innerHTML += '<h2 style="margin-left:195px;"> Llistat de jugadors </h2>';
   
@@ -322,6 +337,19 @@ function playersList(object){
   
 }
 
+/* Función que ejecutamos cuando se pulsa en 'Gestor de comandes' al acceder a un club
+    --> Carga la pantalla de gestión de pedidos (TO DO) */
+function gestor_comandes(){
+  document.getElementById("content").innerHTML = '';
+  document.getElementById("content").innerHTML += '<div><img style="width:100%; height:100%;" src="./images/comandes.jpg" alt="logo" class="center"/></div>'
+}
+
+/* Función que ejecutamos cuando se pulsa en 'Gestor d'activitats' al acceder a un club
+    --> Carga la pantalla de gestión de actividades (TO DO) */
+function gestor_activitats(){
+  document.getElementById("content").innerHTML = '';
+  document.getElementById("content").innerHTML += '<div><img style="width:100%; height:100%;" src="./images/activitats.jpg" alt="logo" class="center"/></div>'
+}
 
 /* --> Función que genera la tabla de jugadores del club abierto */
 function generateTable(object){
@@ -370,6 +398,8 @@ function generateTable(object){
   content.appendChild(tbl)
 }
 
+/* Función que ejecutamos cuando se pulsa el botón de eliminar un jugador en la tabla
+    --> Envía un mensaje al servidor con el id del jugador a borrar */
 function borrarJugador(idJugador){
     var response = confirm("Segur que vols borrar el jugador?");
     if (response == true) {
@@ -380,14 +410,15 @@ function borrarJugador(idJugador){
     }     
 }
 
+/* Función que ejecutamos cuando se reciben un mensaje del servidor del tipo 'playerDelete'
+    --> Elimina la fila del jugador borrado */
 function playerDelete(object){
     if (String(object.operationSuccess).localeCompare("true") == 0){
       deleteTableRow(object.id_player);
-    } else {
-      //mensaje de error al borrar
-    }
+    } 
 }
 
+/* Función que busca la fila del jugador con el id pasado por parámetro */
 function deleteTableRow(id){
   var table = document.getElementsByTagName('table')[0];
   var rows = table.rows;
@@ -403,7 +434,7 @@ function deleteTableRow(id){
 }
 
 
-/*            Función que ejecutamos cuando se pulsa el botón crear club
+/* Función que ejecutamos cuando se pulsa el botón crear club
 --> Limpia el div content y genera el título, y el formulario de creación de club   */
 function boton_crear_club(){
 
@@ -555,7 +586,7 @@ function modal_window(object){
 
   
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
+  g_span.onclick = function() {
     modal.style.display = "none";
   }
 }

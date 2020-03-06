@@ -33,9 +33,8 @@ int main(int argc, char *argv[])
     a.installTranslator(&myappTranslator);
 
     //Conexión a la BBDD
-    QSettings settings("../baskorg/config.prop", QSettings::IniFormat);
+    QSettings settings("../baskorg/database.conf", QSettings::IniFormat);
 
-    qDebug() << QDir::currentPath();
     QString driver = settings.value("driver").toString();
     QString host = settings.value("host").toString();
     QString database = settings.value("database").toString();

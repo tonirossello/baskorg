@@ -26,7 +26,6 @@ void app::checkLoginStatus(ix::WebSocket *webSocket){
             respuesta["operationSuccess"] = "false";
     }
 
-    qDebug() << "check";
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
 }
@@ -390,6 +389,7 @@ app::app(QSqlDatabase &db, bool server_on) : m_db (&db)
     server.setTLSOptions(tlsOptions);*/
 
     if (server_on){
+        qDebug() << "Server started...";
         server.setOnConnectionCallback(
             [&server, this](std::shared_ptr<ix::WebSocket> webSocket,
                       std::shared_ptr<ix::ConnectionState> connectionState)
@@ -508,6 +508,7 @@ app::app(QSqlDatabase &db, bool server_on) : m_db (&db)
         server.start();
         server.wait();
         server.stop();
+        qDebug() << "Server stopped...";
 
 
    } //end if server_on

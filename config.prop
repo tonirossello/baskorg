@@ -1,6 +1,0 @@
-driver = QMYSQL;
-host = localhost;
-database = cbsacabaneta;
-port = 3306; 
-username = pitu;
-password = pitu;
