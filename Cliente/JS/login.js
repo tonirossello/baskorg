@@ -118,6 +118,7 @@ let socket = new WebSocket("ws://localhost:9990");
         case "logout": logout(object); break;
         case "userCreate": userCreate(object); break;
         case "checkLoginStatus": checkLoginStatus(object); break;
+        case "playerDelete": playerDelete(object); break;
 
     } //end switch
   }
@@ -136,7 +137,7 @@ let socket = new WebSocket("ws://localhost:9990");
 
       document.getElementById("div_login").style.display = "none";
       document.getElementById("top").innerHTML = '<div><img src="./images/logoclub.jpg" alt="logo" class="center"/></div>'+
-      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li><a>Administrar clubs</a></li><li><a>Contacte</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
+      '<div><ul><li><a onclick="refresh_clubs()">Inici</a></li><li><a>Administrar clubs</a></li><li><a>Unir-se a un club</a><li><a>Contacte</a></li><li><a onclick="boton_logout()">Logout</a></li></ul></div>';
               
       //cargamos los clubes en la pantalla de inicio
       refresh_clubs();
@@ -318,7 +319,7 @@ function playersList(object){
   document.getElementById("content").innerHTML += '<div><button onclick = "boton_crear_jugador()" id="create_player" style="background-color: #'+object.club_color+';'+
   '+margin-bottom: 25px;"> + </button></div>';
 
-
+  
 }
 
 
@@ -354,11 +355,13 @@ function generateTable(object){
   var tbdy = document.createElement('tbody');
   for (var r = 0; r < rows; r++) {
     tr = document.createElement('tr');
-    for (var c = 0; c < 3; c++) {    
+    tr.setAttribute("idJugador", object.payload[r].id);
+    for (var c = 0; c < 4; c++) {    
         td = document.createElement('td');
         if (c==0) td.textContent = object.payload[r].nom;
         if (c==1) td.textContent = object.payload[r].dni;
         if (c==2) td.textContent = object.payload[r].soci;
+        if (c==3) td.innerHTML += '<i class="far fa-minus-square" onclick="borrarJugador(' + object.payload[r].id +');"></i>  ';
         tr.appendChild(td)     
     }
     tbdy.appendChild(tr);
@@ -366,6 +369,39 @@ function generateTable(object){
   tbl.appendChild(tbdy);
   content.appendChild(tbl)
 }
+
+function borrarJugador(idJugador){
+    var response = confirm("Segur que vols borrar el jugador?");
+    if (response == true) {
+      var text = '{ "type":"playerDelete","id_player":"' + idJugador + '"}';
+      console.log(text);
+      var object = JSON.parse(text); //???
+      socket.send(text);
+    }     
+}
+
+function playerDelete(object){
+    if (String(object.operationSuccess).localeCompare("true") == 0){
+      deleteTableRow(object.id_player);
+    } else {
+      //mensaje de error al borrar
+    }
+}
+
+function deleteTableRow(id){
+  var table = document.getElementsByTagName('table')[0];
+  var rows = table.rows;
+
+  for (var i = 0; i<rows.length; i++){
+    console.log("Attributo row: "+ rows[i].getAttribute("idJugador") + " - " + id);
+    if (rows[i].getAttribute("idJugador") == id){
+      table.deleteRow(rows[i].rowIndex);
+    } else {
+      console.log("no encontrado");
+    }
+  }
+}
+
 
 /*            Función que ejecutamos cuando se pulsa el botón crear club
 --> Limpia el div content y genera el título, y el formulario de creación de club   */
@@ -404,12 +440,21 @@ function load_clubs(object){
     //recorremos todos los elementos del payload
         for (i = 0; i < object.payload.length; i++) {
 
-          console.log("numero de clubs: "+ object.payload.length); 
-
-          document.getElementById("all_club_container").innerHTML += '<div id="club_container"   style ="border: 2px solid #'+ object.payload[i].color_club+';">'+
-          '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3>'+
-          '<button class="button" style ="background-color: #'+ object.payload[i].color_club+';" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>'+
-          '</div></div>';
+          if (i == 0){
+            console.log("numero de clubs: "+ object.payload.length); 
+            
+            document.getElementById("all_club_container").innerHTML += '<div id="club_container"   style ="border: 2px solid #'+ object.payload[i].color_club+';">'+
+            '<i class="fas fa-user-cog" style="float:right;"></i><div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2><br><label>Codi del club:</label> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3><br>'+
+            '<button class="button" style ="background-color: #'+ object.payload[i].color_club+';" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>';         
+            '</div></div>';
+          } else {
+            console.log("numero de clubs: "+ object.payload.length); 
+            
+            document.getElementById("all_club_container").innerHTML += '<div id="club_container"   style ="border: 2px solid #'+ object.payload[i].color_club+';">'+
+            '<div id="inside_club"><h2 class="club_name">' + object.payload[i].nom_club +'</h2><br><label>Codi del club:</label> <h3 class="club_code">#'+object.payload[i].codi_club+'</h3><br>'+
+            '<button class="button" style ="background-color: #'+ object.payload[i].color_club+';" onclick="boton_accedir('+ object.payload[i].id_club +')">Accedir</button>';         
+            '</div></div>';
+          }
 
         } //end for
 

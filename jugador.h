@@ -49,6 +49,7 @@ class jugador
         QString getDni();
         int getIdGen();
         int getIdClub();
+        int getId();
 
         //SETTERS
         void setName(QString name);
@@ -69,6 +70,7 @@ class jugador
         //BBDD Connectors
         bool save();
         void load(int id);
+        bool delete_from_bd();
 
 };
 

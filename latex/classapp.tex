@@ -27,7 +27,9 @@ bool \mbox{\hyperlink{classapp_a9d5d32bf19b4ae0a9c9d7fab8d87ac0f}{get\+Logueado}
 bool \mbox{\hyperlink{classapp_af87506f90057b288a801f2a0d4c00ef4}{string2bool}} (const std\+::string \&v)
 \begin{DoxyCompactList}\small\item\em Convierte un string en booleano. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classapp_a77a1d0cb7a5a4982bcd618a5380e6edf}{check\+Login\+Status}} (ix\+::\+Web\+Socket $\ast$web\+Socket)
-\begin{DoxyCompactList}\small\item\em Saber si se está logueado y saber que usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Saber si se está logueado y saber que usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classapp_a0c9c869259ac2e2362fd84e9a043395f}{player\+Delete}} (ix\+::\+Web\+Socket $\ast$web\+Socket, J\+S\+ON received)
+\begin{DoxyCompactList}\small\item\em Respuesta J\+S\+ON para borrar un jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -166,6 +168,23 @@ Logout del usuario.
 
 
 Creamos un jugador en la B\+B\+DD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em web\+Socket} & --$>$ correspondiente conexión \\
+\hline
+{\em received} & --$>$ J\+S\+ON recibido del cliente \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classapp_a0c9c869259ac2e2362fd84e9a043395f}\label{classapp_a0c9c869259ac2e2362fd84e9a043395f}} 
+\index{app@{app}!player\+Delete@{player\+Delete}}
+\index{player\+Delete@{player\+Delete}!app@{app}}
+\subsubsection{\texorpdfstring{player\+Delete()}{playerDelete()}}
+{\footnotesize\ttfamily void app\+::player\+Delete (\begin{DoxyParamCaption}\item[{ix\+::\+Web\+Socket $\ast$}]{web\+Socket,  }\item[{J\+S\+ON}]{received }\end{DoxyParamCaption})}
+
+
+
+Respuesta J\+S\+ON para borrar un jugador. 
 
 
 \begin{DoxyParams}{Parameters}

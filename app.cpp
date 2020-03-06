@@ -208,7 +208,7 @@ void app::playersList(ix::WebSocket *webSocket, JSON received){
     received["id_club"].get_to(id_club);
 
     QSqlQuery q2;
-    q2.prepare("SELECT nom, dni, soci FROM jugadors where idclub = :club");
+    q2.prepare("SELECT id,nom, dni, soci FROM jugadors where idclub = :club");
     q2.bindValue(":club",  id_club.c_str());
     q2.exec();
 
@@ -229,6 +229,7 @@ void app::playersList(ix::WebSocket *webSocket, JSON received){
         element["nom"] = q2.value("nom").toString().toStdString();
         element["dni"] = q2.value("dni").toString().toStdString();
         element["soci"] = q2.value("soci").toString().toStdString();
+        element["id"] = q2.value("id").toString().toStdString();
 
         respuesta["payload"].push_back(element);
     }
@@ -238,6 +239,40 @@ void app::playersList(ix::WebSocket *webSocket, JSON received){
 
     std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
     webSocket->send(messageToSend); //envio el mensaje JSON al cliente
+}
+
+
+/**
+ * @brief Respuesta JSON para borrar un jugador
+ * @param webSocket --> correspondiente conexión
+ * @param received --> JSON recibido del cliente
+ */
+void app::playerDelete(ix::WebSocket *webSocket, JSON received){
+
+    std::string id_player;
+
+    received["id_player"].get_to(id_player);
+
+    jugador j(m_db);
+    j.load(std::stoi(id_player));
+    qDebug() << "A borrar" << id_player.c_str();
+
+    bool operation = j.delete_from_bd();
+
+    JSON respuesta;
+
+    respuesta["type"] = "playerDelete";
+
+    if (operation){
+        respuesta["operationSuccess"] = "true";
+        respuesta["id_player"] = id_player;
+    } else {
+        respuesta["operationSuccess"] = "false";
+    }
+
+    std::string messageToSend = respuesta.dump(); //el dump lo convierte a JSON
+    webSocket->send(messageToSend); //envio el mensaje JSON al cliente
+    qDebug() << messageToSend.c_str();
 }
 
 /**
@@ -441,6 +476,11 @@ app::app(QSqlDatabase &db, bool server_on) : m_db (&db)
                                     else if (receivedObject["type"] == "userCreate")
                                     {
                                         userCreate(webSocket.get(), receivedObject);
+                                    }
+
+                                    else if (receivedObject["type"] == "playerDelete")
+                                    {
+                                        playerDelete(webSocket.get(), receivedObject);
                                     }
 
                                  } else {

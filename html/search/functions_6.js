@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['save',['save',['../classclub.html#a88805452e8d11cbe90d377321ec40779',1,'club::save()'],['../classjugador.html#af56aa410ca759cb4e3548af92de007b0',1,'jugador::save()'],['../classusuari.html#a033dbdad161e4dabeb4efd0c26165d0a',1,'usuari::save()']]],
-  ['setaddress',['setAddress',['../classjugador.html#a1e4da4c657e46c0368f1db72ce102d93',1,'jugador']]],
-  ['setbirthday',['setBirthday',['../classjugador.html#ac974fe74ff98272b5652de36e5ba4680',1,'jugador']]],
-  ['setcity',['setCity',['../classjugador.html#ae00869eb01324db252abe1b2df0032bc',1,'jugador']]],
-  ['setcodi',['setCodi',['../classclub.html#af845385d60a9833c6c9ce50929a134a8',1,'club']]],
-  ['setcolor',['setColor',['../classclub.html#ac29fce99b2429c5645a85c595528fc9a',1,'club']]],
-  ['setdni',['setDni',['../classjugador.html#a442a923a8704d783a9b0b7ce917a7e39',1,'jugador']]],
-  ['setemail',['setEmail',['../classjugador.html#a75f1d73c24c859503450958bbf1d48ea',1,'jugador']]],
-  ['setidclub',['setIdClub',['../classjugador.html#ac869d669d44efd142595e087cbb2b3f3',1,'jugador']]],
-  ['setidgen',['setIdGen',['../classjugador.html#aa0fd016230cc38f0ac2e7cd6c90003d3',1,'jugador']]],
-  ['setidpropietario',['setIdPropietario',['../classclub.html#ae1e13f2514221a45c7d566bbad4bd188',1,'club']]],
-  ['setname',['setName',['../classclub.html#a7c1e4e25822c9e54407dcad080e8c59a',1,'club::setName()'],['../classjugador.html#a0dcf58840f95ad87661987f7750c4355',1,'jugador::setName()']]],
-  ['setnumber',['setNumber',['../classjugador.html#aa393b3dfb2eb1f269e66eb0b9e673973',1,'jugador']]],
-  ['setpass',['setPass',['../classusuari.html#a4c275e6e79e42efdae64f748dcabb843',1,'usuari']]],
-  ['setphonenumber1',['setPhoneNumber1',['../classjugador.html#aaa04ccc1da6c45dea35b723a54e217d4',1,'jugador']]],
-  ['setphonenumber2',['setPhoneNumber2',['../classjugador.html#a7541a8d0d7df4c5cc1fc49b15cd24da3',1,'jugador']]],
-  ['setsoci',['setSoci',['../classjugador.html#a684e5c98a3c39214b93923615d1a2fb2',1,'jugador']]],
-  ['setteamid',['setTeamId',['../classjugador.html#ae853f109166a05c832bb89f84cc7408c',1,'jugador']]],
-  ['setuser',['setUser',['../classusuari.html#aa3db9874672456c37ce3651a08654eef',1,'usuari']]],
-  ['string2bool',['string2bool',['../classapp.html#af87506f90057b288a801f2a0d4c00ef4',1,'app']]]
+  ['playercreate',['playerCreate',['../classapp.html#a6f44f304590371aa8aae2a2e7b504a64',1,'app']]],
+  ['playerdelete',['playerDelete',['../classapp.html#a0c9c869259ac2e2362fd84e9a043395f',1,'app']]],
+  ['playerslist',['playersList',['../classapp.html#aeddfad0a193f1b1c8581d31977ff4c10',1,'app']]]
 ];

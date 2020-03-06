@@ -119,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0538f173119697d49b6bfc95c9558580"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjugador.html#a0538f173119697d49b6bfc95c9558580">getIdClub</a> ()</td></tr>
 <tr class="memdesc:a0538f173119697d49b6bfc95c9558580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener el club del jugador.  <a href="#a0538f173119697d49b6bfc95c9558580">More...</a><br /></td></tr>
 <tr class="separator:a0538f173119697d49b6bfc95c9558580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2ea4097b89df7679c9589dc4d9dd4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjugador.html#ace2ea4097b89df7679c9589dc4d9dd4d">getId</a> ()</td></tr>
+<tr class="memdesc:ace2ea4097b89df7679c9589dc4d9dd4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtener el id del jugador.  <a href="#ace2ea4097b89df7679c9589dc4d9dd4d">More...</a><br /></td></tr>
+<tr class="separator:ace2ea4097b89df7679c9589dc4d9dd4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dcf58840f95ad87661987f7750c4355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjugador.html#a0dcf58840f95ad87661987f7750c4355">setName</a> (QString name)</td></tr>
 <tr class="memdesc:a0dcf58840f95ad87661987f7750c4355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modificar el nombre del jugador.  <a href="#a0dcf58840f95ad87661987f7750c4355">More...</a><br /></td></tr>
 <tr class="separator:a0dcf58840f95ad87661987f7750c4355"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,6 +167,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b57bb55fbd19cf2a1fee8397eeb0135"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjugador.html#a9b57bb55fbd19cf2a1fee8397eeb0135">load</a> (int id)</td></tr>
 <tr class="memdesc:a9b57bb55fbd19cf2a1fee8397eeb0135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga los datos de un jugador en el objeto jugador.  <a href="#a9b57bb55fbd19cf2a1fee8397eeb0135">More...</a><br /></td></tr>
 <tr class="separator:a9b57bb55fbd19cf2a1fee8397eeb0135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd83799dcfbff2b813eb6c674ae8e5b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjugador.html#acd83799dcfbff2b813eb6c674ae8e5b2">delete_from_bd</a> ()</td></tr>
+<tr class="memdesc:acd83799dcfbff2b813eb6c674ae8e5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borra los datos de un jugador en el objeto jugador.  <a href="#acd83799dcfbff2b813eb6c674ae8e5b2">More...</a><br /></td></tr>
+<tr class="separator:acd83799dcfbff2b813eb6c674ae8e5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -203,6 +209,31 @@ QSqlDatabase *&#160;</td><td class="memItemRight" valign="bottom"><b>m_db</b></t
 <div class="textblock"><p>Clase jugador. </p>
 <p>La clase jugador hace referencia a la tabla 'jugadors' de la BBDD. Encontramos las funciones correspodientes para poder cargar, crear y actualizar nuevos registros en esta tabla. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd83799dcfbff2b813eb6c674ae8e5b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd83799dcfbff2b813eb6c674ae8e5b2">&#9670;&nbsp;</a></span>delete_from_bd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool jugador::delete_from_bd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Borra los datos de un jugador en el objeto jugador. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>&ndash;&gt; id del jugador a borrar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adb7342524d07d6708414942a82cfa514"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb7342524d07d6708414942a82cfa514">&#9670;&nbsp;</a></span>getAddress()</h2>
 
@@ -300,6 +331,26 @@ QSqlDatabase *&#160;</td><td class="memItemRight" valign="bottom"><b>m_db</b></t
 
 <p>Obtener el email del jugador. </p>
 <dl class="section return"><dt>Returns</dt><dd>Email del jugador </dd></dl>
+
+</div>
+</div>
+<a id="ace2ea4097b89df7679c9589dc4d9dd4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2ea4097b89df7679c9589dc4d9dd4d">&#9670;&nbsp;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int jugador::getId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtener el id del jugador. </p>
+<dl class="section return"><dt>Returns</dt><dd>Id del jugador </dd></dl>
 
 </div>
 </div>

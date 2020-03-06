@@ -31,6 +31,8 @@ public:
     bool getLogueado();
     bool string2bool (const std::string & v);
     void checkLoginStatus(ix::WebSocket *webSocket);
+    void playerDelete(ix::WebSocket *webSocket, JSON received);
+
 
 
 

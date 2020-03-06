@@ -1,24 +1,4 @@
 var searchData=
 [
-  ['getaddress',['getAddress',['../classjugador.html#adb7342524d07d6708414942a82cfa514',1,'jugador']]],
-  ['getbirthday',['getBirthday',['../classjugador.html#a845558cf9e7def7add1d73e9b6812865',1,'jugador']]],
-  ['getcity',['getCity',['../classjugador.html#a326f8dd3d47d3fa8fdb7b38b27c47bc8',1,'jugador']]],
-  ['getclubid',['getClubId',['../classclub.html#ac6e69f12ebd2a446f942860bf08fd1fa',1,'club']]],
-  ['getcodi',['getCodi',['../classclub.html#acc2da4046baef9b45398997c1769539a',1,'club']]],
-  ['getcolor',['getColor',['../classclub.html#a06ce786578d87f7e15f5372f043f6050',1,'club']]],
-  ['getdni',['getDni',['../classjugador.html#ac9609bf100bfb43e2e9582a8e69abdb5',1,'jugador']]],
-  ['getemail',['getEmail',['../classjugador.html#a65a647a2c1beedbb2dc2e4b6847bff69',1,'jugador']]],
-  ['getidclub',['getIdClub',['../classjugador.html#a0538f173119697d49b6bfc95c9558580',1,'jugador']]],
-  ['getidgen',['getIdGen',['../classjugador.html#adb2f8c9bba1afa83be6ebf6a651769b2',1,'jugador']]],
-  ['getidpropietari',['getIdPropietari',['../classclub.html#a4f67353b1c96f0d89cc1e9ae2e33ba51',1,'club']]],
-  ['getlogueado',['getLogueado',['../classapp.html#a9d5d32bf19b4ae0a9c9d7fab8d87ac0f',1,'app']]],
-  ['getname',['getName',['../classclub.html#a4a0112cb510ec1e3ec29957f0bb6a873',1,'club::getName()'],['../classjugador.html#adc3df126f15f2bb2aec01cc04145ae14',1,'jugador::getName()']]],
-  ['getnumber',['getNumber',['../classjugador.html#ad1b16c02d5c0ec28e2a7db3ac0a09cda',1,'jugador']]],
-  ['getpass',['getPass',['../classusuari.html#aa8cc58aa9b8a1c8a7ef5fce3ad5fa819',1,'usuari']]],
-  ['getphonenumber1',['getPhoneNumber1',['../classjugador.html#a9bf1e0a307861344a0912d21ec4bf5a9',1,'jugador']]],
-  ['getphonenumber2',['getPhoneNumber2',['../classjugador.html#aa6bbb640f9c687cebedcd442b96e5f76',1,'jugador']]],
-  ['getsoci',['getSoci',['../classjugador.html#a03b468db718824916d7f6d47e46e708b',1,'jugador']]],
-  ['getteamid',['getTeamId',['../classjugador.html#a188b5459eed3f7f09b49232d0d674050',1,'jugador']]],
-  ['getuser',['getUser',['../classusuari.html#adbe5be463437f9e51ca6f4370fa54a5b',1,'usuari']]],
-  ['getuserid',['getUserId',['../classusuari.html#a21ba8ae0a0d63bd1196cd62331573cde',1,'usuari']]]
+  ['exists',['exists',['../classapp.html#a42e2a44d3325daf63b3ec57b8921d1b5',1,'app']]]
 ];

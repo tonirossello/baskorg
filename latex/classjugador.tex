@@ -41,6 +41,8 @@ int \mbox{\hyperlink{classjugador_adb2f8c9bba1afa83be6ebf6a651769b2}{get\+Id\+Ge
 \begin{DoxyCompactList}\small\item\em Obtener el id del género del jugador. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classjugador_a0538f173119697d49b6bfc95c9558580}{get\+Id\+Club}} ()
 \begin{DoxyCompactList}\small\item\em Obtener el club del jugador. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classjugador_ace2ea4097b89df7679c9589dc4d9dd4d}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Obtener el id del jugador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classjugador_a0dcf58840f95ad87661987f7750c4355}{set\+Name}} (Q\+String name)
 \begin{DoxyCompactList}\small\item\em Modificar el nombre del jugador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classjugador_aa393b3dfb2eb1f269e66eb0b9e673973}{set\+Number}} (int number)
@@ -70,7 +72,9 @@ void \mbox{\hyperlink{classjugador_ac869d669d44efd142595e087cbb2b3f3}{set\+Id\+C
 bool \mbox{\hyperlink{classjugador_af56aa410ca759cb4e3548af92de007b0}{save}} ()
 \begin{DoxyCompactList}\small\item\em Actualiza o inserta un nuevo jugador a la B\+B\+DD. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classjugador_a9b57bb55fbd19cf2a1fee8397eeb0135}{load}} (int id)
-\begin{DoxyCompactList}\small\item\em Carga los datos de un jugador en el objeto jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Carga los datos de un jugador en el objeto jugador. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classjugador_acd83799dcfbff2b813eb6c674ae8e5b2}{delete\+\_\+from\+\_\+bd}} ()
+\begin{DoxyCompactList}\small\item\em Borra los datos de un jugador en el objeto jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -113,6 +117,21 @@ Clase jugador.
 La clase jugador hace referencia a la tabla \textquotesingle{}jugadors\textquotesingle{} de la B\+B\+DD. Encontramos las funciones correspodientes para poder cargar, crear y actualizar nuevos registros en esta tabla. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classjugador_acd83799dcfbff2b813eb6c674ae8e5b2}\label{classjugador_acd83799dcfbff2b813eb6c674ae8e5b2}} 
+\index{jugador@{jugador}!delete\+\_\+from\+\_\+bd@{delete\+\_\+from\+\_\+bd}}
+\index{delete\+\_\+from\+\_\+bd@{delete\+\_\+from\+\_\+bd}!jugador@{jugador}}
+\subsubsection{\texorpdfstring{delete\+\_\+from\+\_\+bd()}{delete\_from\_bd()}}
+{\footnotesize\ttfamily bool jugador\+::delete\+\_\+from\+\_\+bd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Borra los datos de un jugador en el objeto jugador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & --$>$ id del jugador a borrar \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classjugador_adb7342524d07d6708414942a82cfa514}\label{classjugador_adb7342524d07d6708414942a82cfa514}} 
 \index{jugador@{jugador}!get\+Address@{get\+Address}}
 \index{get\+Address@{get\+Address}!jugador@{jugador}}
@@ -177,6 +196,19 @@ Obtener el email del jugador.
 
 \begin{DoxyReturn}{Returns}
 Email del jugador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classjugador_ace2ea4097b89df7679c9589dc4d9dd4d}\label{classjugador_ace2ea4097b89df7679c9589dc4d9dd4d}} 
+\index{jugador@{jugador}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!jugador@{jugador}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily int jugador\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtener el id del jugador. 
+
+\begin{DoxyReturn}{Returns}
+Id del jugador 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classjugador_a0538f173119697d49b6bfc95c9558580}\label{classjugador_a0538f173119697d49b6bfc95c9558580}} 
 \index{jugador@{jugador}!get\+Id\+Club@{get\+Id\+Club}}

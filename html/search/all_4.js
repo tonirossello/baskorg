@@ -8,6 +8,7 @@ var searchData=
   ['getcolor',['getColor',['../classclub.html#a06ce786578d87f7e15f5372f043f6050',1,'club']]],
   ['getdni',['getDni',['../classjugador.html#ac9609bf100bfb43e2e9582a8e69abdb5',1,'jugador']]],
   ['getemail',['getEmail',['../classjugador.html#a65a647a2c1beedbb2dc2e4b6847bff69',1,'jugador']]],
+  ['getid',['getId',['../classjugador.html#ace2ea4097b89df7679c9589dc4d9dd4d',1,'jugador']]],
   ['getidclub',['getIdClub',['../classjugador.html#a0538f173119697d49b6bfc95c9558580',1,'jugador']]],
   ['getidgen',['getIdGen',['../classjugador.html#adb2f8c9bba1afa83be6ebf6a651769b2',1,'jugador']]],
   ['getidpropietari',['getIdPropietari',['../classclub.html#a4f67353b1c96f0d89cc1e9ae2e33ba51',1,'club']]],

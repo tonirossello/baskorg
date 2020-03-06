@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exists',['exists',['../classapp.html#a42e2a44d3325daf63b3ec57b8921d1b5',1,'app']]]
+  ['delete_5ffrom_5fbd',['delete_from_bd',['../classjugador.html#acd83799dcfbff2b813eb6c674ae8e5b2',1,'jugador']]]
 ];

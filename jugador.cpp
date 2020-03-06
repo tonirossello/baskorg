@@ -114,6 +114,14 @@ int jugador::getIdClub(){
     return m_idClub;
 }
 
+/**
+ * @brief Obtener el id del jugador
+ * @return Id del jugador
+ */
+int jugador::getId(){
+    return m_idJugador;
+}
+
 
 //SETTERS
 
@@ -312,5 +320,22 @@ void jugador::load(int id){
 
       qDebug() <<  m_name + m_soci + m_birthday.toString() + m_dni + m_phoneNumber1 + m_phoneNumber2 + m_address + m_city + m_email;
     } //end if
+
+}
+
+/**
+ * @brief Borra los datos de un jugador en el objeto jugador
+ * @param id --> id del jugador a borrar
+ */
+bool jugador::delete_from_bd(){
+
+    QSqlQuery q(*m_db);
+
+    q.prepare("DELETE FROM jugadors WHERE id=:idJugador;");
+    q.bindValue(":idJugador", m_idJugador);
+    bool result {q.exec()};
+    qDebug() << q.lastError();
+
+    return result;
 
 }
